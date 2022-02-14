@@ -1,0 +1,76 @@
+@use "variables";
+
+.main-header {
+
+  position: fixed;
+  background: variables.$white;
+  z-index: 100;
+  width: 100%;
+
+  &__line {
+    &._bottom {
+      background: variables.$light-green;
+    }
+  }
+
+  &__top {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto auto 1fr auto auto;
+    grid-template-areas: "logo phone contact sizer search cart";
+    width: 100%;
+
+  }
+
+  &__logo {
+    grid-area: logo;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  &__contact-phone {
+    grid-area: phone;
+    margin-left: 9rem;
+    display: grid;
+
+    & a {
+      font-family: variables.$font-medium;
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      font-weight: 500;
+    }
+
+    & p {
+      font-family: variables.$font-light;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      font-weight: 300;
+    }
+  }
+
+  &__contact-us {
+    text-transform: uppercase;
+    grid-area: contact;
+    border: .1rem solid variables.$green;
+    color: variables.$green;
+    padding: 1rem 2rem;
+    font-family: variables.$font-semi;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-left: 4.4rem;
+  }
+
+  &__search {
+    grid-area: search;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='14' viewBox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5.0625' cy='5.5625' r='4.59375' stroke='%23B3BBB6' stroke-width='0.9375'/%3E%3Cpath d='M12 12.5L8.53125 9.03125' stroke='%23B3BBB6' stroke-width='1.3125' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    font-family: variables.$font-light;
+    font-weight: 300;
+  }
+
+  &__cart-btn {
+    grid-area: cart;
+    margin-left: 4.8rem;
+  }
+
+}

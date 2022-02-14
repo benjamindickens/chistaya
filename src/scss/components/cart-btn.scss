@@ -1,0 +1,31 @@
+@use "../variables";
+
+.cart-btn {
+  display: grid;
+  grid-template-areas: "icon name"
+"icon amount";
+  justify-items: start;
+  align-content: center;
+  align-items: center;
+  grid-gap: 0 .8rem;
+
+  &__icon {
+    grid-area: icon;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &__name {
+    font-family: variables.$font-medium;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 500;
+  }
+
+  &__amount-of-items {
+    font-family: variables.$font-light;
+    font-weight: 300;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+  }
+}
