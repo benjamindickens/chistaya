@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="scss/app.scss">
     <script defer type="module" src="js/app.js"></script>
     <title>Чистая линия</title>
 </head>
 <body>
-<header class="main-header">
+<header class="js-header main-header">
     <div class="main-header__line">
         <div class="main-header__top _width-sizer">
-            <picture class="main-header__logo">
-                <source media="(max-width: 667px)" type="image/png"
-                        srcset="images/desktop/header/logo.png"/>
-                <img src="images/desktop/header/logo.png" alt="top logo">
-            </picture>
+            <a href="/" class="main-header__logo">
+                <picture>
+                    <source media="(max-width: 667px)" type="image/png"
+                            srcset="images/desktop/header/logo.png"/>
+                    <img src="images/desktop/header/logo.png" alt="top logo">
+                </picture>
+            </a>
 
             <div class="main-header__contact-phone">
                 <a href="tel:+78002001200">+7 (800) 200 1 200</a>
@@ -27,7 +29,10 @@
             <a href="#" class="main-header__contact-us">
                 Связаться с нами
             </a>
-            <input type="search" class="main-header__search">
+            <div class="main-header__search search">
+                <input type="search" placeholder="Поиск" class="js-search search__input">
+            </div>
+
             <div class="main-header__cart-btn cart-btn">
                 <svg class="cart-btn__icon">
                     <use xlink:href="images/sprite.svg#cart"></use>
@@ -42,21 +47,409 @@
         </div>
     </div>
     <div class="main-header__line _bottom">
-        <navigation class="main-header__navigation _width-sizer">
-            <ul class="main-header__menu-list">
-                <li class="main-header__menu-item"><a href="#">Волосы</a></li>
-                <li class="main-header__menu-item"><a href="#">Тело</a></li>
-                <li class="main-header__menu-item"><a href="#">Для мужчин</a></li>
-                <li class="main-header__menu-item"><a href="#">О марке</a></li>
-                <li class="main-header__menu-item"><a href="#">О миссии</a></li>
-                <li class="main-header__menu-item"><a href="#">Больше о красоте</a></li>
-            </ul>
-        </navigation>
+        <ul class="main-header__menu-list _width-sizer">
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="face" class="js-menu-btn dropdown-menu__link" href="#">Лицо</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="hair" class="js-menu-btn dropdown-menu__link" href="#">Волосы</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="body" class="js-menu-btn dropdown-menu__link" href="#">Тело</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="men" class="js-menu-btn dropdown-menu__link" href="#">Для мужчин</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="brand" class="js-menu-btn dropdown-menu__link" href="#">О марке</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="mission" class="js-menu-btn dropdown-menu__link" href="#">О миссии</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="main-header__menu-item dropdown-menu">
+                <a data-content="beauty" class="js-menu-btn dropdown-menu__link" href="#">Больше о красоте</a>
+                <div class="dropdown-menu__container">
+                    <div class="dropdown-menu__content _width-sizer">
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Состояние кожи
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                <li><a href="#">Сухая</a></li>
+                                <li><a href="#">Жирная</a></li>
+                                <li><a href="#">Проблемная</a></li>
+                                <li><a href="#">Тусклая</a></li>
+                                <li><a href="#">Сухая и чувствительная</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Тип продукта
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">Крем для лица</a></li>
+                                <li><a href="#">Маска для лица</a></li>
+                                <li><a href="#">Бальзам для губ</a></li>
+                                <li><a href="#">Гель для умывания</a></li>
+                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                <li><a href="#">Крем для лица и тела</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col _spacer">
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Линейка
+                            </h3>
+                            <ul class="dropdown-menu__list">
+                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                <li><a href="#">Идеальная кожа</a></li>
+                                <li><a href="#">Мицелярное очищение</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-menu__col">
+                            <h3 class="dropdown-menu__title">
+                                Популярные товары
+                            </h3>
+                            <ul class="js-popular dropdown-menu__popular">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
     <div class="main-header__line dropdown-menu">
-        <div class="dropdown-menu__content _width-sizer">
 
-        </div>
     </div>
 </header>
 </body>

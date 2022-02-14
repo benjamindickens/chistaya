@@ -1,5 +1,8 @@
 @use "variables";
 @use "fonts";
 @use "common";
-@use "components/cart-btn";
-@use "header";
+@use "components/small-product-card";
+@use "header/dropdown-menu";
+@use "header/cart-btn";
+@use "header/search";
+@use "header/header";

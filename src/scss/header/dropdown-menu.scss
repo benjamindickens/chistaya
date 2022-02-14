@@ -1,0 +1,62 @@
+@use "../variables";
+
+.dropdown-menu {
+
+  &:hover .dropdown-menu__container {
+    display: block;
+  }
+
+  &__container {
+    display: none;
+    position: absolute;
+    box-shadow: 0 .2rem 1rem #5656561A;
+    left: 0;
+    right: 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: 6.5rem;
+    grid-template-columns: auto auto 1fr auto auto;
+    width: 100%;
+    padding: 2rem 0 4rem;
+  }
+
+  &__link {
+    padding: .95rem 0;
+    font-family: variables.$font-regular;
+    color: variables.$black;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-bottom: 1.2rem;
+    font-family: variables.$font-semi;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: grid;
+
+    & li {
+      font-family: variables.$font-light;
+      line-height: 2.1rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__popular {
+    display: grid;
+    grid-gap: 1.2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__popular-item {
+
+  }
+}

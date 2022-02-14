@@ -1,0 +1,36 @@
+@use "../variables";
+
+.small-product-card {
+  box-shadow: 0 .2rem 1rem #5656561A;
+  width: 12rem;
+  height: 10rem;
+  display: grid;
+  grid-gap: .4rem;
+  position: relative;
+  justify-items: center;
+  padding: .6rem;
+  font-size: .8rem;
+  line-height: 1.2rem;
+  font-family: variables.$font-semi;
+  text-transform: uppercase;
+
+  &._hit {
+    &:after {
+      position: absolute;
+      top: .6rem;
+      left: .6rem;
+      content: "хит";
+      color: variables.$white;
+      padding: .1rem .8rem;
+      background: variables.$light-blue;
+    }
+  }
+
+  &__img {
+    max-height: 6rem;
+  }
+
+  &__name {
+    width: 100%;
+  }
+}

@@ -18,7 +18,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
-  font-size: 0.52vw;
+  font-size: 0.69vw;
 }
 
 @media (max-width: variables.$mobile) {
@@ -28,6 +28,8 @@ html {
 }
 
 input {
+  margin: 0;
+  padding: 0;
   outline: none;
   border-color: transparent;
 }
