@@ -1,0 +1,27 @@
+@use "../variables";
+
+.footer-info {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+
+  &__logo {
+    width: 8rem;
+    height: 8.9rem;
+    justify-self: center;
+  }
+
+  &__col {
+    max-width: 35.6rem;
+    display: grid;
+    grid-gap: .8rem;
+    align-content: start;
+  }
+
+  &__item {
+    font-family: variables.$font-light;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+}

@@ -1,56 +1,13 @@
 @use "../variables";
 @use "subscribe-form";
 @use "socials";
+@use "footer-navigation";
+@use "footer-info";
 
 .main-footer {
-
   padding-top: 9.2rem;
 
   &__subscribe-form {
     margin-bottom: 2.8rem;
   }
-
-  &__navigation {
-    border-bottom: .1rem solid variables.$black;
-  }
-
-  &__menu-list {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__menu-item {
-    padding: 2rem 0;
-    font-family: variables.$font-semi;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    text-transform: uppercase;
-  }
-
-  &__info {
-    padding: 2rem 0;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-  }
-
-  &__unilever-logo {
-    width: 8rem;
-    height: 8.9rem;
-    justify-self: center;
-  }
-
-  &__info-col {
-    max-width: 35.6rem;
-    display: grid;
-    grid-gap: .8rem;
-    align-content: start;
-  }
-
-  &__info-item {
-    font-family: variables.$font-light;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-  }
-
-
 }
