@@ -1,7 +1,11 @@
 @use "../variables";
+@use "dropdown-menu";
+@use "cart-btn";
+@use "search";
 
 .main-header {
-
+  height: 10rem;
+  top: 0;
   position: fixed;
   background: variables.$white;
   z-index: 100;

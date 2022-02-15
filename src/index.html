@@ -33,7 +33,7 @@
                 <input type="search" placeholder="Поиск" class="js-search search__input">
             </div>
 
-            <div class="main-header__cart-btn cart-btn">
+            <div class="js-cart-btn main-header__cart-btn cart-btn">
                 <svg class="cart-btn__icon">
                     <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
@@ -452,5 +452,59 @@
 
     </div>
 </header>
+
+
+<main>
+
+</main>
+
+<footer class="main-footer">
+
+    <div class="main-footer__subscribe-form subscribe-form">
+        <div class="subscribe-form__container">
+            <picture class="subscribe-form__decor _1">
+                <source media="(max-width: 667px)" type="image/png"
+                        srcset="images/desktop/footer/subscribe-1.png"/>
+                <img src="images/desktop/footer/subscribe-1.png" alt="bush">
+            </picture>
+            <picture class="subscribe-form__decor _2">
+                <source media="(max-width: 667px)" type="image/png"
+                        srcset="images/desktop/footer/subscribe-2.png"/>
+                <img src="images/desktop/footer/subscribe-2.png" alt="bush">
+            </picture>
+
+            <div class="subscribe-form__description">
+                <h3>Подписаться на новости</h3>
+                <p>Подпишитесь на рассылку и узнавайте первыми о новинках, акциях и эксклюзивных предложениях!</p>
+            </div>
+            <form class="js-subscribe-form subscribe-form__form">
+                <div class="js-input subscribe-form__input main-input">
+                    <input class="main-input__input"
+                           data-required
+                           name="email"
+                           type="text"
+                           placeholder="Электронная почта">
+                    <div class="js-error main-input__error"></div>
+                </div>
+
+                <button class="js-submit subscribe-form__submit main-btn _green">
+                    <span>
+ПОДПИСАТЬСЯ
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="main-footer__socials socials">
+        <a href="#" target="_blank" class="socials__social-item _vk"></a>
+        <a href="#" target="_blank" class="socials__social-item _youtube"></a>
+        <a href="#" target="_blank" class="socials__social-item _instagram"></a>
+        <a href="#" target="_blank" class="socials__social-item _ok"></a>
+    </div>
+
+</footer>
+
 </body>
 </html>

@@ -2,7 +2,7 @@ import {submitForm} from "./request.js";
 
 const menu = document.querySelector(".js-header");
 
-let lastDropdownContent = null;
+let downloadedDropdownContent = [];
 
 const dummySmallProductData = [
     {
@@ -50,10 +50,9 @@ const handleMenuHover = (e) => {
 
     if (hoveredEl.classList.contains("js-menu-btn")) {
         const currentDropdownContent = hoveredEl.dataset.content;
-        if (currentDropdownContent !== lastDropdownContent) {
-            lastDropdownContent = currentDropdownContent;
+        if (!downloadedDropdownContent.includes(currentDropdownContent)) {
+            downloadedDropdownContent.push(currentDropdownContent);
             const productContainer = hoveredEl.parentElement.querySelector(".js-popular");
-
             //удалить
             createCards(dummySmallProductData, productContainer)
             //раскоментировать

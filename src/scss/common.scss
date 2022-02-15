@@ -18,7 +18,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
-  font-size: 0.69vw;
+  //font-size: 0.69vw;  //1440
+  font-size: 0.52vw; //1920
 }
 
 @media (max-width: variables.$mobile) {
@@ -87,7 +88,7 @@ button {
 }
 
 main {
-  //margin: 13.9rem auto 0;
+  margin: 10rem auto 0;
 }
 
 ._width-sizer {

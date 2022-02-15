@@ -1,0 +1,45 @@
+@use "../variables";
+
+.main-input {
+  position: relative;
+  display: grid;
+  align-items: center;
+  width: 100%;
+
+  &._error {
+    & .main-input__input {
+
+    }
+
+    & .main-input__error {
+      opacity: 1;
+    }
+  }
+
+  &::placeholder {
+    font-family: variables.$font-light;
+    color: variables.$light-gray;
+  }
+
+  &__error {
+    transition: opacity 0.15s;
+    opacity: 0;
+    width: 100%;
+    bottom: -2.5rem;
+    padding: 0 0.8rem;
+    position: absolute;
+    display: block;
+    color: red;
+    font-size: 1.4rem;
+    font-family: variables.$font-regular
+  }
+
+  &__input {
+    background: variables.$white;
+    padding: 1.1rem .8rem;
+    color: variables.$black;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-family: variables.$font-regular;
+  }
+}

@@ -22,8 +22,7 @@
 
   &__input {
     font-size: 1.4rem;
-    font-family: variables.$font-light;
-    font-weight: 300;
+    font-family: variables.$font-regular;
     color: variables.$black;
     width: 100%;
 
@@ -36,9 +35,9 @@
     }
 
     &::placeholder {
+      opacity: 0.5;
       color: variables.$light-gray;
       font-family: variables.$font-light;
-      font-weight: 400;
     }
   }
 }

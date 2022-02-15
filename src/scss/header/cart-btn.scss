@@ -1,6 +1,7 @@
 @use "../variables";
 
 .cart-btn {
+  cursor: pointer;
   display: grid;
   grid-template-areas: "icon name"
 "icon amount";

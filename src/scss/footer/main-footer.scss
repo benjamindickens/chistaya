@@ -1,0 +1,14 @@
+@use "../variables";
+@use "subscribe-form";
+@use "socials";
+
+.main-footer {
+
+  padding-top: 9.2rem;
+
+  &__subscribe-form {
+    margin-bottom: 2.8rem;
+  }
+
+
+}
