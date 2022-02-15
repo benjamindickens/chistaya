@@ -3,40 +3,48 @@ import 'swiper/swiper-bundle.min.css';
 
 const btnPerGroup = 5;
 const bannerSlider = new Swiper(".js-banner-slider", {});
-const bannerSliderSlides = bannerSlider.slides;
-
-const navigationData = bannerSliderSlides.map(slide => {
-    return {
-        index: slide.dataset.index,
-        title: slide.dataset.title,
-        description: slide.dataset.description,
-    }
-})
 
 const createNavBtn = (data) => {
     return `<div>${data.title},${data.index}</div>`
 }
 
 const createSlides = (navigationData) => {
-    const navSlides = {
-        "page-0": [],
-    };
+    const navSlides = [];
     let currentSlide = 0;
     navigationData.forEach(data => {
-        if (navSlides[`page-${currentSlide}`].length <= 5) {
-            navSlides[`page-${currentSlide}`].push(createNavBtn(data))
+
+        if (!navSlides[currentSlide]) {
+            navSlides[currentSlide] = [];
         }
-        if (navSlides[`page-${currentSlide}`].length === 5) {
+
+        if (navSlides[currentSlide].length <= 5) {
+            navSlides[currentSlide].push(createNavBtn(data));
+        }
+
+        if (navSlides[currentSlide].length === 5) {
             currentSlide++;
-            navSlides[`page-${currentSlide}`] = [];
+            navSlides[currentSlide] = [];
         }
+
     })
 
-    return navSlides;
+    return navSlides.map(array => array.join(""));
 }
 
-const result = createSlides(navigationData);
-
-console.log(result)
-
-const bannerNavigation = new Swiper(".js-banner-navigation", {});
+const bannerNavigation = new Swiper(".js-banner-navigation", {
+    watchSlidesVisibility: true,
+    virtual: {
+        cache: true,
+        slides: (function () {
+            const bannerSliderSlides = bannerSlider.slides;
+            const navigationData = bannerSliderSlides.map(slide => {
+                return {
+                    index: slide.dataset.index,
+                    title: slide.dataset.title,
+                    description: slide.dataset.description,
+                }
+            })
+            return createSlides(navigationData);
+        }()),
+    },
+});
