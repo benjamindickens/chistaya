@@ -1,4 +1,5 @@
 import {submitForm} from "./request.js";
+import {hasClass} from "./common.js";
 
 const forms = document.querySelectorAll("form");
 
@@ -56,7 +57,7 @@ const getFormData = (e, form) => {
 const subscribeForm = document.querySelector(".js-subscribe-form");
 
 subscribeForm.addEventListener("click", function (e) {
-    if (e.target.classList.contains("js-submit")) {
+    if (hasClass(e.target, "js-submit")){
         const data = getFormData(e, this);
         const requiredField = getRequiredFields(this);
         const isValid = validateData(data, requiredField, this)

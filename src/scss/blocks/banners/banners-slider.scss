@@ -5,6 +5,8 @@
   height: 40rem;
 
   &__slide {
+    background: variables.$white;
+
     & img {
       width: 100%;
       object-fit: cover;

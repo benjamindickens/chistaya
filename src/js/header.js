@@ -1,4 +1,5 @@
 import {submitForm} from "./request.js";
+import {hasClass} from "./common.js";
 
 const menu = document.querySelector(".js-header");
 
@@ -48,7 +49,7 @@ const createCards = (data, container) => {
 const handleMenuHover = (e) => {
     const hoveredEl = e.target;
 
-    if (hoveredEl.classList.contains("js-menu-btn")) {
+    if (hasClass(hoveredEl,"js-menu-btn")) {
         const currentDropdownContent = hoveredEl.dataset.content;
         if (!downloadedDropdownContent.includes(currentDropdownContent)) {
             downloadedDropdownContent.push(currentDropdownContent);

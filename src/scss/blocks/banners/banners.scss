@@ -1,2 +1,7 @@
 @use "../../variables";
 @use "banners-slider";
+@use "banners-navigation";
+
+.banners {
+  background: variables.$light-green;
+}

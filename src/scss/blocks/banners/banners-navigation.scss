@@ -1,0 +1,41 @@
+@use "../../variables";
+
+.banners-navigation {
+  user-select: none;
+  
+  &__wrapper {
+    & .swiper-slide {
+      display: flex;
+    }
+  }
+
+  &__btn {
+    flex: 1;
+    display: grid;
+    grid-gap: .2rem;
+    color: variables.$black;
+    padding: 1.6rem 1.6rem;
+
+    & > * {
+      pointer-events: none;
+    }
+
+    &._active {
+      color: variables.$white;
+      background: variables.$green-bg;
+    }
+  }
+
+  &__title {
+    font-family: variables.$font-semi;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  &__description {
+    font-family: variables.$font-light;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+}
