@@ -8,10 +8,10 @@
 @use "components/main-btn";
 
 //header
-@use "header/main-header";
+@use "blocks/main-header/main-header";
 
 //footer
-@use "footer/main-footer";
+@use "blocks/main-footer/main-footer";
 
 //main-content
-@use "banners/banners";
+@use "blocks/banners/banners";
