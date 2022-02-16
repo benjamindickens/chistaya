@@ -6,8 +6,8 @@ const btnPerGroup = 5;
 const navigationContainer = document.querySelector(".js-banner-navigation")
 let bannerNavigation, bannersSlider = null;
 
-const createNavBtn = (data) => {
-    return `<button data-index="${data.index}" class="js-banners-nav banners-navigation__btn">
+const createNavBtn = (data, btnSlide) => {
+    return `<button data-index="${data.index}" data-slide="${btnSlide}" class="js-banners-nav banners-navigation__btn">
 <h3 class="banners-navigation__title">${data.title}</h3>
 <p class="banners-navigation__description">${data.description}</p>
 </button>`
@@ -27,7 +27,7 @@ const createSlides = (navigationData, btnPerGroup) => {
         }
 
         if (navSlides[currentSlide].length <= btnPerGroup) {
-            navSlides[currentSlide].push(createNavBtn(data));
+            navSlides[currentSlide].push(createNavBtn(data, currentSlide));
         }
 
         if (navSlides[currentSlide].length === btnPerGroup) {
@@ -48,7 +48,9 @@ bannersSlider = new Swiper(".js-banner-slider", {
         slideChangeTransitionStart() {
             navigationContainer.querySelector("._active").classList.remove("_active");
             setActiveBtn(this.realIndex)
-        }
+            const expectedSlide = navigationContainer.querySelector(`[data-index="${this.realIndex}"]`).dataset.slide;
+            bannerNavigation.slideTo(expectedSlide);
+        },
     }
 });
 
