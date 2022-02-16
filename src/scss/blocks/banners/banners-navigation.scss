@@ -2,7 +2,12 @@
 
 .banners-navigation {
   user-select: none;
-  
+  z-index: 1;
+  position: relative;
+
+  &__slider.swiper {
+  }
+
   &__wrapper {
     & .swiper-slide {
       display: flex;
@@ -10,6 +15,8 @@
   }
 
   &__btn {
+    border: none;
+    position: relative;
     flex: 1;
     display: grid;
     grid-gap: .2rem;
@@ -38,4 +45,25 @@
     line-height: 1.5rem;
   }
 
+  &__progress {
+    width: 0;
+    transition: width .2s linear;
+    height: .4rem;
+    background: variables.$green-bg;
+  }
+
+}
+
+.banners-navigation__btn._currently-active {
+  .banners-navigation__progress {
+    transition: width 5s linear;
+    width: 100%;
+  }
+}
+
+.banners-navigation__btn._activated {
+  .banners-navigation__progress {
+    transition: none;
+    width: 100%;
+  }
 }

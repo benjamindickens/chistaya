@@ -4,4 +4,15 @@
 
 .banners {
   background: variables.$light-green;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    background: variables.$white;
+    height: .4rem;
+    width: 100%;
+    bottom: 0;
+    display: block;
+  }
 }
