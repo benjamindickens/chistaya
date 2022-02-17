@@ -1,9 +1,10 @@
-@use "../variables";
+@use "../common/variables";
 
 .main-btn {
   display: grid;
   align-items: center;
   text-align: center;
+  height: 4rem;
 
   & span {
     pointer-events: none;
@@ -14,6 +15,11 @@
 
   &._green {
     background: variables.$green-bg;
+    color: variables.$white;
+  }
+
+  &._blue {
+    background: variables.$blue;
     color: variables.$white;
   }
 }

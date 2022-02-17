@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+h1, h2, h3, h4 {
+  font-weight: unset;
+}
+
 .js-rem-example {
   height: 1rem;
   position: absolute;

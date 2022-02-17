@@ -1,0 +1,121 @@
+@use "../../common/variables";
+
+.analyzer {
+  width: 100%;
+  background: url("../images/desktop/analyzer/bg.png");
+  color: variables.$white;
+
+  &__container {
+    padding: 11.6rem 0 11.6rem 59rem;
+    height: 100%;
+    position: relative;
+  }
+
+  &__popup {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+  }
+
+  &__pin {
+    transition: fill .5s linear, transform .5s linear;
+    cursor: pointer;
+    width: 2.8rem;
+    height: 2.8rem;
+    fill: white;
+  }
+
+  &__link-container {
+    position: absolute;
+  }
+
+  &__img {
+    width: 46rem;
+    height: 46rem;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    left: 4.8rem;
+  }
+
+  &__content {
+    max-width: 40rem;
+    font-family: variables.$font-light;
+    display: grid;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+    margin-bottom: .4rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+    font-family: variables.$font-semi;
+    margin-bottom: 1.2rem;
+    border-bottom: .1rem solid variables.$white;
+    letter-spacing: .1rem;
+    padding-bottom: .2rem;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: 4rem;
+  }
+
+  &__btn {
+    padding: 0 4.7rem;
+    justify-self: start;
+  }
+
+}
+
+
+//popup + hover
+
+.analyzer__popup:hover {
+  & .analyzer__pin {
+    fill: variables.$blue;
+  }
+}
+
+.analyzer__popup._skin {
+  left: 30rem;
+  top: 27rem;
+
+  & .analyzer__pin {
+    transform: rotate(-240deg);
+  }
+
+  &:hover {
+    & .analyzer__pin {
+      transform: rotate(-70deg);
+    }
+  }
+
+  & .analyzer__link-container {
+    right: 0;
+    transform: translateX(100%);
+  }
+}
+
+
+.analyzer__popup._hair {
+  left: 20rem;
+  top: 11rem;
+
+  &:hover {
+    & .analyzer__pin {
+      transform: rotate(-170deg);
+    }
+  }
+
+  & .analyzer__link-container {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}

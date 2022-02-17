@@ -1,0 +1,24 @@
+@use "common/variables";
+@use "common/fonts";
+@use "common/common";
+
+//header
+@use "blocks/main-header/main-header";
+
+//footer
+@use "blocks/main-footer/main-footer";
+
+//components
+@use "components/small-product-card";
+@use "components/main-input";
+@use "components/main-btn";
+
+//main-content
+@use "blocks/top-banners/top-banners";
+@use "blocks/banners/banner";
+@use "blocks/analyzer/analyzer";
+
+//styles
+.main-page {
+
+}
