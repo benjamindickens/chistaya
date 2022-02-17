@@ -16,6 +16,7 @@
     position: absolute;
     left: 0;
     cursor: pointer;
+    overflow: hidden;
   }
 
   &__pin {
@@ -102,19 +103,20 @@
     background: variables.$blue;
     text-align: center;
     display: grid;
+    justify-items: center;
+    align-items: center;
     padding: 0.8rem 2.4rem 0.4rem 2.4rem;
 
     &:after {
+      margin-top: -0.2rem;
       transition: opacity .7s;
       opacity: 0;
       transition-delay: 0s;
       position: absolute;
       content: "";
       display: block;
-      width: 18rem;
-      height: 8rem;
-      top: -31%;
-      left: -0.8rem;
+      width: 18.5rem;
+      height: 7.8rem;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -142,6 +144,10 @@
 }
 
 .analyzer__popup:hover {
+
+  & {
+    overflow: visible;
+  }
 
   & .analyzer__pin {
     fill: variables.$blue;
@@ -184,10 +190,16 @@
   }
 
   & .analyzer__link-container {
+    grid-template-columns: auto 16.3rem;
     grid-template-areas: "line box";
-    right: 1.1rem;
-    transform: translateX(100%);
-    top: 1.2rem;
+    left: 1.1rem;
+    top: 1.3rem;
+  }
+
+
+  & .analyzer__link-box {
+    left: -0.4rem;
+    top: 0.5rem;
   }
 }
 
@@ -203,7 +215,7 @@
   & .analyzer__link-box {
     position: relative;
     right: -.4rem;
-    top: -1.8rem
+    top: -2.2rem;
   }
 
   &:hover {
@@ -213,7 +225,7 @@
   }
 
   & .analyzer__link-container {
-    left: -21.9rem;
+    right: 1rem;
     top: -1.8rem;
     flex-direction: row-reverse;
   }
