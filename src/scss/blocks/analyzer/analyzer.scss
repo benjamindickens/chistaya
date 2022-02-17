@@ -18,7 +18,7 @@
   }
 
   &__pin {
-    transition: fill .5s linear, transform .5s linear;
+    transition: fill .3s linear, transform .3s linear;
     cursor: pointer;
     width: 2.8rem;
     height: 2.8rem;
@@ -74,12 +74,29 @@
 
 }
 
+//link-line
+
+.analyzer__link-line {
+  & .path {
+    stroke: white;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+  }
+}
 
 //popup + hover
 
 .analyzer__popup:hover {
   & .analyzer__pin {
     fill: variables.$blue;
+  }
+
+  & .analyzer__link-line {
+    & .path {
+      stroke: variables.$blue;
+      animation: slide 5s linear forwards;
+      animation-delay: .15s;
+    }
   }
 }
 
@@ -93,13 +110,14 @@
 
   &:hover {
     & .analyzer__pin {
-      transform: rotate(-70deg);
+      transform: rotate(-40deg);
     }
   }
 
   & .analyzer__link-container {
-    right: 0;
+    right: 1.1rem;
     transform: translateX(100%);
+    top: 1.2rem;
   }
 }
 
@@ -117,5 +135,11 @@
   & .analyzer__link-container {
     left: 0;
     transform: translateX(-100%);
+  }
+}
+
+@keyframes slide {
+  to {
+    stroke-dashoffset: 0;
   }
 }
