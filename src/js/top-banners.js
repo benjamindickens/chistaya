@@ -2,11 +2,12 @@ import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
 import {hasClass} from "./common.js";
 
+const delay = 3500;
 const btnPerGroup = 5;
 let currentStepWidth = 0;
 const navigationContainer = document.querySelector(".js-banners-navigation");
 const progressBar = document.querySelector(".js-banners-progress");
-let bannerNavigation, bannersSlider = null;
+let bannerNavigation, bannersSlider, progressTransition, expectedProgressBarWidth = null;
 
 const createNavBtn = (data, btnSlide, progressStep) => {
     return `<button data-step="${progressStep}" data-index="${data.index}" data-slide="${btnSlide}" class="js-banners-nav banners-navigation__btn">
@@ -21,10 +22,33 @@ const setActiveBtn = (selector) => {
 
 const setStepToSlides = (slider) => {
     slider.slides.forEach((slide, index) => {
-        const step = (index % btnPerGroup) ;
+        const step = (index % btnPerGroup);
         slide.setAttribute("data-step", step)
     })
 }
+
+const autoplay = (slider) => {
+    clearTimeout(progressTransition);
+    progressTransition = null;
+
+    expectedProgressBarWidth = (parseInt(progressBar.style.width) ? parseInt(progressBar.style.width) : 0) + currentStepWidth + "%";
+    progressBar.classList.remove("_progress-transition-off")
+    setTimeout(() => {
+
+        progressBar.classList.add("_progress-transition-on")
+
+        progressBar.style.width = expectedProgressBarWidth;
+
+        progressTransition = setTimeout(() => {
+            if (slider.realIndex + 1 < slider.slides.length) {
+                slider.slideNext();
+            } else {
+                slider.slideTo(0)
+            }
+
+        }, delay)
+    })
+};
 
 const setCurrentProgress = () => {
     progressBar.style.width = currentStepWidth * +bannersSlider.slides[bannersSlider.realIndex].dataset.step + "%";
@@ -60,10 +84,24 @@ const createSlides = (navigationData, btnPerGroup) => {
 bannersSlider = new Swiper(".js-banner-slider", {
     slidesPerView: 1,
     followFinger: false,
+    speed: 300,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
     watchSlidesVisibility: true,
     on: {
         init() {
             setStepToSlides(this);
+        },
+        slideChangeTransitionEnd() {
+            autoplay(this)
+        },
+        beforeTransitionStart() {
+            progressBar.classList.remove("_progress-transition-on");
+            if (this.realIndex - this.previousIndex !== 1) {
+                progressBar.classList.add("_progress-transition-off")
+            }
         },
         slideChangeTransitionStart() {
             navigationContainer.querySelector("._active").classList.remove("_active");
@@ -77,6 +115,11 @@ bannersSlider = new Swiper(".js-banner-slider", {
 
 bannerNavigation = new Swiper(navigationContainer, {
     followFinger: false,
+    speed: 300,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
     watchSlidesVisibility: true,
     virtual: {
         cache: true,
@@ -96,6 +139,9 @@ bannerNavigation = new Swiper(navigationContainer, {
         init() {
             setActiveBtn(bannersSlider.realIndex);
             currentStepWidth = 100 / this.slides[this.realIndex].children.length;
+        },
+        afterInit() {
+            autoplay(bannersSlider)
         },
         slideChangeTransitionStart() {
             const slideToIndex = this.slides[this.realIndex].firstChild.dataset.index;

@@ -46,10 +46,17 @@
   }
 
   &__progress {
-    width: 0;
-    transition: width .2s linear;
+    width: 0%;
     height: .4rem;
     background: variables.$green-bg;
+
+    &._progress-transition-off {
+      transition: width .3s linear;
+    }
+
+    &._progress-transition-on {
+      transition: width 3.5s linear;
+    }
   }
 
 }
