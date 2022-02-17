@@ -3,16 +3,17 @@ import 'swiper/swiper-bundle.min.css';
 import {hasClass} from "./common.js";
 
 const delay = 3500;
+const slideTransition = 400;
 const btnPerGroup = 5;
 let currentStepWidth = 0;
-const navigationContainer = document.querySelector(".js-banners-navigation");
+const navigationContainer = document.querySelector(".js-banners-preview");
 const progressBar = document.querySelector(".js-banners-progress");
 let bannerNavigation, bannersSlider, progressTransition, expectedProgressBarWidth = null;
 
 const createNavBtn = (data, btnSlide, progressStep) => {
-    return `<button data-step="${progressStep}" data-index="${data.index}" data-slide="${btnSlide}" class="js-banners-nav banners-navigation__btn">
-<h3 class="banners-navigation__title">${data.title}</h3>
-<p class="banners-navigation__description">${data.description}</p>
+    return `<button data-step="${progressStep}" data-index="${data.index}" data-slide="${btnSlide}" class="js-banners-nav-btn top-banners-preview__btn">
+<h3 class="top-banners-preview__title">${data.title}</h3>
+<p class="top-banners-preview__description">${data.description}</p>
 </button>`
 }
 
@@ -32,7 +33,9 @@ const autoplay = (slider) => {
     progressTransition = null;
 
     expectedProgressBarWidth = (parseInt(progressBar.style.width) ? parseInt(progressBar.style.width) : 0) + currentStepWidth + "%";
+
     progressBar.classList.remove("_progress-transition-off")
+
     setTimeout(() => {
 
         progressBar.classList.add("_progress-transition-on")
@@ -84,7 +87,7 @@ const createSlides = (navigationData, btnPerGroup) => {
 bannersSlider = new Swiper(".js-banner-slider", {
     slidesPerView: 1,
     followFinger: false,
-    speed: 300,
+    speed: slideTransition,
     effect: 'fade',
     fadeEffect: {
         crossFade: true
@@ -115,7 +118,7 @@ bannersSlider = new Swiper(".js-banner-slider", {
 
 bannerNavigation = new Swiper(navigationContainer, {
     followFinger: false,
-    speed: 300,
+    speed: slideTransition,
     effect: 'fade',
     fadeEffect: {
         crossFade: true
@@ -155,7 +158,7 @@ bannerNavigation = new Swiper(navigationContainer, {
 navigationContainer.addEventListener("click", (e) => {
     const currentEL = e.target;
 
-    if (hasClass(currentEL, "js-banners-nav") && !hasClass(currentEL, "_active")) {
+    if (hasClass(currentEL, "js-banners-nav-btn") && !hasClass(currentEL, "_active")) {
         navigationContainer.querySelector("._active").classList.remove("_active");
         setActiveBtn(currentEL);
         bannersSlider.slideTo(currentEL.dataset.index)

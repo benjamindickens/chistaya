@@ -1,6 +1,6 @@
 @use "../../variables";
 
-.banners-navigation {
+.top-banners-preview {
   user-select: none;
   z-index: 1;
   position: relative;
@@ -51,7 +51,7 @@
     background: variables.$green-bg;
 
     &._progress-transition-off {
-      transition: width .3s linear;
+      transition: width .4s linear;
     }
 
     &._progress-transition-on {
@@ -61,15 +61,15 @@
 
 }
 
-.banners-navigation__btn._currently-active {
-  .banners-navigation__progress {
+.top-banners-preview__btn._currently-active {
+  .top-banners-preview__progress {
     transition: width 5s linear;
     width: 100%;
   }
 }
 
-.banners-navigation__btn._activated {
-  .banners-navigation__progress {
+.top-banners-preview__btn._activated {
+  .top-banners-preview__progress {
     transition: none;
     width: 100%;
   }

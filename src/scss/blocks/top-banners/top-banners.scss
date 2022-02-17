@@ -1,8 +1,8 @@
 @use "../../variables";
-@use "banners-slider";
-@use "banners-navigation";
+@use "top-banners-slider";
+@use "top-banners-preview";
 
-.banners {
+.top-banners {
   background: variables.$light-green;
   position: relative;
 

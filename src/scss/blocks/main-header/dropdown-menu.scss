@@ -13,7 +13,8 @@
     background: variables.$white;
     left: 0;
     right: 0;
-    top: 4rem;
+    top: 3.9rem;
+    padding: 2rem 0 4rem;
   }
 
   &__content {
@@ -21,7 +22,6 @@
     grid-gap: 6.5rem;
     grid-template-columns: auto auto 1fr auto auto;
     width: 100%;
-    padding: 2rem 0 4rem;
   }
 
   &__link {
