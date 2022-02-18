@@ -20,6 +20,7 @@
   &__top {
     display: grid;
     padding: 0.3rem 0;
+    background: white;
     align-items: center;
     grid-template-columns: auto auto auto 1fr auto auto;
     grid-template-areas: "logo phone contact sizer search cart";
