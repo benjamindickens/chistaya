@@ -1,0 +1,20 @@
+@use "../../common/variables";
+@use "post-card";
+
+.beauty-blog {
+  background: url("../images/desktop/beauty-blog/bg.png") left bottom no-repeat;
+  background-size: auto 32rem;
+  padding: 8.6rem 0 8rem;
+
+  &__grid-container {
+    display: flex;
+    grid-gap: 3rem;
+  }
+
+  &__title {
+    margin-bottom: 4rem;
+    font-family: variables.$font-semi;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+}

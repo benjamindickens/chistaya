@@ -1,0 +1,29 @@
+@use "../../common/variables";
+
+.post-card {
+  display: grid;
+  align-items: start;
+  grid-template-rows: auto auto 1fr;
+
+  &__img {
+    height: 26rem;
+    object-fit: cover;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    margin-bottom: .8rem;
+    font-family: variables.$font-semi;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-right: 1rem;
+  }
+
+  &__description {
+    align-self: end;
+    font-family: variables.$font-light;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding-right: 1rem;
+  }
+}
