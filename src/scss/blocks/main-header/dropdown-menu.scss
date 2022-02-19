@@ -7,7 +7,6 @@
 
   &:hover .dropdown-menu__container {
     transform: translateY(0);
-    opacity: 1;
   }
 
   &__container {
@@ -20,8 +19,7 @@
     top: 4rem;
     padding: 2rem 0 4rem;
     z-index: -1;
-    opacity: 0;
-    transition: transform .3s, opacity .3s;
+    transition: transform .3s;
     transform: translateY(-110%);
   }
 

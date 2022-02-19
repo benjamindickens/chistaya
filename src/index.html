@@ -478,7 +478,7 @@
                                 </p>
                                 <div class="product-card__stats">
                                     <div data-stars="0" class="product-card__stars"></div>
-                                    <p class="product-card__comments">32 отзыва</p>
+                                    <a href="#" class="product-card__comments">32 отзыва</a>
                                 </div>
                                 <button class="js-buy-btn product-card__btn main-btn _green">
                                     Купить
@@ -501,7 +501,7 @@
                                 </p>
                                 <div class="product-card__stats">
                                     <div data-stars="4" class="product-card__stars"></div>
-                                    <p class="product-card__comments">32 отзыва</p>
+                                    <a href="#" class="product-card__comments">32 отзыва</a>
                                 </div>
                                 <button class="js-buy-btn product-card__btn main-btn _green">
                                     Купить
@@ -524,7 +524,7 @@
                                 </p>
                                 <div class="product-card__stats">
                                     <div data-stars="5" class="product-card__stars"></div>
-                                    <p class="product-card__comments">32 отзыва</p>
+                                    <a href="#" class="product-card__comments">32 отзыва</a>
                                 </div>
                                 <button class="js-buy-btn product-card__btn main-btn _green">
                                     Купить
@@ -547,7 +547,7 @@
                                 </p>
                                 <div class="product-card__stats">
                                     <div data-stars="2" class="product-card__stars"></div>
-                                    <p class="product-card__comments">32 отзыва</p>
+                                    <a href="#" class="product-card__comments">32 отзыва</a>
                                 </div>
                                 <button class="js-buy-btn product-card__btn main-btn _green">
                                     Купить
@@ -600,44 +600,52 @@
         <div class="beauty-blog__content _width-sizer">
             <h1 class="beauty-blog__title _section-title">УЗНАЙ БОЛЬШЕ О КРАСОТЕ</h1>
 
-            <div class="beauty-blog__grid-container">
-                <a href="#" class="beauty-blog__post-card post-card">
-                    <picture class="post-card__img">
-                        <source media="(max-width: 667px)" type="image/png"
-                                srcset="images/beauty-blog-test.png"/>
-                        <img src="images/beauty-blog-test.png" alt="post img">
-                    </picture>
+            <div class="js-blog-slider beauty-blog__slider swiper">
+                <div class="beauty-blog__wrapper swiper-wrapper">
+                    <div class="beauty-blog__slide swiper-slide">
+                        <a href="#" class="beauty-blog__post-card post-card">
+                            <picture class="post-card__img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/beauty-blog-test.png"/>
+                                <img src="images/beauty-blog-test.png" alt="post img">
+                            </picture>
 
-                    <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
+                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
 
-                    <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                        работает только наполовину?</p>
-                </a>
-                <a href="#" class="beauty-blog__post-card post-card">
-                    <picture class="post-card__img">
-                        <source media="(max-width: 667px)" type="image/png"
-                                srcset="images/beauty-blog-test.png"/>
-                        <img src="images/beauty-blog-test.png" alt="post img">
-                    </picture>
+                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
+                                работает только наполовину?</p>
+                        </a>
+                    </div>
+                    <div class="beauty-blog__slide swiper-slide">
+                        <a href="#" class="beauty-blog__post-card post-card">
+                            <picture class="post-card__img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/beauty-blog-test.png"/>
+                                <img src="images/beauty-blog-test.png" alt="post img">
+                            </picture>
 
-                    <h3 class="post-card__title">Избавить кожу от токсинов легко
-                    </h3>
+                            <h3 class="post-card__title">Избавить кожу от токсинов легко
+                            </h3>
 
-                    <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                        работает только наполовину?</p>
-                </a>
-                <a href="#" class="beauty-blog__post-card post-card">
-                    <picture class="post-card__img">
-                        <source media="(max-width: 667px)" type="image/png"
-                                srcset="images/beauty-blog-test.png"/>
-                        <img src="images/beauty-blog-test.png" alt="post img">
-                    </picture>
+                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
+                                работает только наполовину?</p>
+                        </a>
+                    </div>
+                    <div class="beauty-blog__slide swiper-slide">
+                        <a href="#" class="beauty-blog__post-card post-card">
+                            <picture class="post-card__img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/beauty-blog-test.png"/>
+                                <img src="images/beauty-blog-test.png" alt="post img">
+                            </picture>
 
-                    <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
+                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
 
-                    <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                        работает только наполовину?</p>
-                </a>
+                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
+                                работает только наполовину?</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 

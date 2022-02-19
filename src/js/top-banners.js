@@ -87,6 +87,7 @@ const createSlides = (navigationData, btnPerGroup) => {
 }
 
 bannersSlider = new Swiper(".js-banner-slider", {
+    rewind: true,
     slidesPerView: 1,
     followFinger: false,
     speed: slideTransition,
@@ -121,6 +122,7 @@ bannersSlider = new Swiper(".js-banner-slider", {
 
 bannerNavigation = new Swiper(navigationContainer, {
     followFinger: false,
+    rewind: true,
     speed: slideTransition,
     effect: 'fade',
     fadeEffect: {
