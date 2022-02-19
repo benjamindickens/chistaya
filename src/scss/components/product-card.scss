@@ -2,6 +2,10 @@
 
 .product-card {
   position: relative;
+  box-shadow: 0 .2rem 1rem #5656561A;
+  padding: 1.2rem;
+  display: grid;
+  cursor: pointer;
 
   &:after {
     position: absolute;
@@ -13,24 +17,18 @@
     font-family: variables.$font-semi;
   }
 
-  &._hit {
+  &[data-type="hit"] {
     &:after {
       background: variables.$light-blue;
       content: "хит";
     }
   }
 
-  &._new {
+  &[data-type="new"] {
     &:after {
       background: variables.$btn-pink;
       content: "НОВИНКА";
     }
-  }
-
-  &__content {
-    box-shadow: 0 .2rem 1rem #5656561A;
-    padding: 1.2rem;
-    display: grid;
   }
 
   &__img {

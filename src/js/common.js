@@ -1,22 +1,36 @@
-const hasClass = (el,className) => {
-    return el.classList.contains(className);
+const hasClass = (el, logicOperator = "||", ...classNames) => {
+    const results = classNames.map(className => el.classList.contains(className));
+    return logicOperator === "&&" ? !results.includes(false) : results.includes(true);
 }
 
 const getNoun = (number, one, two, five) => {
     let n = Math.abs(number);
     n %= 100;
     if (n >= 5 && n <= 20) {
-        return five;
+        return number + " " + five;
     }
     n %= 10;
     if (n === 1) {
-        return one;
+        return number + " " + one;
     }
     if (n >= 2 && n <= 4) {
-        return two;
+        return number + " " + two;
     }
-    return five;
+    return number + " " + five;
+}
+
+const productCardClickEvents = (container) => {
+    container.addEventListener("click", (e) => {
+        if (!hasClass(e.target, "||", "js-buy-btn", "js-product-comments")) {
+            console.log("redirect")
+            // location.href = e.target.closest(".js-product-slide").dataset.href;
+        } else if (hasClass(e.target, null, "js-buy-btn")) {
+            console.log("buy btn")
+        } else {
+            console.log("comments")
+        }
+    })
 }
 
 
-export {hasClass, getNoun}
+export {hasClass, getNoun, productCardClickEvents}
