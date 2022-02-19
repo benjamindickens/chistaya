@@ -1,9 +1,10 @@
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
 import {getNoun, productCardClickEvents} from "./common.js";
-
+import {submitForm} from "./request.js";
 
 const hitsSliderContainer = document.querySelector(".js-hits-slider");
+let hitsSlider = null;
 
 //logic for backend render
 
@@ -85,5 +86,13 @@ const getSlide = (content) => {
     </div>`
 }
 
-const hitsSlider = createHitsSlider(hitsSliderContainer, dummyData)
 productCardClickEvents(hitsSliderContainer);
+
+submitForm('get', "/api/hits").then(res => res.json()).then(data => {
+    hitsSlider = createHitsSlider(hitsSliderContainer, data)
+}).catch(e => {
+    console.error(e)
+    //удалить ниже тестовые данные
+    hitsSlider = createHitsSlider(hitsSliderContainer, dummyData);
+});
+

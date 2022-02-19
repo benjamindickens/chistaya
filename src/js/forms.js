@@ -57,16 +57,17 @@ const getFormData = (e, form) => {
 const subscribeForm = document.querySelector(".js-subscribe-form");
 
 subscribeForm.addEventListener("click", function (e) {
-    if (hasClass(e.target, "js-submit")){
+    if (hasClass(e.target, null, "js-submit")) {
         const data = getFormData(e, this);
         const requiredField = getRequiredFields(this);
         const isValid = validateData(data, requiredField, this)
 
-        isValid && console.log(data, "подписка выполнена")
-
-        // расскоментировать
-        // isValid && submitForm('post', "/api/subscribe", data).then(res => res.json()).then(data => {
-        //     console.log("подписка выполнена")
-        // }).catch(e => console.error(e));
+        isValid && submitForm('post', "/api/subscribe", data).then(res => res.json()).then(data => {
+            console.log("подписка выполнена")
+        }).catch(e => {
+            console.error(e)
+            //удалить ниже тестовые данные
+            console.log("подписка выполнена")
+        });
     }
 })
