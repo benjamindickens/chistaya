@@ -22,12 +22,9 @@ const getNoun = (number, one, two, five) => {
 const productCardClickEvents = (container) => {
     container.addEventListener("click", (e) => {
         if (!hasClass(e.target, "||", "js-buy-btn", "js-product-comments")) {
-            console.log("redirect")
-            // location.href = e.target.closest(".js-product-slide").dataset.href;
+            location.href = e.target.closest(".js-product-card").dataset.href;
         } else if (hasClass(e.target, null, "js-buy-btn")) {
-            console.log("buy btn")
-        } else {
-            console.log("comments")
+            //logic for buy btn
         }
     })
 }
