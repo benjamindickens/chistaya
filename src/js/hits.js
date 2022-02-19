@@ -37,7 +37,6 @@ const dummyData = new Array(10).fill({
 
 const createHitsSlider = (container, dataOfSlides) => {
     return new Swiper(hitsSliderContainer, {
-        loop: true,
         spaceBetween: 16,
         slidesPerView: 5,
         watchSlidesVisibility: true,
@@ -55,6 +54,11 @@ const createHitsSlider = (container, dataOfSlides) => {
                 return slides;
             }()),
         },
+        on: {
+            init() {
+                this.slideTo(0, 0)
+            }
+        }
     })
 }
 
