@@ -51,7 +51,7 @@
     background: variables.$green-bg;
 
     &._progress-transition-off {
-      transition: width .4s linear;
+      transition: width .4s linear !important;
     }
 
     &._progress-transition-on {
@@ -61,16 +61,3 @@
 
 }
 
-.top-banners-preview__btn._currently-active {
-  .top-banners-preview__progress {
-    transition: width 5s linear;
-    width: 100%;
-  }
-}
-
-.top-banners-preview__btn._activated {
-  .top-banners-preview__progress {
-    transition: none;
-    width: 100%;
-  }
-}

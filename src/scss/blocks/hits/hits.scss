@@ -1,0 +1,42 @@
+@use "../../common/variables";
+
+.hits {
+
+  &__title {
+    margin-bottom: 2.8rem;
+  }
+
+  &__container {
+    padding: 3.6rem 0 9.2rem;
+    position: relative;
+  }
+
+  &__slider {
+    width: 108.4rem;
+  }
+
+  &__slide {
+    margin-bottom: 1.2rem;
+  }
+
+
+  &__nav-btn.swiper-button-prev,
+  &__nav-btn.swiper-button-next {
+    fill: variables.$black;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-size: contain;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__nav-btn.swiper-button-prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.3135 3L4.99977 14.3137L16.3135 25.6274' stroke='%23001D0B' stroke-width='3'/%3E%3C/svg%3E%0A");
+  }
+
+  &__nav-btn.swiper-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg width='26' height='28' viewBox='0 0 26 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6865 3L23.0002 14.3137L11.6865 25.6274' stroke='%23001D0B' stroke-width='3'/%3E%3C/svg%3E%0A");
+  }
+}

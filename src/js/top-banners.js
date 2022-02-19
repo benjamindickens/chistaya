@@ -34,7 +34,9 @@ const autoplay = (slider) => {
 
     expectedProgressBarWidth = (parseInt(progressBar.style.width) ? parseInt(progressBar.style.width) : 0) + currentStepWidth + "%";
 
+
     progressBar.classList.remove("_progress-transition-off")
+
 
     setTimeout(() => {
 
@@ -102,8 +104,9 @@ bannersSlider = new Swiper(".js-banner-slider", {
         },
         beforeTransitionStart() {
             progressBar.classList.remove("_progress-transition-on");
+
             if (this.realIndex - this.previousIndex !== 1) {
-                progressBar.classList.add("_progress-transition-off")
+            progressBar.classList.add("_progress-transition-off")
             }
         },
         slideChangeTransitionStart() {

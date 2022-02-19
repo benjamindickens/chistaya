@@ -12,14 +12,16 @@
 @use "components/small-product-card";
 @use "components/main-input";
 @use "components/main-btn";
+@use "components/product-card";
 
 //main-content
 @use "blocks/top-banners/top-banners";
+@use "blocks/hits/hits";
 @use "blocks/banners/banner";
 @use "blocks/analyzer/analyzer";
 @use "blocks/beauty-blog/beauty-blog";
 
-//styles
+//page styles
 .main-page {
 
 }
