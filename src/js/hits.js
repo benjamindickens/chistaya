@@ -6,35 +6,24 @@ import {submitForm} from "./request.js";
 const hitsSliderContainer = document.querySelector(".js-hits-slider");
 let hitsSlider = null;
 
-//logic for backend render
+//remove dummy data func generator
 
-// const hitsSlider = new Swiper(hitsSliderContainer, {
-//     loop: true,
-//     spaceBetween: 16,
-//     slidesPerView: 5,
-//     navigation: {
-//         nextEl: '.js-hits-nav.swiper-button-next',
-//         prevEl: '.js-hits-nav.swiper-button-prev',
-//     },
-//     on: {
-//         click() {
-//             location.href = this.clickedSlide.firstElementChild.dataset.href;
-//         }
-//     }
-// })
+const dummyDataGenerator = (num) => {
+    const array = new Array(num).fill(0);
+    return array.map((el, index) => {
+        return {
+            link: "https://test.ru",
+            title: "test",
+            description: "test",
+            volume: 200,
+            comments: 20,
+            image: `https://picsum.photos/id/${index + 90}/200/`,
+            type: "new",
+        }
+    })
+}
 
-
-//logic for frontend rendering using virtual slides
-
-const dummyData = new Array(10).fill({
-    link: "https://test.ru",
-    title: "test",
-    description: "test",
-    volume: 200,
-    comments: 20,
-    image: "/test-header-card.263d08c4.png",
-    type: "new",
-})
+const dummyData = dummyDataGenerator(20);
 
 const createHitsSlider = (container, dataOfSlides) => {
     return new Swiper(hitsSliderContainer, {
@@ -45,6 +34,7 @@ const createHitsSlider = (container, dataOfSlides) => {
             nextEl: '.js-hits-nav.swiper-button-next',
             prevEl: '.js-hits-nav.swiper-button-prev',
         },
+        preloadImages: false,
         virtual: {
             cache: true,
             slides: (function () {

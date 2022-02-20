@@ -107,7 +107,7 @@ bannersSlider = new Swiper(".js-banner-slider", {
             progressBar.classList.remove("_progress-transition-on");
 
             if (this.realIndex - this.previousIndex !== 1) {
-            progressBar.classList.add("_progress-transition-off")
+                progressBar.classList.add("_progress-transition-off")
             }
         },
         slideChangeTransitionStart() {
@@ -163,7 +163,7 @@ bannerNavigation = new Swiper(navigationContainer, {
 navigationContainer.addEventListener("click", (e) => {
     const currentEL = e.target;
 
-    if (hasClass(currentEL, "js-banners-nav-btn") && !hasClass(currentEL, "_active")) {
+    if (hasClass(currentEL, null, "js-banners-nav-btn") && !hasClass(currentEL, null, "_active")) {
         navigationContainer.querySelector("._active").classList.remove("_active");
         setActiveBtn(currentEL);
         bannersSlider.slideTo(currentEL.dataset.index)
