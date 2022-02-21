@@ -29,5 +29,9 @@ const productCardClickEvents = (container) => {
     })
 }
 
+const detectMobile = () => {
+    return window.innerWidth < 667;
+}
 
-export {hasClass, getNoun, productCardClickEvents}
+
+export {hasClass, getNoun, productCardClickEvents, detectMobile}

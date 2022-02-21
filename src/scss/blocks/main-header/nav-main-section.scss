@@ -1,4 +1,9 @@
 .nav-main-section {
+  position: fixed;
+  top: 7.3rem;
+  width: 100%;
+  background: rgba(0,0,0,.6);
+
   &__list-container {
     display: grid;
   }
