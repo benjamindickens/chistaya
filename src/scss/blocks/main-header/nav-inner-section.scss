@@ -1,0 +1,10 @@
+.nav-inner-section {
+
+
+  &__popular {
+    display: grid;
+    grid-gap: 1.2rem;
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+  }
+}
