@@ -5,9 +5,12 @@
   display: grid;
   align-content: center;
 
-  &:hover .dropdown-menu__container {
-    transform: translateY(0);
+  @media (min-width: variables.$mobile) {
+    &:hover .dropdown-menu__container {
+      transform: translateY(0);
+    }
   }
+
 
   &__container {
     display: block;

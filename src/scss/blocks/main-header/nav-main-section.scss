@@ -1,0 +1,10 @@
+.nav-main-section {
+  &__list-container {
+    display: grid;
+  }
+
+  &__item.is-active {
+    order: -1;
+  }
+}
+

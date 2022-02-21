@@ -406,297 +406,430 @@
 
 <main class="main-page">
 
-    <!--top-banners-->
+    <div class="mobile-menu">
 
-    <section class="main-page__top-banners top-banners">
-        <div class="js-banner-slider top-banners-slider swiper">
-            <div class="top-banners-slider__wrapper swiper-wrapper">
-                <div data-index="0" data-title="banner 1" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="1" data-title="banner 2" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="2" data-title="banner 3" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="3" data-title="banner 4" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="4" data-title="banner 5" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="5" data-title="banner 6" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="6" data-title="banner 6" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-                <div data-index="7" data-title="banner 6" data-description="text"
-                     class="top-banners-slider__slide swiper-slide">
-                    <img src="images/test-banner.png"/>
-                </div>
-            </div>
-        </div>
-        <div class="top-banners-preview _width-sizer">
-            <div class="js-banners-preview top-banners-preview__slider swiper">
-                <div class="top-banners-preview__wrapper swiper-wrapper">
-                    <!--virtual slides-->
-                </div>
-            </div>
-            <div data-width="" class="js-banners-progress top-banners-preview__progress"></div>
-        </div>
-    </section>
+        <div class="mobile-menu__btn">OPEN</div>
 
-    <!--hits-->
+        <div class="mobile-menu__dropdown nav-main-section">
+            <ul class="js-nav-main-section nav-main-section__list-container accordion-container">
 
+                <li data-content="face" class="nav-main-section__item ac">
 
-    <section class="main-page__hits hits">
+                    <h2 class="nav-main-section__title ac-header">
+                        <button class="ac-trigger">Лицо</button>
+                    </h2>
 
-        <div class="hits__container _width-sizer">
+                    <div class="nav-main-section__nav-inner-section nav-inner-section ac-panel">
+                        <ul class="js-nav-inner-section nav-inner-section__list-container accordion-container">
 
-            <div class="hits__title _section-title">Хиты продаж</div>
-            <div class="hits__slider js-hits-slider swiper">
-                <div class="hits__wrapper swiper-wrapper">
-                    <!--virtual slides-->
-                </div>
-            </div>
-            <div class="js-hits-nav hits__nav-btn swiper-button-prev"></div>
-            <div class="js-hits-nav hits__nav-btn swiper-button-next"></div>
-        </div>
+                            <li data-all-products class="nav-inner-section__item"><a href="#">Все продукты категории</a>
+                            </li>
 
-    </section>
+                            <li class="nav-inner-section__item ac">
+                                <h2 class="nav-inner-section__title ac-header">
+                                    <button class="ac-trigger">Состояние кожи</button>
+                                </h2>
+                                <div class="nav-inner-section__content ac-panel">
+                                    <ul class="nav-inner-section__container">
+                                        <li><a href="#">Нормальная и комбинированная</a></li>
+                                        <li><a href="#">Сухая</a></li>
+                                        <li><a href="#">Жирная</a></li>
+                                        <li><a href="#">Проблемная</a></li>
+                                        <li><a href="#">Тусклая</a></li>
+                                        <li><a href="#">Сухая и чувствительная</a></li>
+                                    </ul>
+                                </div>
+                            </li>
 
-    <!--banner-->
+                            <li class="nav-inner-section__item ac">
+                                <h2 class="nav-inner-section__title ac-header">
+                                    <button class="ac-trigger">Тип продукта</button>
+                                </h2>
+                                <div class="nav-inner-section__content ac-panel">
+                                    <ul class="nav-inner-section__container">
+                                        <li><a href="#">Крем для лица</a></li>
+                                        <li><a href="#">Маска для лица</a></li>
+                                        <li><a href="#">Бальзам для губ</a></li>
+                                        <li><a href="#">Гель для умывания</a></li>
+                                        <li><a href="#">Лосьен-тоник для лица</a></li>
+                                        <li><a href="#">Крем для лица и тела</a></li>
+                                    </ul>
+                                </div>
+                            </li>
 
-    <section class="main-page__banner banner">
-        <img src="images/test-banner-2.png" alt="">
-    </section>
+                            <li class="nav-inner-section__item ac">
+                                <h2 class="nav-inner-section__title ac-header">
+                                    <button class="ac-trigger">Линейка</button>
+                                </h2>
+                                <div class="nav-inner-section__content ac-panel">
+                                    <ul class="nav-inner-section__container">
+                                        <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                        <li><a href="#">Идеальная кожа</a></li>
+                                        <li><a href="#">Мицелярное очищение</a></li>
+                                    </ul>
+                                </div>
+                            </li>
 
-    <!--beauty-blog-->
-
-    <section class="main-page__beauty-blog beauty-blog">
-
-        <div class="beauty-blog__content _width-sizer">
-            <h1 class="beauty-blog__title _section-title">УЗНАЙ БОЛЬШЕ О КРАСОТЕ</h1>
-
-            <div class="js-blog-slider beauty-blog__slider swiper">
-                <div class="beauty-blog__wrapper swiper-wrapper">
-                    <div class="beauty-blog__slide swiper-slide">
-                        <a href="#" class="beauty-blog__post-card post-card">
-                            <picture class="post-card__img">
-                                <source media="(max-width: 667px)" type="image/png"
-                                        srcset="images/beauty-blog-test.png"/>
-                                <img src="images/beauty-blog-test.png" alt="post img">
-                            </picture>
-
-                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
-
-                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                                работает только наполовину?</p>
-                        </a>
+                        </ul>
                     </div>
-                    <div class="beauty-blog__slide swiper-slide">
-                        <a href="#" class="beauty-blog__post-card post-card">
-                            <picture class="post-card__img">
-                                <source media="(max-width: 667px)" type="image/png"
-                                        srcset="images/beauty-blog-test.png"/>
-                                <img src="images/beauty-blog-test.png" alt="post img">
-                            </picture>
+                </li>
 
-                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
+                <li data-content="face" class="nav-main-section__item ac">
 
-                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                                работает только наполовину?</p>
-                        </a>
+                    <h2 class="nav-main-section__title ac-header">
+                        <button class="ac-trigger">Волосы</button>
+                    </h2>
+
+                    <div class="nav-main-section__nav-inner-section nav-inner-section ac-panel">
+                        <ul class="js-nav-inner-section nav-inner-section__list-container accordion-container">
+
+                            <li data-all-products class="nav-inner-section__item"><a href="#">Все продукты категории</a>
+                            </li>
+
+                            <li class="nav-inner-section__item ac">
+                                <h2 class="nav-inner-section__title ac-header">
+                                    <button class="ac-trigger">Состояние кожи</button>
+                                </h2>
+                                <div class="nav-inner-section__content ac-panel">
+                                    <ul class="nav-inner-section__container">
+                                        <li><a href="#">Нормальная и комбинированная</a></li>
+                                        <li><a href="#">Сухая</a></li>
+                                        <li><a href="#">Жирная</a></li>
+                                        <li><a href="#">Проблемная</a></li>
+                                        <li><a href="#">Тусклая</a></li>
+                                        <li><a href="#">Сухая и чувствительная</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-inner-section__item ac">
+                                <h2 class="nav-inner-section__title ac-header">
+                                    <button class="ac-trigger">Тип продукта</button>
+                                </h2>
+                                <div class="nav-inner-section__content ac-panel">
+                                    <ul class="nav-inner-section__container">
+                                        <li><a href="#">Крем для лица</a></li>
+                                        <li><a href="#">Маска для лица</a></li>
+                                        <li><a href="#">Бальзам для губ</a></li>
+                                        <li><a href="#">Гель для умывания</a></li>
+                                        <li><a href="#">Лосьен-тоник для лица</a></li>
+                                        <li><a href="#">Крем для лица и тела</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-inner-section__item ac">
+                                <h2 class="nav-inner-section__title ac-header">
+                                    <button class="ac-trigger">Линейка</button>
+                                </h2>
+                                <div class="nav-inner-section__content ac-panel">
+                                    <ul class="nav-inner-section__container">
+                                        <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                        <li><a href="#">Идеальная кожа</a></li>
+                                        <li><a href="#">Мицелярное очищение</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
                     </div>
-                    <div class="beauty-blog__slide swiper-slide">
-                        <a href="#" class="beauty-blog__post-card post-card">
-                            <picture class="post-card__img">
-                                <source media="(max-width: 667px)" type="image/png"
-                                        srcset="images/beauty-blog-test.png"/>
-                                <img src="images/beauty-blog-test.png" alt="post img">
-                            </picture>
+                </li>
 
-                            <h3 class="post-card__title">Избавить кожу от токсинов легко
-                            </h3>
-
-                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                                работает только наполовину?</p>
-                        </a>
-                    </div>
-                    <div class="beauty-blog__slide swiper-slide">
-                        <a href="#" class="beauty-blog__post-card post-card">
-                            <picture class="post-card__img">
-                                <source media="(max-width: 667px)" type="image/png"
-                                        srcset="images/beauty-blog-test.png"/>
-                                <img src="images/beauty-blog-test.png" alt="post img">
-                            </picture>
-
-                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>
-
-                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем
-                                работает только наполовину?</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </ul>
         </div>
 
-    </section>
+    </div>
+    <!--    &lt;!&ndash;top-banners&ndash;&gt;-->
 
-    <!--analyzer-->
+    <!--    <section class="main-page__top-banners top-banners">-->
+    <!--        <div class="js-banner-slider top-banners-slider swiper">-->
+    <!--            <div class="top-banners-slider__wrapper swiper-wrapper">-->
+    <!--                <div data-index="0" data-title="banner 1" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="1" data-title="banner 2" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="2" data-title="banner 3" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="3" data-title="banner 4" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="4" data-title="banner 5" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="5" data-title="banner 6" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="6" data-title="banner 6" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--                <div data-index="7" data-title="banner 6" data-description="text"-->
+    <!--                     class="top-banners-slider__slide swiper-slide">-->
+    <!--                    <img src="images/test-banner.png"/>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="top-banners-preview _width-sizer">-->
+    <!--            <div class="js-banners-preview top-banners-preview__slider swiper">-->
+    <!--                <div class="top-banners-preview__wrapper swiper-wrapper">-->
+    <!--                    &lt;!&ndash;virtual slides&ndash;&gt;-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div data-width="" class="js-banners-progress top-banners-preview__progress"></div>-->
+    <!--        </div>-->
+    <!--    </section>-->
 
-    <section class="main-page__analyzer analyzer">
-        <div class="analyzer__container _width-sizer">
-
-            <picture class="analyzer__img">
-                <source media="(max-width: 667px)" type="image/png"
-                        srcset="images/desktop/analyzer/woman.png"/>
-                <img src="images/desktop/analyzer/woman.png" alt="woman">
-            </picture>
-
-            <div data-type="skin" class="analyzer__popup _skin">
-                <svg class="analyzer__pin">
-                    <use xlink:href="images/sprite.svg#analyzer-pin"></use>
-                </svg>
-                <div class="analyzer__link-container">
-                    <svg class="analyzer__link-line" viewBox="0 0 71 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="path" d="M0 1H22L70 34" stroke-width="2"/>
-                    </svg>
-                    <div class="analyzer__link-box">
-                        <div class="analyzer__link-text">Анализатор кожи</div>
-                    </div>
-                </div>
-            </div>
-
-            <div data-type="hair" class="analyzer__popup _hair">
-                <svg class="analyzer__pin">
-                    <use xlink:href="images/sprite.svg#analyzer-pin"></use>
-                </svg>
-                <div class="analyzer__link-container">
-                    <svg class="analyzer__link-line" viewBox="0 0 71 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="path" d="M0 1H22L70 34" stroke-width="2"/>
-                    </svg>
-                    <div class="analyzer__link-box">
-                        <a class="analyzer__link-text">Анализатор волос</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="analyzer__content">
-                <h4 class="analyzer__subtitle">
-                    Анализатор
-                </h4>
-                <h1 class="analyzer__title">
-                    Состояния кожи
-                    и волос
-                </h1>
-                <p class="analyzer__description">
-                    Пройди онлайн-тестирование от Чистой линии, чтобы узнать состояние своей кожи и волос и подобрать
-                    правильную программу по ухода за ними.
-                </p>
-
-                <a href="#" class="analyzer__btn main-btn _blue"><span>Пройти диагностику</span></a>
-            </div>
-
-        </div>
+    <!--    &lt;!&ndash;hits&ndash;&gt;-->
 
 
-    </section>
+    <!--    <section class="main-page__hits hits">-->
+
+    <!--        <div class="hits__container _width-sizer">-->
+
+    <!--            <div class="hits__title _section-title">Хиты продаж</div>-->
+    <!--            <div class="hits__slider js-hits-slider swiper">-->
+    <!--                <div class="hits__wrapper swiper-wrapper">-->
+    <!--                    &lt;!&ndash;virtual slides&ndash;&gt;-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="js-hits-nav hits__nav-btn swiper-button-prev"></div>-->
+    <!--            <div class="js-hits-nav hits__nav-btn swiper-button-next"></div>-->
+    <!--        </div>-->
+
+    <!--    </section>-->
+
+    <!--    &lt;!&ndash;banner&ndash;&gt;-->
+
+    <!--    <section class="main-page__banner banner">-->
+    <!--        <img src="images/test-banner-2.png" alt="">-->
+    <!--    </section>-->
+
+    <!--    &lt;!&ndash;beauty-blog&ndash;&gt;-->
+
+    <!--    <section class="main-page__beauty-blog beauty-blog">-->
+
+    <!--        <div class="beauty-blog__content _width-sizer">-->
+    <!--            <h1 class="beauty-blog__title _section-title">УЗНАЙ БОЛЬШЕ О КРАСОТЕ</h1>-->
+
+    <!--            <div class="js-blog-slider beauty-blog__slider swiper">-->
+    <!--                <div class="beauty-blog__wrapper swiper-wrapper">-->
+    <!--                    <div class="beauty-blog__slide swiper-slide">-->
+    <!--                        <a href="#" class="beauty-blog__post-card post-card">-->
+    <!--                            <picture class="post-card__img">-->
+    <!--                                <source media="(max-width: 667px)" type="image/png"-->
+    <!--                                        srcset="images/beauty-blog-test.png"/>-->
+    <!--                                <img src="images/beauty-blog-test.png" alt="post img">-->
+    <!--                            </picture>-->
+
+    <!--                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>-->
+
+    <!--                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем-->
+    <!--                                работает только наполовину?</p>-->
+    <!--                        </a>-->
+    <!--                    </div>-->
+    <!--                    <div class="beauty-blog__slide swiper-slide">-->
+    <!--                        <a href="#" class="beauty-blog__post-card post-card">-->
+    <!--                            <picture class="post-card__img">-->
+    <!--                                <source media="(max-width: 667px)" type="image/png"-->
+    <!--                                        srcset="images/beauty-blog-test.png"/>-->
+    <!--                                <img src="images/beauty-blog-test.png" alt="post img">-->
+    <!--                            </picture>-->
+
+    <!--                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>-->
+
+    <!--                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем-->
+    <!--                                работает только наполовину?</p>-->
+    <!--                        </a>-->
+    <!--                    </div>-->
+    <!--                    <div class="beauty-blog__slide swiper-slide">-->
+    <!--                        <a href="#" class="beauty-blog__post-card post-card">-->
+    <!--                            <picture class="post-card__img">-->
+    <!--                                <source media="(max-width: 667px)" type="image/png"-->
+    <!--                                        srcset="images/beauty-blog-test.png"/>-->
+    <!--                                <img src="images/beauty-blog-test.png" alt="post img">-->
+    <!--                            </picture>-->
+
+    <!--                            <h3 class="post-card__title">Избавить кожу от токсинов легко-->
+    <!--                            </h3>-->
+
+    <!--                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем-->
+    <!--                                работает только наполовину?</p>-->
+    <!--                        </a>-->
+    <!--                    </div>-->
+    <!--                    <div class="beauty-blog__slide swiper-slide">-->
+    <!--                        <a href="#" class="beauty-blog__post-card post-card">-->
+    <!--                            <picture class="post-card__img">-->
+    <!--                                <source media="(max-width: 667px)" type="image/png"-->
+    <!--                                        srcset="images/beauty-blog-test.png"/>-->
+    <!--                                <img src="images/beauty-blog-test.png" alt="post img">-->
+    <!--                            </picture>-->
+
+    <!--                            <h3 class="post-card__title">Забота о красоте — в нашей природе</h3>-->
+
+    <!--                            <p class="post-card__description">Знаешь ли ты, что без очищения кожи от токсинов, твой крем-->
+    <!--                                работает только наполовину?</p>-->
+    <!--                        </a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+
+    <!--    </section>-->
+
+    <!--    &lt;!&ndash;analyzer&ndash;&gt;-->
+
+    <!--    <section class="main-page__analyzer analyzer">-->
+    <!--        <div class="analyzer__container _width-sizer">-->
+
+    <!--            <picture class="analyzer__img">-->
+    <!--                <source media="(max-width: 667px)" type="image/png"-->
+    <!--                        srcset="images/desktop/analyzer/woman.png"/>-->
+    <!--                <img src="images/desktop/analyzer/woman.png" alt="woman">-->
+    <!--            </picture>-->
+
+    <!--            <div data-type="skin" class="analyzer__popup _skin">-->
+    <!--                <svg class="analyzer__pin">-->
+    <!--                    <use xlink:href="images/sprite.svg#analyzer-pin"></use>-->
+    <!--                </svg>-->
+    <!--                <div class="analyzer__link-container">-->
+    <!--                    <svg class="analyzer__link-line" viewBox="0 0 71 35" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--                        <path class="path" d="M0 1H22L70 34" stroke-width="2"/>-->
+    <!--                    </svg>-->
+    <!--                    <div class="analyzer__link-box">-->
+    <!--                        <div class="analyzer__link-text">Анализатор кожи</div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+
+    <!--            <div data-type="hair" class="analyzer__popup _hair">-->
+    <!--                <svg class="analyzer__pin">-->
+    <!--                    <use xlink:href="images/sprite.svg#analyzer-pin"></use>-->
+    <!--                </svg>-->
+    <!--                <div class="analyzer__link-container">-->
+    <!--                    <svg class="analyzer__link-line" viewBox="0 0 71 35" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--                        <path class="path" d="M0 1H22L70 34" stroke-width="2"/>-->
+    <!--                    </svg>-->
+    <!--                    <div class="analyzer__link-box">-->
+    <!--                        <a class="analyzer__link-text">Анализатор волос</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+
+    <!--            <div class="analyzer__content">-->
+    <!--                <h4 class="analyzer__subtitle">-->
+    <!--                    Анализатор-->
+    <!--                </h4>-->
+    <!--                <h1 class="analyzer__title">-->
+    <!--                    Состояния кожи-->
+    <!--                    и волос-->
+    <!--                </h1>-->
+    <!--                <p class="analyzer__description">-->
+    <!--                    Пройди онлайн-тестирование от Чистой линии, чтобы узнать состояние своей кожи и волос и подобрать-->
+    <!--                    правильную программу по ухода за ними.-->
+    <!--                </p>-->
+
+    <!--                <a href="#" class="analyzer__btn main-btn _blue"><span>Пройти диагностику</span></a>-->
+    <!--            </div>-->
+
+    <!--        </div>-->
+
+
+    <!--    </section>-->
 
 </main>
 
-<footer class="main-footer">
+<!--<footer class="main-footer">-->
 
-    <div class="main-footer__subscribe-form subscribe-form">
-        <div class="subscribe-form__container">
-            <picture class="subscribe-form__decor _1">
-                <source media="(max-width: 667px)" type="image/png"
-                        srcset="images/desktop/footer/subscribe-1.png"/>
-                <img src="images/desktop/footer/subscribe-1.png" alt="bush">
-            </picture>
-            <picture class="subscribe-form__decor _2">
-                <source media="(max-width: 667px)" type="image/png"
-                        srcset="images/desktop/footer/subscribe-2.png"/>
-                <img src="images/desktop/footer/subscribe-2.png" alt="bush">
-            </picture>
+<!--    <div class="main-footer__subscribe-form subscribe-form">-->
+<!--        <div class="subscribe-form__container">-->
+<!--            <picture class="subscribe-form__decor _1">-->
+<!--                <source media="(max-width: 667px)" type="image/png"-->
+<!--                        srcset="images/desktop/footer/subscribe-1.png"/>-->
+<!--                <img src="images/desktop/footer/subscribe-1.png" alt="bush">-->
+<!--            </picture>-->
+<!--            <picture class="subscribe-form__decor _2">-->
+<!--                <source media="(max-width: 667px)" type="image/png"-->
+<!--                        srcset="images/desktop/footer/subscribe-2.png"/>-->
+<!--                <img src="images/desktop/footer/subscribe-2.png" alt="bush">-->
+<!--            </picture>-->
 
-            <div class="subscribe-form__description">
-                <h3>Подписаться на новости</h3>
-                <p>Подпишитесь на рассылку и узнавайте первыми о новинках, акциях и эксклюзивных предложениях!</p>
-            </div>
-            <form class="js-subscribe-form subscribe-form__form">
-                <div class="js-input subscribe-form__input main-input">
-                    <input class="main-input__input"
-                           data-required
-                           name="email"
-                           type="text"
-                           placeholder="Электронная почта">
-                    <div class="js-error main-input__error"></div>
-                </div>
+<!--            <div class="subscribe-form__description">-->
+<!--                <h3>Подписаться на новости</h3>-->
+<!--                <p>Подпишитесь на рассылку и узнавайте первыми о новинках, акциях и эксклюзивных предложениях!</p>-->
+<!--            </div>-->
+<!--            <form class="js-subscribe-form subscribe-form__form">-->
+<!--                <div class="js-input subscribe-form__input main-input">-->
+<!--                    <input class="main-input__input"-->
+<!--                           data-required-->
+<!--                           name="email"-->
+<!--                           type="text"-->
+<!--                           placeholder="Электронная почта">-->
+<!--                    <div class="js-error main-input__error"></div>-->
+<!--                </div>-->
 
-                <button class="js-submit subscribe-form__submit main-btn _green">
-                    <span>
-ПОДПИСАТЬСЯ
-                    </span>
-                </button>
-            </form>
-        </div>
-    </div>
+<!--                <button class="js-submit subscribe-form__submit main-btn _green">-->
+<!--                    <span>-->
+<!--ПОДПИСАТЬСЯ-->
+<!--                    </span>-->
+<!--                </button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
-    <div class="main-footer__socials socials">
-        <a href="#" target="_blank" class="socials__social-item _vk"></a>
-        <a href="#" target="_blank" class="socials__social-item _youtube"></a>
-        <a href="#" target="_blank" class="socials__social-item _instagram"></a>
-        <a href="#" target="_blank" class="socials__social-item _ok"></a>
-    </div>
+<!--    <div class="main-footer__socials socials">-->
+<!--        <a href="#" target="_blank" class="socials__social-item _vk"></a>-->
+<!--        <a href="#" target="_blank" class="socials__social-item _youtube"></a>-->
+<!--        <a href="#" target="_blank" class="socials__social-item _instagram"></a>-->
+<!--        <a href="#" target="_blank" class="socials__social-item _ok"></a>-->
+<!--    </div>-->
 
-    <div class="main-footer__navigation footer-navigation">
-        <ul class="footer-navigation__menu-list _width-sizer">
-            <li class="footer-navigation__menu-item"><a href="#">Где купить</a></li>
-            <li class="footer-navigation__menu-item"><a href="#">Программа лояльности</a></li>
-            <li class="footer-navigation__menu-item"><a href="#">Линейки</a></li>
-            <li class="footer-navigation__menu-item"><a href="#">О марке</a></li>
-        </ul>
-    </div>
+<!--    <div class="main-footer__navigation footer-navigation">-->
+<!--        <ul class="footer-navigation__menu-list _width-sizer">-->
+<!--            <li class="footer-navigation__menu-item"><a href="#">Где купить</a></li>-->
+<!--            <li class="footer-navigation__menu-item"><a href="#">Программа лояльности</a></li>-->
+<!--            <li class="footer-navigation__menu-item"><a href="#">Линейки</a></li>-->
+<!--            <li class="footer-navigation__menu-item"><a href="#">О марке</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
 
-    <div class="main-footer__info footer-info _width-sizer">
-        <ul class="footer-info__col">
-            <li class="footer-info__item"><a target="_blank" href="">Условия пользования сайтом (PDF, 494 KB)</a></li>
-            <li class="footer-info__item"><a target="_blank" href="">Политика о персональных данных</a></li>
-            <li class="footer-info__item"><a target="_blank" href="">Политика Cookie</a></li>
-            <li class="footer-info__item"><a target="_blank" href="">Карта сайта</a></li>
-            <li class="footer-info__item"><a target="_blank" href="">Правила акции «Твоя Красота Может Больше» (PDF, 287
-                KB)</a></li>
-        </ul>
-        <picture class="footer-info__logo">
-            <source media="(max-width: 667px)" type="image/png"
-                    srcset="images/desktop/footer/unilever-logo.png"/>
-            <img src="images/desktop/footer/unilever-logo.png" alt="unilever logo">
-        </picture>
-        <ul class="footer-info__col">
-            <li class="footer-info__item">Юридический и почтовый адрес: 123022, г. Москва, </br>ул. Сергея Макеева, д.
-                13. ИНН: 7705183476
-            </li>
-            <li class="footer-info__item"><a target="_blank" href="mailto:communications.russia@unilever.com">communications.russia@unilever.com</a>
-            </li>
-            <li class="footer-info__item"><a target="_blank" href="tel:+78002001200">Горячая линия: +7 (800) 200 1 200
-                (бесплатно по России)</a></li>
-            <li class="footer-info__item">© 2021 Unilever</li>
-        </ul>
+<!--    <div class="main-footer__info footer-info _width-sizer">-->
+<!--        <ul class="footer-info__col">-->
+<!--            <li class="footer-info__item"><a target="_blank" href="">Условия пользования сайтом (PDF, 494 KB)</a></li>-->
+<!--            <li class="footer-info__item"><a target="_blank" href="">Политика о персональных данных</a></li>-->
+<!--            <li class="footer-info__item"><a target="_blank" href="">Политика Cookie</a></li>-->
+<!--            <li class="footer-info__item"><a target="_blank" href="">Карта сайта</a></li>-->
+<!--            <li class="footer-info__item"><a target="_blank" href="">Правила акции «Твоя Красота Может Больше» (PDF, 287-->
+<!--                KB)</a></li>-->
+<!--        </ul>-->
+<!--        <picture class="footer-info__logo">-->
+<!--            <source media="(max-width: 667px)" type="image/png"-->
+<!--                    srcset="images/desktop/footer/unilever-logo.png"/>-->
+<!--            <img src="images/desktop/footer/unilever-logo.png" alt="unilever logo">-->
+<!--        </picture>-->
+<!--        <ul class="footer-info__col">-->
+<!--            <li class="footer-info__item">Юридический и почтовый адрес: 123022, г. Москва, </br>ул. Сергея Макеева, д.-->
+<!--                13. ИНН: 7705183476-->
+<!--            </li>-->
+<!--            <li class="footer-info__item"><a target="_blank" href="mailto:communications.russia@unilever.com">communications.russia@unilever.com</a>-->
+<!--            </li>-->
+<!--            <li class="footer-info__item"><a target="_blank" href="tel:+78002001200">Горячая линия: +7 (800) 200 1 200-->
+<!--                (бесплатно по России)</a></li>-->
+<!--            <li class="footer-info__item">© 2021 Unilever</li>-->
+<!--        </ul>-->
 
-    </div>
+<!--    </div>-->
 
-</footer>
+<!--</footer>-->
 
 </body>
 </html>
