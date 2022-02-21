@@ -4,7 +4,8 @@ import {hasClass, detectMobile} from "./common.js";
 
 const searchContainer = document.querySelector(".js-search-container");
 const search = document.querySelector(".js-search");
-const searchClose = document.querySelector(".js-close-search");
+const burgerBtn = document.querySelector(".js-burger-btn");
+const mobileMainSection = document.querySelector(".js-mobile-menu-container");
 
 let isMobile = detectMobile();
 let innerAccordions = null;
@@ -13,7 +14,6 @@ const mainCollapsesMenu = document.querySelector(".js-nav-main-section")
 const innerCollapsesMenu = [...document.querySelectorAll(".js-nav-inner-section")];
 
 const searchClickHandler = (e) => {
-    console.log(e.target)
     if (hasClass(e.target, null, "js-open-search")) {
         search.focus()
     } else if (hasClass(e.target, null, "js-close-search")) {
@@ -44,6 +44,8 @@ innerAccordions = new Accordion(innerCollapsesMenu, {
     showMultiple: false,
 });
 
+//search
+
 setSearchType(search);
 
 searchContainer.addEventListener("click", searchClickHandler)
@@ -67,4 +69,17 @@ window.addEventListener("resize", () => {
         isMobile = false;
         setSearchType(search);
     }
+})
+
+//mobile menu
+
+burgerBtn.addEventListener("click", function () {
+    if (!hasClass(this, null, "_opened")) {
+        mobileMainSection.classList.add("_opened");
+        this.classList.add("_opened")
+    } else {
+        mobileMainSection.classList.remove("_opened");
+        this.classList.remove("_opened")
+    }
+
 })

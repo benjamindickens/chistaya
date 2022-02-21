@@ -18,7 +18,7 @@
     display: flex;
 
     &._active {
-      border: .1rem solid variables.$green;
+      border: .1rem solid variables.$icon-green;
       width: auto;
       height: 4.4rem;
       padding: 0;
@@ -57,7 +57,7 @@
     background-size: 2rem 2rem;
     background-repeat: no-repeat;
     background-position: center;
-    margin-right: .6rem;
+    margin-right: .2rem;
     height: 100%;
     width: 3rem;
     cursor: pointer;
@@ -80,7 +80,7 @@
     &:focus {
       @media (max-width: variables.$mobile) {
         padding: 0;
-        width: 16rem;
+        width: 15rem;
         border-width: .1rem;
       }
 

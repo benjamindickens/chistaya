@@ -18,9 +18,13 @@
 
             <div class="main-header__mobile-menu _mobile">
 
-                <div class="main-header__burger-btn">OPEN</div>
+                <div class="js-burger-btn main-header__burger-btn">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
 
-                <div class="main-header__nav-main-section nav-main-section">
+                <div class="js-mobile-menu-container main-header__nav-main-section nav-main-section">
                     <ul class="js-nav-main-section nav-main-section__list-container accordion-container">
 
                         <li data-content="face" class="nav-main-section__item ac">
@@ -129,7 +133,7 @@
                             </div>
                         </li>
 
-                        <li data-content="face" class="nav-main-section__item ac">
+                        <li data-content="hair" class="nav-main-section__item ac">
 
                             <h2 class="nav-main-section__title ac-header">
                                 <button class="ac-trigger">Волосы</button>
@@ -233,6 +237,234 @@
 
                                 </ul>
                             </div>
+                        </li>
+
+                        <li data-content="body" class="nav-main-section__item ac">
+
+                            <h2 class="nav-main-section__title ac-header">
+                                <button class="ac-trigger">Тело</button>
+                            </h2>
+
+                            <div class="nav-main-section__nav-inner-section nav-inner-section ac-panel">
+                                <ul class="js-nav-inner-section nav-inner-section__list-container accordion-container">
+
+                                    <li data-all-products class="nav-inner-section__item"><a href="#">Все продукты
+                                        категории</a>
+                                    </li>
+
+                                    <li class="nav-inner-section__item ac">
+                                        <h2 class="nav-inner-section__title ac-header">
+                                            <button class="ac-trigger">Состояние кожи</button>
+                                        </h2>
+                                        <div class="nav-inner-section__content ac-panel">
+                                            <ul class="nav-inner-section__container">
+                                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                                <li><a href="#">Сухая</a></li>
+                                                <li><a href="#">Жирная</a></li>
+                                                <li><a href="#">Проблемная</a></li>
+                                                <li><a href="#">Тусклая</a></li>
+                                                <li><a href="#">Сухая и чувствительная</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-inner-section__item ac">
+                                        <h2 class="nav-inner-section__title ac-header">
+                                            <button class="ac-trigger">Тип продукта</button>
+                                        </h2>
+                                        <div class="nav-inner-section__content ac-panel">
+                                            <ul class="nav-inner-section__container">
+                                                <li><a href="#">Крем для лица</a></li>
+                                                <li><a href="#">Маска для лица</a></li>
+                                                <li><a href="#">Бальзам для губ</a></li>
+                                                <li><a href="#">Гель для умывания</a></li>
+                                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                                <li><a href="#">Крем для лица и тела</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-inner-section__item ac">
+                                        <h2 class="nav-inner-section__title ac-header">
+                                            <button class="ac-trigger">Линейка</button>
+                                        </h2>
+                                        <div class="nav-inner-section__content ac-panel">
+                                            <ul class="nav-inner-section__container">
+                                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                                <li><a href="#">Идеальная кожа</a></li>
+                                                <li><a href="#">Мицелярное очищение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-inner-section__item">
+                                        <h3 class="nav-inner-section__title">
+                                            Популярные товары
+                                        </h3>
+                                        <ul class="nav-inner-section__popular">
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li data-content="men" class="nav-main-section__item ac">
+
+                            <h2 class="nav-main-section__title ac-header">
+                                <button class="ac-trigger">Для мужчин</button>
+                            </h2>
+
+                            <div class="nav-main-section__nav-inner-section nav-inner-section ac-panel">
+                                <ul class="js-nav-inner-section nav-inner-section__list-container accordion-container">
+
+                                    <li data-all-products class="nav-inner-section__item"><a href="#">Все продукты
+                                        категории</a>
+                                    </li>
+
+                                    <li class="nav-inner-section__item ac">
+                                        <h2 class="nav-inner-section__title ac-header">
+                                            <button class="ac-trigger">Состояние кожи</button>
+                                        </h2>
+                                        <div class="nav-inner-section__content ac-panel">
+                                            <ul class="nav-inner-section__container">
+                                                <li><a href="#">Нормальная и комбинированная</a></li>
+                                                <li><a href="#">Сухая</a></li>
+                                                <li><a href="#">Жирная</a></li>
+                                                <li><a href="#">Проблемная</a></li>
+                                                <li><a href="#">Тусклая</a></li>
+                                                <li><a href="#">Сухая и чувствительная</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-inner-section__item ac">
+                                        <h2 class="nav-inner-section__title ac-header">
+                                            <button class="ac-trigger">Тип продукта</button>
+                                        </h2>
+                                        <div class="nav-inner-section__content ac-panel">
+                                            <ul class="nav-inner-section__container">
+                                                <li><a href="#">Крем для лица</a></li>
+                                                <li><a href="#">Маска для лица</a></li>
+                                                <li><a href="#">Бальзам для губ</a></li>
+                                                <li><a href="#">Гель для умывания</a></li>
+                                                <li><a href="#">Лосьен-тоник для лица</a></li>
+                                                <li><a href="#">Крем для лица и тела</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-inner-section__item ac">
+                                        <h2 class="nav-inner-section__title ac-header">
+                                            <button class="ac-trigger">Линейка</button>
+                                        </h2>
+                                        <div class="nav-inner-section__content ac-panel">
+                                            <ul class="nav-inner-section__container">
+                                                <li><a href="#">ФИТОколлаген-комплекс для лица</a></li>
+                                                <li><a href="#">Идеальная кожа</a></li>
+                                                <li><a href="#">Мицелярное очищение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-inner-section__item">
+                                        <h3 class="nav-inner-section__title">
+                                            Популярные товары
+                                        </h3>
+                                        <ul class="nav-inner-section__popular">
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="https://lol/ru" target="_blank">
+                                                <div data-type="hit"
+                                                     class="nav-inner-section__popular-item small-product-card">
+                                                    <img src="images/test-header-card.png"
+                                                         class="small-product-card__img"
+                                                         alt="product">
+                                                    <p class="small-product-card__name">Шампунь объем и сила волос</p>
+                                                </div>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li data-content="brand" class="nav-main-section__item">
+                            <h2 class="nav-main-section__title">
+                                <a href="#lal">О марке</a>
+                            </h2>
+                        </li>
+                        <li data-content="mission" class="nav-main-section__item">
+                            <h2 class="nav-main-section__title">
+                                <a href="#lal">О миссии</a>
+                            </h2>
+                        </li>
+                        <li data-content="beauty" class="nav-main-section__item">
+                            <h2 class="nav-main-section__title">
+                                <a href="#lal">Больше о красоте</a>
+                            </h2>
                         </li>
 
                     </ul>

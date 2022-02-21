@@ -1,15 +1,19 @@
 .nav-main-section {
-  position: fixed;
-  top: 7.3rem;
+  display: grid;
+  align-content: start;
   width: 100%;
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, .6);
+  overflow: scroll;
+  height: calc(100vh - 8rem);
 
   &__list-container {
     display: grid;
+    width: calc(100% - 4rem);
   }
 
   &__item.is-active {
-    order: -1;
+    //если надо перемещать активный эдемент в начало списка
+    //order: -1;
   }
 }
 
