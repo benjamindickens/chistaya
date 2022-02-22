@@ -30,13 +30,13 @@
     line-height: 4.4rem;
     display: grid;
     padding: 1.1rem .5rem;
-    grid-gap: .5rem;
+    grid-gap: 5px;
     cursor: pointer;
 
     & > div {
       pointer-events: none;
       width: 100%;
-      height: .4rem;
+      height: 4px;
       background: variables.$icon-green;
       transition: width .3s;
     }
