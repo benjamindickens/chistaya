@@ -48,7 +48,10 @@
     &._bottom {
       background: variables.$light-green;
       position: relative;
-      display: none;
+      @media (max-width: variables.$mobile) {
+        overflow: scroll;
+        width: 100%;
+      }
     }
   }
 
@@ -138,6 +141,11 @@
     height: 4rem;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: variables.$mobile) {
+      padding: 0 1.6rem;
+      grid-gap: 1.1rem;
+    }
+
   }
 
   &__menu-item {

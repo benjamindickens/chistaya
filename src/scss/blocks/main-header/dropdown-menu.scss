@@ -5,6 +5,12 @@
   display: grid;
   align-content: center;
 
+  &:last-of-type {
+    @media (max-width: variables.$mobile) {
+      padding-right: 1.6rem;
+    }
+  }
+
   @media (min-width: variables.$mobile) {
     &:hover .dropdown-menu__container {
       transform: translateY(0);
@@ -40,6 +46,10 @@
     line-height: 2.1rem;
     text-transform: uppercase;
     cursor: pointer;
+
+    @media (max-width: variables.$mobile) {
+      white-space: nowrap;
+    }
   }
 
   &__title {

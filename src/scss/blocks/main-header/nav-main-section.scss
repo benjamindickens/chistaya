@@ -8,6 +8,7 @@
   overflow: scroll;
   transition: background .3s, left .3s .6s;
   left: -100%;
+  z-index: 2;
 
   & .nav-main-section__item:last-of-type {
     border-color: transparent;
