@@ -4,14 +4,25 @@
   display: grid;
   align-content: start;
   width: 100%;
-  background: rgba(0, 0, 0, .6);
+  background: transparent;
   overflow: scroll;
+  transition: background .5s;
 
+  &._opened {
+    background: rgba(0, 0, 0, .6);
+
+    & .nav-main-section__list-container {
+      transform: translateX(0);
+    }
+  }
 
   &__list-container {
+    will-change: auto;
     display: grid;
     align-content: start;
     width: calc(100% - 4rem);
+    transform: translateX(-100%);
+    transition: transform .3s;
     background: variables.$white;
   }
 
