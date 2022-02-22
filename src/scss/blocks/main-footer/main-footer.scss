@@ -7,7 +7,15 @@
 .main-footer {
   padding-top: 9.2rem;
 
+  @media (max-width: variables.$mobile) {
+    padding-top: 5.4rem;
+  }
+
   &__subscribe-form {
     margin-bottom: 2.8rem;
+
+    @media (max-width: variables.$mobile) {
+      margin-bottom: 6rem;
+    }
   }
 }

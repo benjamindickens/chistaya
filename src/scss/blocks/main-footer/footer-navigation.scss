@@ -3,9 +3,19 @@
 .footer-navigation {
   border-bottom: .1rem solid variables.$black;
 
+  @media (max-width: variables.$mobile) {
+    display: flex;
+    grid-gap: 4rem;
+    padding: 2.1rem 1.6rem 2rem 4rem;
+  }
+
   &__menu-list {
     display: flex;
     justify-content: space-between;
+    @media (max-width: variables.$mobile) {
+      display: grid;
+      grid-gap: .8rem;
+    }
   }
 
   &__menu-item {
@@ -14,6 +24,11 @@
     font-size: 1.4rem;
     line-height: 2.1rem;
     text-transform: uppercase;
+    @media (max-width: variables.$mobile) {
+      padding: 0;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
   }
 }
 

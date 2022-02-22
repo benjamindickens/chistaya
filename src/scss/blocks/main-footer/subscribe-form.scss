@@ -13,6 +13,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+
+    @media (max-width: variables.$mobile) {
+      display: grid;
+      padding: 2.4rem 1.6rem;
+    }
+
   }
 
   &__decor {
@@ -23,6 +29,14 @@
       bottom: 0;
       width: 8.8rem;
       height: 10rem;
+      @media (max-width: variables.$mobile) {
+        left: unset;
+        right: 0;
+        top: 6.1rem;
+        width: 6.1rem;
+        height: 7rem;
+      }
+
     }
 
     &._2 {
@@ -30,12 +44,19 @@
       top: 0;
       width: 10rem;
       height: 8.3rem;
+      @media (max-width: variables.$mobile) {
+        display: none;
+      }
     }
   }
 
   &__description {
     display: grid;
     grid-gap: .8rem;
+
+    @media (max-width: variables.$mobile) {
+      justify-self: start;
+    }
 
     & h3 {
       font-family: variables.$font-semi;
@@ -47,6 +68,10 @@
       font-size: 1.2rem;
       line-height: 1.8rem;
       max-width: 37rem;
+
+      @media (max-width: variables.$mobile) {
+        max-width: 30rem
+      }
     }
   }
 
@@ -54,6 +79,12 @@
     display: grid;
     grid-template-columns: 30rem 17.6rem;
     grid-gap: .8rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-template-columns: 32.8rem;
+      grid-gap: 1.9rem;
+      margin-top: 1.6rem;
+    }
   }
 
 

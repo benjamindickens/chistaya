@@ -7,6 +7,11 @@
   grid-gap: 5.6rem;
   justify-content: center;
 
+  @media (max-width: variables.$mobile) {
+    padding: 1.6rem;
+    grid-gap: 4.8rem;
+  }
+
   &__social-item {
     transition: background-image .15s;
     width: 4.6rem;

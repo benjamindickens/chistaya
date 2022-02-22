@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
 
+  @media (max-width: variables.$mobile) {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.6rem;
+  }
 
   &__logo {
     width: 8rem;
@@ -23,5 +27,9 @@
     font-family: variables.$font-light;
     font-size: 1.2rem;
     line-height: 1.5rem;
+    @media (max-width: variables.$mobile) {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
   }
 }
