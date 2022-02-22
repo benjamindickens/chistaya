@@ -2,10 +2,28 @@
 
 .nav-inner-section {
 
-
   &__list-container {
     display: grid;
     align-content: start;
+
+    & .nav-inner-section__item:last-of-type .nav-inner-section__title {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-gap: .8rem;
+    padding-bottom: 1.6rem;
+
+    & li {
+      font-family: variables.$font-light;
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      font-weight: 300;
+    }
   }
 
   &__item, &__item.ac {
@@ -63,11 +81,11 @@
   }
 
 
-
   &__popular {
     display: grid;
     grid-gap: 1.2rem;
     grid-template-columns: repeat(2, auto);
     justify-content: start;
+    padding-bottom: 4rem;
   }
 }

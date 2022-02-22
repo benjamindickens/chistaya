@@ -1,17 +1,26 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
-import {hasClass, detectMobile} from "./common.js";
+import {hasClass, detectMobile, getOneRem} from "./common.js";
+
 
 const searchContainer = document.querySelector(".js-search-container");
 const search = document.querySelector(".js-search");
 const burgerBtn = document.querySelector(".js-burger-btn");
 const mobileMainSection = document.querySelector(".js-mobile-menu-container");
+const header = document.querySelector(".js-header");
 
+let oneRemValue = getOneRem();
 let isMobile = detectMobile();
 let innerAccordions = null;
 
 const mainCollapsesMenu = document.querySelector(".js-nav-main-section")
 const innerCollapsesMenu = [...document.querySelectorAll(".js-nav-inner-section")];
+
+const setMobileMenuHeight = (container, oneRemValue, ...otherElements) => {
+    const sumOfElementsHeight = otherElements.reduce((prev, el) => prev + el.offsetHeight, 0);
+    const screenHeight = window.screen.availHeight;
+    container.style.height = (screenHeight - sumOfElementsHeight) / 10 + "rem";
+}
 
 const searchClickHandler = (e) => {
     if (hasClass(e.target, null, "js-open-search")) {
@@ -32,6 +41,10 @@ const setSearchType = (el) => {
 const mainAccordion = new Accordion(mainCollapsesMenu, {
     duration: 300,
     showMultiple: false,
+    onOpen(el) {
+        console.log(el)
+        el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    },
     beforeClose() {
         innerAccordions.forEach((accordion, index) => {
             accordion.closeAll();
@@ -81,5 +94,6 @@ burgerBtn.addEventListener("click", function () {
         mobileMainSection.classList.remove("_opened");
         this.classList.remove("_opened")
     }
-
 })
+
+setMobileMenuHeight(mobileMainSection, oneRemValue, header);

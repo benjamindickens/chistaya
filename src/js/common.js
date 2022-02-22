@@ -1,3 +1,5 @@
+const getOneRem = () => document.querySelector(".js-rem-example").offsetHeight;
+
 const hasClass = (el, logicOperator = "||", ...classNames) => {
     const results = classNames.map(className => el.classList.contains(className));
     return logicOperator === "&&" ? !results.includes(false) : results.includes(true);
@@ -34,4 +36,4 @@ const detectMobile = () => {
 }
 
 
-export {hasClass, getNoun, productCardClickEvents, detectMobile}
+export {hasClass, getNoun, productCardClickEvents, detectMobile, getOneRem}

@@ -7,6 +7,7 @@
   background: transparent;
   overflow: scroll;
   transition: background .5s;
+  height: calc(100vh - 8rem);
 
   &._opened {
     background: rgba(0, 0, 0, .6);

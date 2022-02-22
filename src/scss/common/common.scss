@@ -18,7 +18,7 @@ h1, h2, h3, h4 {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
@@ -125,6 +125,11 @@ main {
   line-height: 4.8rem;
 }
 
+.js-rem-example {
+  height: 1rem;
+  position: absolute;
+  visibility: hidden;
+}
 
 @media (max-width: 667px) {
   main {
