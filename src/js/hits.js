@@ -1,9 +1,10 @@
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
-import {getNoun, productCardClickEvents} from "./common.js";
+import {getNoun, productCardClickEvents, detectMobile} from "./common.js";
 import {submitForm} from "./request.js";
 
 const hitsSliderContainer = document.querySelector(".js-hits-slider");
+const isMobile = detectMobile();
 let hitsSlider = null;
 
 //remove dummy data func generator
@@ -27,14 +28,19 @@ const dummyData = dummyDataGenerator(20);
 
 const createHitsSlider = (container, dataOfSlides) => {
     return new Swiper(hitsSliderContainer, {
-        spaceBetween: 16,
-        slidesPerView: 5,
+        spaceBetween: 8,
+        slidesPerView: isMobile ? 2 : 5,
+        slidesPerGroup: 2,
         watchSlidesVisibility: true,
         navigation: {
             nextEl: '.js-hits-nav.swiper-button-next',
             prevEl: '.js-hits-nav.swiper-button-prev',
         },
         preloadImages: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
         virtual: {
             cache: true,
             slides: (function () {
@@ -44,6 +50,13 @@ const createHitsSlider = (container, dataOfSlides) => {
                 })
                 return slides;
             }()),
+        },
+        breakpoints: {
+            667: {
+                slidesPerGroup: 1,
+                pagination: false,
+                spaceBetween: 16,
+            }
         },
         on: {
             init() {

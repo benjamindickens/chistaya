@@ -25,7 +25,7 @@
       transition: background .15s, border-color .15s;
 
       &.swiper-pagination-bullet-active {
-        border-color: variables.$icon-green;;
+        border-color: variables.$icon-green;
         background: variables.$white;
       }
     }

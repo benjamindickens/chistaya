@@ -93,13 +93,20 @@ bannersSlider = new Swiper(".js-banner-slider", {
     followFinger: false,
     speed: slideTransition,
     effect: 'fade',
+    preloadImages: false,
     fadeEffect: {
         crossFade: true
     },
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
     watchSlidesVisibility: true,
+    breakpoints: {
+        667: {
+            pagination: false
+        }
+    },
     on: isMobile ? "" : {
         init() {
             setStepToSlides(this);
@@ -121,13 +128,7 @@ bannersSlider = new Swiper(".js-banner-slider", {
             bannerNavigation.slideTo(expectedSlide);
             setCurrentProgress();
         },
-    },
-    breakpoints: {
-        // when window width is >= 320px
-        667: {
-            pagination: false
-        }
-    },
+    }
 });
 
 if (!isMobile) {

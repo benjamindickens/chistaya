@@ -6,6 +6,7 @@
   padding: 1.2rem;
   display: grid;
   cursor: pointer;
+  background: variables.$white;
 
   &:after {
     position: absolute;
@@ -15,6 +16,13 @@
     padding: .6rem 1.2rem;
     text-transform: uppercase;
     font-family: variables.$font-semi;
+
+    @media (max-width: variables.$mobile) {
+      font-size: 1rem;
+      line-height: 1.3rem;
+      padding: .6rem 1.2rem;
+    }
+
   }
 
   &[data-type="hit"] {
@@ -35,6 +43,11 @@
     justify-self: center;
     height: 14rem;
     margin-bottom: 1.6rem;
+
+    @media (max-width: variables.$mobile) {
+      height: 11.2rem;
+      margin-bottom: .8rem;
+    }
   }
 
   &__title {
@@ -42,6 +55,11 @@
     line-height: 1.8rem;
     font-family: variables.$font-semi;
     margin-bottom: .4rem;
+
+    @media (max-width: variables.$mobile) {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
   }
 
   &__description {
@@ -49,12 +67,21 @@
     line-height: 1.6rem;
     font-family: variables.$font-light;
     margin-bottom: .8rem;
+
+    @media (max-width: variables.$mobile) {
+      font-size: 1rem;
+      line-height: 1.3rem;
+    }
   }
 
   &__stats {
     margin-bottom: 1.2rem;
     display: flex;
     grid-gap: .8rem;
+
+    @media (max-width: variables.$mobile) {
+      margin-bottom: 1.75rem;
+    }
   }
 
   &__volume {
@@ -62,6 +89,10 @@
     line-height: 1.8rem;
     font-family: variables.$font-medium;
     margin-bottom: .8rem;
+    @media (max-width: variables.$mobile) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 
   &__stars {
@@ -69,7 +100,11 @@
     background-size: contain;
     height: 1.6rem;
     width: 8rem;
-    margin-bottom: 1.2rem;
+
+    @media (max-width: variables.$mobile) {
+      width: 6rem;
+      height: 1.2rem;
+    }
 
     &[data-stars="5"] {
       background-image: url("data:image/svg+xml,%3Csvg width='80' height='16' viewBox='0 0 80 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z' fill='%23F7C179'/%3E%3Cpath d='M24 0L26.3511 4.76393L31.6085 5.52786L27.8042 9.23607L28.7023 14.4721L24 12L19.2977 14.4721L20.1958 9.23607L16.3915 5.52786L21.6489 4.76393L24 0Z' fill='%23F7C179'/%3E%3Cpath d='M40 0L42.3511 4.76393L47.6085 5.52786L43.8042 9.23607L44.7023 14.4721L40 12L35.2977 14.4721L36.1958 9.23607L32.3915 5.52786L37.6489 4.76393L40 0Z' fill='%23F7C179'/%3E%3Cpath d='M56 0L58.3511 4.76393L63.6085 5.52786L59.8042 9.23607L60.7023 14.4721L56 12L51.2977 14.4721L52.1958 9.23607L48.3915 5.52786L53.6489 4.76393L56 0Z' fill='%23F7C179'/%3E%3Cpath d='M72 0L74.3511 4.76393L79.6085 5.52786L75.8042 9.23607L76.7023 14.4721L72 12L67.2977 14.4721L68.1958 9.23607L64.3915 5.52786L69.6489 4.76393L72 0Z' fill='%23F7C179'/%3E%3C/svg%3E%0A");
@@ -102,6 +137,10 @@
     line-height: 1.8rem;
     font-family: variables.$font-regular;
     text-decoration: underline;
+    @media (max-width: variables.$mobile) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 
 
