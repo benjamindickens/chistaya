@@ -6,12 +6,18 @@
   width: 100%;
   background: transparent;
   overflow: scroll;
-  transition: background .5s;
-  height: calc(100vh - 8rem);
+  transition: background .3s, left .3s .6s;
+  left: -100%;
+
+  & .nav-main-section__item:last-of-type {
+    border-color: transparent;
+    padding-bottom: 4rem;
+  }
 
   &._opened {
+    left: 0;
+    transition: background .3s, left 0s;
     background: rgba(0, 0, 0, .6);
-
     & .nav-main-section__list-container {
       transform: translateX(0);
     }
@@ -44,6 +50,8 @@
     transition: font-weight .15s, font-family .15s;
 
     &:after {
+      background-repeat: no-repeat;
+      background-position: center;
       tansition: transform .25s;
       display: block;
       position: absolute;

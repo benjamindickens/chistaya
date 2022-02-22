@@ -8,6 +8,10 @@ const search = document.querySelector(".js-search");
 const burgerBtn = document.querySelector(".js-burger-btn");
 const mobileMainSection = document.querySelector(".js-mobile-menu-container");
 const header = document.querySelector(".js-header");
+const mobileContacts = document.querySelector(".js-mobile-contacts ");
+
+console.log(mobileContacts.getBoundingClientRect().height)
+
 
 let oneRemValue = getOneRem();
 let isMobile = detectMobile();
