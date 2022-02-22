@@ -9,6 +9,11 @@
     height: 26rem;
     object-fit: cover;
     margin-bottom: 2rem;
+
+    @media (max-width: variables.$mobile) {
+      height: 23rem;
+      margin-bottom: 1.6rem;
+    }
   }
 
   &__title {
