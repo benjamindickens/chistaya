@@ -1,10 +1,11 @@
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
-import {hasClass} from "./common.js";
+import {hasClass, detectMobile} from "./common.js";
 
 const delay = 3500;
 const slideTransition = 400;
 const btnPerGroup = 5;
+const isMobile = detectMobile();
 let currentStepWidth = 0;
 const navigationContainer = document.querySelector(".js-banners-preview");
 const progressBar = document.querySelector(".js-banners-progress");
@@ -95,8 +96,11 @@ bannersSlider = new Swiper(".js-banner-slider", {
     fadeEffect: {
         crossFade: true
     },
+    pagination: {
+        el: '.swiper-pagination',
+    },
     watchSlidesVisibility: true,
-    on: {
+    on: isMobile ? "" : {
         init() {
             setStepToSlides(this);
         },
@@ -117,55 +121,65 @@ bannersSlider = new Swiper(".js-banner-slider", {
             bannerNavigation.slideTo(expectedSlide);
             setCurrentProgress();
         },
-    }
-});
-
-bannerNavigation = new Swiper(navigationContainer, {
-    followFinger: false,
-    rewind: true,
-    speed: slideTransition,
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true
     },
-    watchSlidesVisibility: true,
-    virtual: {
-        cache: true,
-        slides: (function () {
-            const bannerSliderSlides = bannersSlider.slides;
-            const navigationData = bannerSliderSlides.map(slide => {
-                return {
-                    index: slide.dataset.index,
-                    title: slide.dataset.title,
-                    description: slide.dataset.description,
-                }
-            })
-            return createSlides(navigationData, btnPerGroup);
-        }()),
-    },
-    on: {
-        init() {
-            setActiveBtn(bannersSlider.realIndex);
-            currentStepWidth = 100 / this.slides[this.realIndex].children.length;
-        },
-        afterInit() {
-            autoplay(bannersSlider)
-        },
-        slideChangeTransitionStart() {
-            const slideToIndex = this.slides[this.realIndex].firstChild.dataset.index;
-            currentStepWidth = 100 / this.slides[this.realIndex].children.length;
-            bannersSlider.slideTo(slideToIndex);
+    breakpoints: {
+        // when window width is >= 320px
+        667: {
+            pagination: false
         }
     },
 });
 
+if (!isMobile) {
 
-navigationContainer.addEventListener("click", (e) => {
-    const currentEL = e.target;
+    bannerNavigation = new Swiper(navigationContainer, {
+        followFinger: false,
+        rewind: true,
+        speed: slideTransition,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        watchSlidesVisibility: true,
+        virtual: {
+            cache: true,
+            slides: (function () {
+                const bannerSliderSlides = bannersSlider.slides;
+                const navigationData = bannerSliderSlides.map(slide => {
+                    return {
+                        index: slide.dataset.index,
+                        title: slide.dataset.title,
+                        description: slide.dataset.description,
+                    }
+                })
+                return createSlides(navigationData, btnPerGroup);
+            }()),
+        },
+        on: {
+            init() {
+                setActiveBtn(bannersSlider.realIndex);
+                currentStepWidth = 100 / this.slides[this.realIndex].children.length;
+            },
+            afterInit() {
+                autoplay(bannersSlider)
+            },
+            slideChangeTransitionStart() {
+                const slideToIndex = this.slides[this.realIndex].firstChild.dataset.index;
+                currentStepWidth = 100 / this.slides[this.realIndex].children.length;
+                bannersSlider.slideTo(slideToIndex);
+            }
+        },
+    });
 
-    if (hasClass(currentEL, null, "js-banners-nav-btn") && !hasClass(currentEL, null, "_active")) {
-        navigationContainer.querySelector("._active").classList.remove("_active");
-        setActiveBtn(currentEL);
-        bannersSlider.slideTo(currentEL.dataset.index)
-    }
-})
+
+    navigationContainer.addEventListener("click", (e) => {
+        const currentEL = e.target;
+
+        if (hasClass(currentEL, null, "js-banners-nav-btn") && !hasClass(currentEL, null, "_active")) {
+            navigationContainer.querySelector("._active").classList.remove("_active");
+            setActiveBtn(currentEL);
+            bannersSlider.slideTo(currentEL.dataset.index)
+        }
+    });
+
+}

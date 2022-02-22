@@ -13,4 +13,21 @@
       object-fit: cover;
     }
   }
+
+  &__pagination {
+
+    & .swiper-pagination-bullet {
+      width: 1.2rem;
+      height: 1.2rem;
+      border: 0.1rem solid variables.$white;
+      opacity: 1;
+      background: variables.$icon-green;
+      transition: background .15s, border-color .15s;
+
+      &.swiper-pagination-bullet-active {
+        border-color: variables.$icon-green;;
+        background: variables.$white;
+      }
+    }
+  }
 }
