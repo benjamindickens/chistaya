@@ -87,6 +87,12 @@
       & + .search__close {
         display: block;
       }
+
+      &::placeholder {
+        @media (max-width: variables.$mobile) {
+          opacity: 1;
+        }
+      }
     }
 
     &::-webkit-search-cancel-button {
@@ -101,6 +107,11 @@
       opacity: 0.5;
       color: variables.$light-gray;
       font-family: variables.$font-light;
+
+      @media (max-width: variables.$mobile) {
+        opacity: 0;
+        transition: opacity .3s;
+      }
     }
 
   }
