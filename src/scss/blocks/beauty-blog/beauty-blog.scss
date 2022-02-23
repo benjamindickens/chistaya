@@ -11,15 +11,30 @@
     padding: 6rem 1.6rem 6rem;
   }
 
-  &__grid-container {
-    display: flex;
-    grid-gap: 3rem;
+  &__slider.swiper {
+    @media (max-width: variables.$mobile) {
+      padding-bottom: 4rem;
+    }
   }
 
   &__title {
     margin-bottom: 4rem;
     @media (max-width: variables.$mobile) {
       margin-bottom: 2.8rem;
+    }
+  }
+
+  & &__pagination.swiper-pagination {
+    bottom: 0;
+  }
+
+  &__nav-btn.swiper-button-next, &__nav-btn.swiper-button-prev {
+    display: none;
+    top: unset;
+    margin-top: unset;
+    bottom: 0;
+    @media (max-width: variables.$mobile) {
+      display: block;
     }
   }
 }

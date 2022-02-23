@@ -11,8 +11,8 @@ const beautyBlogSlider = new Swiper(beautyBlogContainer, {
         clickable: true,
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.beauty-blog__nav-btn.swiper-button-next',
+        prevEl: '.beauty-blog__nav-btn.swiper-button-prev',
     },
     breakpoints: {
         667: {
