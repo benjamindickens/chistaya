@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "parcel src/index.html --dist-dir public --no-cache",
-    "build": "parcel build src/index.html --dist-dir public --no-cache"
+    "dev": "parcel src/*.html --dist-dir public --no-cache",
+    "build": "parcel build src/*.html --dist-dir public --no-cache"
   },
   "author": "",
   "license": "ISC",

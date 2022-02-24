@@ -235,7 +235,9 @@
   }
 
   & .analyzer__link-line {
-    transform: scale(-1, -1);
+    @media (max-width: variables.$mobile) {
+      transform: scale(-1, -1);
+    }
   }
 
   & .analyzer__link-container {

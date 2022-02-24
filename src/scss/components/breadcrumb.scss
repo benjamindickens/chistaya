@@ -1,0 +1,39 @@
+@use "../common/variables";
+
+.breadcrumb {
+  padding: 1.2rem 0 4.4rem;
+  list-style: none;
+
+  &__list {
+    display: flex;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-family: variables.$font-regular;
+    color: variables.$light-gray;
+
+    &._active {
+      position: relative;
+
+      &:after {
+        width: 100%;
+        position: absolute;
+        height: .1rem;
+        bottom: 0.1rem;
+        background: variables.$light-gray;
+        content: " ";
+        display: block;
+      }
+    }
+  }
+
+  &__item + .breadcrumb__item:before {
+    padding: 0 .4rem;
+    content: ">";
+  }
+
+}
