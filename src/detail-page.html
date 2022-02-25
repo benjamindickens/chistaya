@@ -113,42 +113,95 @@
 
         <div class="js-description-tabs detail-top-block__description-block description-block">
             <div class="description-block__tab-navigation">
-                <div data-open="description" class="js-description-tab-btn description-block__tab-btn _active">
+                <div data-open="description"
+                     class="js-description-tab-btn-prev js-description-tab-btn description-block__tab-btn _active">
                     Описание
                 </div>
-                <div data-open="composition" class="js-description-tab-btn description-block__tab-btn">
+                <div data-open="composition"
+                     class="js-description-tab-btn-next js-description-tab-btn description-block__tab-btn">
                     Состав
                 </div>
             </div>
 
-            <div class="description-block__tab-container">
-                <div data-detail-description="description" class="description-block__description _active">
-                    <h2>
-                        Описание Крем для лица + гиалурон
-                    </h2>
-                    <p>Нежное косметическое средство создано специально для ежедневного ухода за кожей
-                        нормального и
-                        комбинированного типа. Имея потрясающие целебные свойства, оно бережно заботится о
-                        молодости
-                        и
-                        красоте, придавая сияние, бархатистость и гладкость.</p>
-                    <p>Косметическая формула содержит целый комплекс полезных экстрактов, а очень эффективными
-                        их
-                        помогли
-                        сделать знания о фитотерапии и уникальные современные технологии. Крем обладает легкой
-                        текстурой
-                        белого цвета и отличается приятнейшим цветочно-фантазийным ароматом с травянистыми
-                        нотками.</p>
-                    <p>При регулярном использовании крем обеспечивает потрясающий результат – борется с
-                        недостатками
-                        кожи и
-                        делает ее безупречной!</p>
+            <div class="js-tab description-block__tab-container swiper">
+                <div class="swiper-wrapper">
+                    <div class="description-block__description swiper-slide">
+                        <h2>
+                            Описание Крем для лица + гиалурон
+                        </h2>
+                        <p>Нежное косметическое средство создано специально для ежедневного ухода за кожей
+                            нормального и
+                            комбинированного типа. Имея потрясающие целебные свойства, оно бережно заботится о
+                            молодости
+                            и
+                            красоте, придавая сияние, бархатистость и гладкость.</p>
+                        <p>Косметическая формула содержит целый комплекс полезных экстрактов, а очень эффективными
+                            их
+                            помогли
+                            сделать знания о фитотерапии и уникальные современные технологии. Крем обладает легкой
+                            текстурой
+                            белого цвета и отличается приятнейшим цветочно-фантазийным ароматом с травянистыми
+                            нотками.</p>
+                        <p>При регулярном использовании крем обеспечивает потрясающий результат – борется с
+                            недостатками
+                            кожи и
+                            делает ее безупречной!</p>
 
-                    <h2>Способ применения</h2>
-                    <p>нанести на чистую кожу лица.</p>
-                </div>
-                <div data-detail-description="composition" class="description-block__composition">
-                    xyi
+                        <h2>Способ применения</h2>
+                        <p>нанести на чистую кожу лица.</p>
+                    </div>
+                    <div class="description-block__composition swiper-slide composition">
+                        <h2 class="composition__title">Активные элементы</h2>
+                        <div class="js-composition-slider composition__slider swiper">
+                            <div class="composition__wrapper swiper-wrapper">
+                                <div class="composition__slide swiper-slide">
+                                    <img src="images/composition-test.png" alt="component"
+                                         class="composition__slide-img">
+                                    <h2 class="composition__slide-title">Propylene Glycol</h2>
+                                    <p class="composition__slide-description">Краткое описание активного элемента и его
+                                        преимущества</p>
+                                </div>
+                                <div class="composition__slide swiper-slide">
+                                    <img src="images/composition-test.png" alt="component"
+                                         class="composition__slide-img">
+                                    <h2 class="composition__slide-title">Propylene Glycol</h2>
+                                    <p class="composition__slide-description">Краткое описание активного элемента и его
+                                        преимущества</p>
+                                </div>
+                                <div class="composition__slide swiper-slide">
+                                    <img src="images/composition-test.png" alt="component"
+                                         class="composition__slide-img">
+                                    <h2 class="composition__slide-title">Propylene Glycol</h2>
+                                    <p class="composition__slide-description">Краткое описание активного элемента и его
+                                        преимущества</p>
+                                </div>
+
+                            </div>
+                            <div class="js-composition-nav composition__nav-btn _black-nav-btn _reverse-styles swiper-button-prev"></div>
+                            <div class="js-composition-nav composition__nav-btn _black-nav-btn _reverse-styles swiper-button-next"></div>
+                        </div>
+
+                        <h2 class="composition__title">Полный список ингредиентов</h2>
+
+                        <ul class="composition__ingredient-list">
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                            <li class="composition__ingredient-item">Aqua</li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>

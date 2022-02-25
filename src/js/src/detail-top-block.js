@@ -3,33 +3,12 @@ import 'swiper/swiper-bundle.min.css';
 import {getNoun, hasClass, productCardClickEvents, detectMobile} from "./common.js";
 
 const detailProductContainer = document.querySelector(".js-detail-product-slider");
+const descriptionCompositionContainer = document.querySelector(".js-composition-slider");
+const tabContainer = document.querySelector(".js-tab");
+const descriptionTabButtons = document.querySelectorAll(".js-description-tab-btn")
 
 const previewImg = document.querySelector(".js-product-active-img");
 const sliderSpeed = 300;
-const descriptionTabs = document.querySelector(".js-description-tabs");
-
-const tabsLogic = (e) => {
-    if (hasClass(e.target, null, "js-description-tab-btn")) {
-        let descriptionToClose = null;
-
-        e.target.classList.add("_active");
-        if (e.target.nextElementSibling) {
-            e.target.nextElementSibling.classList.remove("_active");
-            descriptionToClose = e.target.nextElementSibling.dataset.open;
-        } else {
-            e.target.previousElementSibling.classList.remove("_active");
-            descriptionToClose = e.target.previousElementSibling.dataset.open;
-        }
-
-        const elementToClose = document.querySelector(`[data-detail-description="${descriptionToClose}"]`);
-        elementToClose.classList.remove("_active");
-        if (elementToClose.nextElementSibling) {
-            elementToClose.nextElementSibling.classList.add("_active")
-        } else {
-            elementToClose.previousElementSibling.classList.add("_active")
-        }
-    }
-}
 
 const detailProductSlider = new Swiper(detailProductContainer, {
     spaceBetween: 16,
@@ -67,4 +46,50 @@ const detailProductSlider = new Swiper(detailProductContainer, {
     }
 });
 
-descriptionTabs.addEventListener("click", tabsLogic)
+const tabSlider = new Swiper(tabContainer, {
+    followFinger: false,
+    autoHeight: true,
+    slidesPerView: 1,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 300,
+    slideToClickedSlide: true,
+    preventInteractionOnTransition: true,
+    navigation: {
+        nextEl: '.js-description-tab-btn-next',
+        prevEl: '.js-description-tab-btn-prev',
+    },
+    on: {
+        transitionStart() {
+            descriptionTabButtons[this.previousIndex].classList.remove("_active");
+            descriptionTabButtons[this.realIndex].classList.add("_active");
+        }
+    }
+})
+
+const descriptionCompositionSlider = new Swiper(descriptionCompositionContainer, {
+    spaceBetween: 20,
+    followFinger: false,
+    slidesPerView: 1,
+    speed: 300,
+    slideToClickedSlide: true,
+    preventInteractionOnTransition: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        667: {
+            navigation: {
+                nextEl: '.js-composition-nav.swiper-button-next',
+                prevEl: '.js-composition-nav.swiper-button-prev',
+            },
+            pagination: false,
+            slidesPerView: 3,
+            spaceBetween: 50,
+        }
+    },
+})
+

@@ -1,7 +1,9 @@
+@use "../../common/variables";
 @use "detail-product-slider";
 @use "detail-main-content";
 @use "description-block";
-@use "../../common/variables";
+@use "composition";
+
 
 .detail-top-block {
   display: grid;

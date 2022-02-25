@@ -20,7 +20,8 @@
   }
 
   &__tab-container {
-    width: 100%;
+    width: 117rem;
+    margin: 0 !important;
   }
 
   &__tab-btn {
@@ -79,17 +80,4 @@
       font-family: variables.$font-light;
     }
   }
-
-  &__composition {
-
-  }
-
-  &__description, &__composition {
-    display: none;
-
-    &._active {
-      display: block;
-    }
-  }
-
 }
