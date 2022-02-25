@@ -220,11 +220,11 @@ main {
     height: .8rem;
     border: 0.3rem solid variables.$white;
     opacity: 1;
-    background: variables.$icon-green;
+    background: variables.$green;
     transition: background .15s, border-color .15s;
 
     &.swiper-pagination-bullet-active {
-      border-color: variables.$icon-green;
+      border-color: variables.$green;
       background: variables.$white;
     }
   }
