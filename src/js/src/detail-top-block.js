@@ -85,13 +85,12 @@ const descriptionCompositionSlider = new Swiper(descriptionCompositionContainer,
     followFinger: false,
     slidesPerView: "auto",
     speed: 300,
-    navigation: false,
     slideToClickedSlide: true,
     preventInteractionOnTransition: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
+    // pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true,
+    // },
     breakpoints: {
         667: {
             navigation: {
