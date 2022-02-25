@@ -5,9 +5,9 @@
   position: relative;
 
   &__slider-container {
-    width: 45.2rem;
+    width: 43.8rem;
     height: 10.4rem;
-    padding: 1.2rem .1rem !important;
+    padding: 1.2rem 5px !important;
   }
 
   &__nav-btn._black-nav-btn {
@@ -17,15 +17,16 @@
     bottom: 4.5rem;
 
     &.swiper-button-next {
-      right: -1rem;
+      right: 0rem;
     }
 
     &.swiper-button-prev {
-      left: -1rem;
+      left: 0rem;
     }
   }
 
-  &__slide {
+  &__slide.swiper-slide {
+    width: 8rem;
     display: grid;
     justify-items: center;
     align-items: center;

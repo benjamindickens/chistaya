@@ -20,7 +20,7 @@ const detailProductSlider = new Swiper(detailProductContainer, {
         667: {
             pagination: false,
             slidesPerView: 5,
-            spaceBetween: 8,
+            spaceBetween: 9,
         }
     },
 })
