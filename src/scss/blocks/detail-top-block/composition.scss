@@ -2,7 +2,7 @@
 
 .composition {
   position: relative;
-  
+
   &__slider {
     position: relative;
   }
@@ -15,9 +15,18 @@
   &__nav-btn._black-nav-btn._reverse-styles {
     background-position: center;
     top: calc(50% + 2rem);
+
+    &.swiper-button-prev {
+      left: 0;
+    }
+
+    &.swiper-button-next {
+      right: 0;
+    }
   }
 
   &__slide {
+    user-select: none;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
