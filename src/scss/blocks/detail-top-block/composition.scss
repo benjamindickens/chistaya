@@ -10,6 +10,10 @@
   &__slider-container {
     width: 106rem;
     margin: 2.1rem auto 0 !important;
+
+    @media (max-width: variables.$mobile) {
+      width: 32.8rem;
+    }
   }
 
   &__nav-btn._black-nav-btn._reverse-styles {
