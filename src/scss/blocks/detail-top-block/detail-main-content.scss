@@ -4,6 +4,15 @@
   display: grid;
   justify-items: start;
   align-content: start;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(7, auto);
+  grid-gap: 0 6rem;
+
+  @media (max-width: variables.$mobile) {
+    grid-gap: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, auto);
+  }
 
   &__title {
     font-size: 2.4rem;
@@ -12,6 +21,11 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: .8rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-column: 1/span 2;
+      text-transform: none;
+    }
   }
 
   &__type {
@@ -21,10 +35,38 @@
     line-height: 2rem;
     opacity: 0.5;
     margin-bottom: 1.4rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-column: 1 / span 1;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      grid-row: 2 /span 1;
+      margin-bottom: .8rem;
+    }
   }
 
   &__stats {
     margin-bottom: 2rem;
+
+    @media (max-width: variables.$mobile) {
+      margin-bottom: 1.8rem;
+      grid-column: 1 / span 1;
+      grid-row: 3 /span 1;
+    }
+
+    & .stats__stars {
+      @media (max-width: variables.$mobile) {
+        width: 8rem;
+        height: 1.6rem;
+      }
+    }
+
+    & .stats__comments {
+      @media (max-width: variables.$mobile) {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+      }
+    }
   }
 
   &__volume {
@@ -34,12 +76,24 @@
     line-height: 1.8rem;
     font-family: variables.$font-medium;
     background: variables.$light-green;
+
+    @media (max-width: variables.$mobile) {
+      grid-column: 2 / span 1;
+      grid-row: 2 /span 2;
+      align-self: start;
+      justify-self: end;
+      margin-bottom: 0;
+    }
   }
 
   &__advantages {
     margin-bottom: 3.4rem;
     font-size: 1.4rem;
     line-height: 2.1rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-column: 1/span 2;
+    }
 
     & p {
       margin-bottom: 1rem;
@@ -57,6 +111,7 @@
 
     & li {
       list-style: none;
+      display: flex;
       font-family: variables.$font-light;
       color: variables.$black;
 
@@ -70,5 +125,10 @@
 
   &__btn {
     padding: 1.1rem 8rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
   }
 }

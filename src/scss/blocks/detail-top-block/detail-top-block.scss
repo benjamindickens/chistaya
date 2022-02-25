@@ -1,7 +1,16 @@
 @use "detail-product-slider";
 @use "detail-main-content";
+@use "description-block";
+@use "../../common/variables";
 
 .detail-top-block {
-  display: flex;
-  grid-gap: 6rem;
+  display: grid;
+
+  @media (max-width: variables.$mobile) {
+    grid-gap: 4rem;
+  }
+
+  &__description {
+    margin-top: 6.3rem;
+  }
 }

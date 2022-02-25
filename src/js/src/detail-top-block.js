@@ -2,7 +2,6 @@ import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
 import {getNoun, productCardClickEvents, detectMobile} from "./common.js";
 
-// const isMobile = detectMobile();
 const detailProductContainer = document.querySelector(".js-detail-product-slider");
 const previewImg = document.querySelector(".js-product-active-img");
 const sliderSpeed = 300;
@@ -33,7 +32,6 @@ const detailProductSlider = new Swiper(detailProductContainer, {
     on: {
         transitionStart() {
             const currentActiveSlide = this.slides[this.realIndex];
-            console.log(currentActiveSlide)
             previewImg.classList.add("_transition")
 
             setTimeout(() => {

@@ -1,0 +1,78 @@
+@use "../../common/variables";
+
+.description-block {
+  margin-top: 5.7rem;
+
+  @media (max-width: variables.$mobile) {
+    margin-top: 0;
+  }
+
+  &__tab-navigation {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    border-bottom: .1rem solid #E9F6E9;
+    grid-gap: 10rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-gap: 0;
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+
+  &__tab-btn {
+    padding: 1.7rem .4rem;
+    font-family: variables.$font-medium;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+
+    &:last-child {
+      @media (max-width: variables.$mobile) {
+        grid-column: -1;
+      }
+    }
+
+    &._active {
+      position: relative;
+
+      &:after {
+        width: 100%;
+        position: absolute;
+        height: .1rem;
+        transform: translateY(125%);
+        left: 0;
+        bottom: 0;
+        background: #A2D4A6;
+        content: " ";
+        display: block;
+      }
+    }
+  }
+
+  &__description {
+
+    & > *:last-child {
+      margin-bottom: 2rem;
+    }
+
+    & h2 {
+      margin-top: 2rem;
+      margin-bottom: .4rem;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      font-family: variables.$font-medium;
+
+      @media (max-width: variables.$mobile) {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    & p {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      font-family: variables.$font-light;
+    }
+  }
+
+}

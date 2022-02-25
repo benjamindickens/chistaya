@@ -19,67 +19,71 @@
     <div class="breadcrumb">
         <ul class="js-breadcrumb breadcrumb__list _width-sizer">
             <li class="breadcrumb__item" data-link="detail-page.html">Главная</li>
-            <li class="breadcrumb__item" data-link="">Лицо</li>
-            <li class="breadcrumb__item" data-link="">Крем для лица</li>
-            <li class="breadcrumb__item" data-link="">Крем для лица + гиалурон</li>
+            <li class="breadcrumb__item" data-link="main-page.html">Лицо</li>
+            <li class="breadcrumb__item" data-link="main-page.html">Крем для лица</li>
+            <li class="breadcrumb__item" data-link="main-page.html">Крем для лица + гиалурон</li>
         </ul>
     </div>
 
     <div class="detail-page__top-block detail-top-block _width-sizer">
-        <div data-type="new" class="detail-page__detail-product-slider detail-product-slider">
-            <div class="js-product-active-img detail-product-slider__preview-img">
-                <img class="js-product-active-img" src="images/detail-slider-test.png" alt="product">
-            </div>
-            <div class="js-detail-product-slider detail-product-slider__slider-container swiper">
-                <div class="detail-product-slider__wrapper swiper-wrapper">
-                    <div class="detail-product-slider__slide swiper-slide">
-                        <picture class="detail-product-slider__nav-img">
-                            <source media="(max-width: 667px)" type="image/png"
-                                    srcset="images/detail-slider-test.png"/>
-                            <img src="images/detail-slider-test.png"
-                                 alt="post img">
-                        </picture>
-                    </div>
-                    <div class="detail-product-slider__slide swiper-slide">
-                        <picture class="detail-product-slider__nav-img">
-                            <source media="(max-width: 667px)" type="image/png"
-                                    srcset="images/detail-slider-test.png"/>
-                            <img src="images/detail-slider-test.png"
-                                 alt="post img">
-                        </picture>
-                    </div>
-                    <div class="detail-product-slider__slide swiper-slide">
-                        <picture class="detail-product-slider__nav-img">
-                            <source media="(max-width: 667px)" type="image/png"
-                                    srcset="images/detail-slider-test.png"/>
-                            <img src="images/detail-slider-test.png"
-                                 alt="post img">
-                        </picture>
-                    </div>
-                    <div class="detail-product-slider__slide swiper-slide">
-                        <picture class="detail-product-slider__nav-img">
-                            <source media="(max-width: 667px)" type="image/png"
-                                    srcset="images/detail-slider-test.png"/>
-                            <img src="images/detail-slider-test.png"
-                                 alt="post img">
-                        </picture>
-                    </div>
-                    <div class="detail-product-slider__slide swiper-slide">
-                        <picture class="detail-product-slider__nav-img">
-                            <source media="(max-width: 667px)" type="image/png"
-                                    srcset="images/test-header-card.png"/>
-                            <img src="images/test-header-card.png"
-                                 alt="post img">
-                        </picture>
+
+        <div class="detail-top-block__detail-main-content detail-main-content">
+
+            <div data-type="new" class="detail-main-content__detail-product-slider detail-product-slider">
+                <div class="js-product-active-img detail-product-slider__preview-img _desktop">
+                    <img class="js-product-active-img" src="images/detail-slider-test.png" alt="product">
+                </div>
+                <div class="js-detail-product-slider detail-product-slider__slider-container swiper">
+                    <div class="detail-product-slider__wrapper swiper-wrapper">
+                        <div class="detail-product-slider__slide swiper-slide">
+                            <picture class="detail-product-slider__nav-img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/detail-slider-test.png"/>
+                                <img src="images/detail-slider-test.png"
+                                     alt="post img">
+                            </picture>
+                        </div>
+                        <div class="detail-product-slider__slide swiper-slide">
+                            <picture class="detail-product-slider__nav-img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/detail-slider-test.png"/>
+                                <img src="images/detail-slider-test.png"
+                                     alt="post img">
+                            </picture>
+                        </div>
+                        <div class="detail-product-slider__slide swiper-slide">
+                            <picture class="detail-product-slider__nav-img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/detail-slider-test.png"/>
+                                <img src="images/detail-slider-test.png"
+                                     alt="post img">
+                            </picture>
+                        </div>
+                        <div class="detail-product-slider__slide swiper-slide">
+                            <picture class="detail-product-slider__nav-img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/detail-slider-test.png"/>
+                                <img src="images/detail-slider-test.png"
+                                     alt="post img">
+                            </picture>
+                        </div>
+                        <div class="detail-product-slider__slide swiper-slide">
+                            <picture class="detail-product-slider__nav-img">
+                                <source media="(max-width: 667px)" type="image/png"
+                                        srcset="images/test-header-card.png"/>
+                                <img src="images/test-header-card.png"
+                                     alt="post img">
+                            </picture>
+                        </div>
                     </div>
                 </div>
+
+                <div class="detail-product-slider__pagination _black-pagination swiper-pagination"></div>
+                <div class="js-detail-main-slider-nav detail-product-slider__nav-btn _black-nav-btn _reverse-styles swiper-button-prev"></div>
+                <div class="js-detail-main-slider-nav detail-product-slider__nav-btn _black-nav-btn _reverse-styles swiper-button-next"></div>
             </div>
 
-            <div class="js-detail-main-slider-nav detail-product-slider__nav-btn _black-nav-btn _reverse-styles swiper-button-prev"></div>
-            <div class="js-detail-main-slider-nav detail-product-slider__nav-btn _black-nav-btn _reverse-styles swiper-button-next"></div>
-        </div>
 
-        <div class="detail-page__detail-main-content detail-main-content">
             <h1 class="detail-main-content__title">
                 Крем для лица + гиалурон (сияние и увлажнение)
             </h1>
@@ -106,8 +110,46 @@
                 <span>Купить</span>
             </button>
         </div>
-    </div>
-    <div class="detail-page__description-block">
+
+        <div class="detail-top-block__description-block description-block">
+            <div class="description-block__tab-navigation">
+                <div data-open="description" class="description-block__tab-btn _active">
+                    Описание
+                </div>
+                <div data-open="composition" class="description-block__tab-btn">
+                    Состав
+                </div>
+            </div>
+
+            <div class="description-block__tab-container">
+
+                <div data-type="description" class="js-tab description-block__tab">
+                    <div class="description-block__description">
+                        <h2>
+                            Описание Крем для лица + гиалурон
+                        </h2>
+                        <p>Нежное косметическое средство создано специально для ежедневного ухода за кожей нормального и
+                            комбинированного типа. Имея потрясающие целебные свойства, оно бережно заботится о молодости и
+                            красоте, придавая сияние, бархатистость и гладкость.</p>
+                        <p>Косметическая формула содержит целый комплекс полезных экстрактов, а очень эффективными их
+                            помогли
+                            сделать знания о фитотерапии и уникальные современные технологии. Крем обладает легкой текстурой
+                            белого цвета и отличается приятнейшим цветочно-фантазийным ароматом с травянистыми нотками.</p>
+                        <p>При регулярном использовании крем обеспечивает потрясающий результат – борется с недостатками
+                            кожи и
+                            делает ее безупречной!</p>
+
+                        <h2>Способ применения</h2>
+                        <p>нанести на чистую кожу лица.</p>
+                    </div>
+                </div>
+                <div data-type="composition" class="js-tab description-block__tab">
+                    <div class="description-block__composition">
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </main>

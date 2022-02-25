@@ -3,6 +3,14 @@
 .detail-product-slider {
   display: grid;
   position: relative;
+  grid-row: 1/-1;
+  grid-column: 1 / span 1;
+
+  @media (max-width: variables.$mobile) {
+    grid-row: 4/span 1;
+    grid-column: 1/span 2;
+    margin-bottom: 4rem;
+  }
 
   &:after {
     position: absolute;
@@ -41,6 +49,16 @@
     width: 43.8rem;
     height: 10.4rem;
     padding: 1.2rem 5px !important;
+
+    @media (max-width: variables.$mobile) {
+      width: 100%;
+      height: auto;
+      padding: 1rem .3rem 3.2rem !important;
+    }
+  }
+
+  &__pagination {
+    bottom: 0;
   }
 
   &__nav-btn._black-nav-btn {
@@ -49,12 +67,28 @@
     top: unset;
     bottom: 4.5rem;
 
+    @media (max-width: variables.$mobile) {
+      top: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      bottom: unset;
+    }
+
     &.swiper-button-next {
       right: 0rem;
+      @media (max-width: variables.$mobile) {
+        right: 1rem;
+        background-position: right;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='26' viewBox='0 0 16 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.68652 2L13.0002 13.3137L1.68652 24.6274' stroke='%2395C19C' stroke-width='3'/%3E%3C/svg%3E%0A");
+      }
     }
 
     &.swiper-button-prev {
       left: 0rem;
+      @media (max-width: variables.$mobile) {
+        left: 1rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='26' viewBox='0 0 16 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3135 2L2.99977 13.3137L14.3135 24.6274' stroke='%2395C19C' stroke-width='3'/%3E%3C/svg%3E%0A");
+      }
     }
   }
 
@@ -70,8 +104,19 @@
     width: 8rem;
     height: 6.8rem;
 
+    @media (max-width: variables.$mobile) {
+      display: grid;
+      height: 30rem;
+      width: 100%;
+    }
+
     & img {
       object-fit: contain;
+      object-position: center;
+
+      @media (max-width: variables.$mobile) {
+        max-height: 26rem;
+      }
     }
   }
 
