@@ -12,7 +12,6 @@
     grid-template-columns: auto auto 1fr;
     border-bottom: .1rem solid #E9F6E9;
     grid-gap: 10rem;
-    padding: 1.2rem 0;
 
     @media (max-width: variables.$mobile) {
       grid-gap: 0;

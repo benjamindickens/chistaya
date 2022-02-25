@@ -32,7 +32,7 @@
 
   &__nav-btn._black-nav-btn._reverse-styles {
     background-position: center;
-    top: calc(50% + 2rem);
+    top: 4rem;
 
     @media (max-width: variables.$mobile) {
       display: none;
@@ -45,6 +45,10 @@
     &.swiper-button-next {
       right: 0;
     }
+  }
+
+  &__pagination {
+    bottom: -3rem !important;
   }
 
   &__slide {
@@ -84,10 +88,41 @@
     font-size: 1.6rem;
     line-height: 2.4rem;
     font-family: variables.$font-medium;
-    margin-top: 4.2rem;
+    margin-top: 4rem;
+    @media (max-width: variables.$mobile) {
+      margin-top: 6rem;
+    }
 
     &:nth-child(1) {
       margin-top: 2rem;
+    }
+  }
+
+  &__ingredient-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 23.7rem;
+    grid-gap: .6rem 2.8rem;
+    align-content: flex-start;
+    @media (max-width: variables.$mobile) {
+      max-height: unset;
+    }
+  }
+
+  &__ingredient-item {
+    list-style: none;
+    display: flex;
+    font-family: variables.$font-light;
+    color: variables.$black;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+
+    &::before {
+      content: "•";
+      padding-right: 0.8rem;
+      color: variables.$icon-green;
     }
   }
 }

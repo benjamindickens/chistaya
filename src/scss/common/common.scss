@@ -214,6 +214,22 @@ main {
   }
 }
 
+._green-pagination {
+  & .swiper-pagination-bullet {
+    width: .8rem;
+    height: .8rem;
+    border: 0.3rem solid variables.$white;
+    opacity: 1;
+    background: variables.$icon-green;
+    transition: background .15s, border-color .15s;
+
+    &.swiper-pagination-bullet-active {
+      border-color: variables.$icon-green;
+      background: variables.$white;
+    }
+  }
+}
+
 
 @media (max-width: 667px) {
   main {
