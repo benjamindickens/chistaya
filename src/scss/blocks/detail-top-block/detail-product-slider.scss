@@ -4,6 +4,39 @@
   display: grid;
   position: relative;
 
+  &:after {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    color: variables.$white;
+    padding: .8rem;
+    text-transform: uppercase;
+    font-family: variables.$font-semi;
+    font-size: 2rem;
+    line-height: 2.6rem;
+
+    @media (max-width: variables.$mobile) {
+      font-size: 1rem;
+      line-height: 1.3rem;
+      padding: .6rem 1.2rem;
+    }
+
+  }
+
+  &[data-type="hit"] {
+    &:after {
+      background: variables.$light-blue;
+      content: "хит";
+    }
+  }
+
+  &[data-type="new"] {
+    &:after {
+      background: variables.$btn-pink;
+      content: "НОВИНКА";
+    }
+  }
+
   &__slider-container {
     width: 43.8rem;
     height: 10.4rem;
@@ -50,42 +83,17 @@
     display: grid;
     justify-items: center;
     align-items: center;
+    opacity: 1;
+    transition: opacity .15s, filter .15s;
+    filter: blur(0px);
+
+    &._transition {
+      opacity: 0;
+      filter: blur(3rem);
+    }
 
     img {
       max-height: 38.4rem;
-    }
-
-    &:after {
-      position: absolute;
-      top: 2rem;
-      left: 0;
-      color: variables.$white;
-      padding: .8rem;
-      text-transform: uppercase;
-      font-family: variables.$font-semi;
-      font-size: 2rem;
-      line-height: 2.6rem;
-
-      @media (max-width: variables.$mobile) {
-        font-size: 1rem;
-        line-height: 1.3rem;
-        padding: .6rem 1.2rem;
-      }
-
-    }
-
-    &[data-type="hit"] {
-      &:after {
-        background: variables.$light-blue;
-        content: "хит";
-      }
-    }
-
-    &[data-type="new"] {
-      &:after {
-        background: variables.$btn-pink;
-        content: "НОВИНКА";
-      }
     }
   }
 }

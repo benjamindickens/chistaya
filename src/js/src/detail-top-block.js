@@ -1,13 +1,20 @@
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
-import {getNoun, productCardClickEvents} from "./common.js";
+import {getNoun, productCardClickEvents, detectMobile} from "./common.js";
 
-const detailProductContainer = document.querySelector(".js-detail-product-slider")
+// const isMobile = detectMobile();
+const detailProductContainer = document.querySelector(".js-detail-product-slider");
+const previewImg = document.querySelector(".js-product-active-img");
+const sliderSpeed = 300;
+
 const detailProductSlider = new Swiper(detailProductContainer, {
     spaceBetween: 16,
     followFinger: false,
     slidesPerView: 1,
+    speed: 300,
+    slideToClickedSlide: true,
     loop: true,
+    preventInteractionOnTransition: true,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -23,4 +30,16 @@ const detailProductSlider = new Swiper(detailProductContainer, {
             spaceBetween: 9,
         }
     },
+    on: {
+        transitionStart() {
+            const currentActiveSlide = this.slides[this.realIndex];
+            console.log(currentActiveSlide)
+            previewImg.classList.add("_transition")
+
+            setTimeout(() => {
+                previewImg.querySelector("img").src = currentActiveSlide.querySelector("img").src;
+                previewImg.classList.remove("_transition")
+            }, sliderSpeed / 2)
+        }
+    }
 })
