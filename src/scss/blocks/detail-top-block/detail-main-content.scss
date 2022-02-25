@@ -1,0 +1,74 @@
+@use "../../common/variables";
+
+.detail-main-content {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+
+  &__title {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    font-family: variables.$font-semi;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: .8rem;
+  }
+
+  &__type {
+    font-family: variables.$font-light;
+    color: variables.$black;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    opacity: 0.5;
+    margin-bottom: 1.4rem;
+  }
+
+  &__stats {
+    margin-bottom: 2rem;
+  }
+
+  &__volume {
+    margin-bottom: 2rem;
+    padding: .8rem 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-family: variables.$font-medium;
+    background: variables.$light-green;
+  }
+
+  &__advantages {
+    margin-bottom: 3.4rem;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+
+    & p {
+      margin-bottom: 1rem;
+      font-family: variables.$font-light;
+    }
+
+    & span {
+      font-family: variables.$font-semi;
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: .6rem;
+    }
+
+    & li {
+      list-style: none;
+      font-family: variables.$font-light;
+      color: variables.$black;
+
+      &::before {
+        content: "•";
+        padding-right: 0.6rem;
+        color: variables.$black;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 1.1rem 8rem;
+  }
+}

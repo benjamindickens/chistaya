@@ -10,6 +10,11 @@
     <title>Чистая линия</title>
 </head>
 <body>
+
+<img class="main-header" src="images/header-zaglushka.png" alt="">
+
+<!--detail page-->
+
 <main class="detail-page">
     <div class="breadcrumb">
         <ul class="js-breadcrumb breadcrumb__list _width-sizer">
@@ -20,6 +25,91 @@
         </ul>
     </div>
 
+    <div class="detail-page__top-block detail-top-block _width-sizer">
+        <div class="detail-page__detail-product-slider detail-product-slider">
+            <div data-type="new" class="detail-product-slider__preview-img">
+                <img class="js-product-active-img" src="images/detail-slider-test.png" alt="product">
+            </div>
+            <div class="js-detail-product-slider detail-product-slider__slider-container swiper">
+                <div class="detail-product-slider__wrapper swiper-wrapper">
+                    <div class="detail-product-slider__slide swiper-slide">
+                        <picture class="detail-product-slider__nav-img">
+                            <source media="(max-width: 667px)" type="image/png"
+                                    srcset="images/detail-slider-test.png"/>
+                            <img src="images/detail-slider-test.png"
+                                 alt="post img">
+                        </picture>
+                    </div>
+                    <div class="detail-product-slider__slide swiper-slide">
+                        <picture class="detail-product-slider__nav-img">
+                            <source media="(max-width: 667px)" type="image/png"
+                                    srcset="images/detail-slider-test.png"/>
+                            <img src="images/detail-slider-test.png"
+                                 alt="post img">
+                        </picture>
+                    </div>
+                    <div class="detail-product-slider__slide swiper-slide">
+                        <picture class="detail-product-slider__nav-img">
+                            <source media="(max-width: 667px)" type="image/png"
+                                    srcset="images/detail-slider-test.png"/>
+                            <img src="images/detail-slider-test.png"
+                                 alt="post img">
+                        </picture>
+                    </div>
+                    <div class="detail-product-slider__slide swiper-slide">
+                        <picture class="detail-product-slider__nav-img">
+                            <source media="(max-width: 667px)" type="image/png"
+                                    srcset="images/detail-slider-test.png"/>
+                            <img src="images/detail-slider-test.png"
+                                 alt="post img">
+                        </picture>
+                    </div>
+                    <div class="detail-product-slider__slide swiper-slide">
+                        <picture class="detail-product-slider__nav-img">
+                            <source media="(max-width: 667px)" type="image/png"
+                                    srcset="images/detail-slider-test.png"/>
+                            <img src="images/detail-slider-test.png"
+                                 alt="post img">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+            <div class="js-detail-main-slider-nav detail-product-slider__nav-btn _black-nav-btn _reverse-styles swiper-button-prev"></div>
+            <div class="js-detail-main-slider-nav detail-product-slider__nav-btn _black-nav-btn _reverse-styles swiper-button-next"></div>
+        </div>
+
+        <div class="detail-page__detail-main-content detail-main-content">
+            <h1 class="detail-main-content__title">
+                Крем для лица + гиалурон (сияние и увлажнение)
+            </h1>
+            <p class="detail-main-content__type">Дневной для сухой кожи</p>
+            <div class="detail-main-content__stats stats">
+                <div data-stars="4" class="stats__stars"></div>
+                <a href="#comments" class="js-product-comments stats__comments">31 отзыв</a>
+            </div>
+            <div class="detail-main-content__volume">
+                40 мл
+            </div>
+            <div class="detail-main-content__advantages">
+                <p><span>Преимущества:</span> Далее 4-5 строк об основных своствах продукта.</p>
+                <p>Нежное косметическое средство создано специально для ежедневного ухода за кожей нормального и
+                    комбинированного типа.</p>
+                <p>Увлажняет, оставляя кожу мягкой и нежной:</p>
+                <ul>
+                    <li>«Дружит» с макияжем</li>
+                    <li>Используй как несмываемую маску для экспресс-сияния</li>
+                    <li>Создает эффект «макияжа без макияжа»</li>
+                </ul>
+            </div>
+            <button class="js-buy-btn detail-main-content__btn main-btn _green">
+                <span>Купить</span>
+            </button>
+        </div>
+    </div>
+    <div class="detail-page__description-block">
+
+    </div>
 </main>
 </body>
 </html>

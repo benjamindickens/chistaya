@@ -1,0 +1,90 @@
+@use "../../common/variables";
+
+.detail-product-slider {
+  display: grid;
+  position: relative;
+
+  &__slider-container {
+    width: 45.2rem;
+    height: 10.4rem;
+    padding: 1.2rem .1rem !important;
+  }
+
+  &__nav-btn._black-nav-btn {
+    width: 1.4rem;
+    height: 1rem;
+    top: unset;
+    bottom: 4.5rem;
+
+    &.swiper-button-next {
+      right: -1rem;
+    }
+
+    &.swiper-button-prev {
+      left: -1rem;
+    }
+  }
+
+  &__slide {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 .2rem 1rem #5656561A;
+  }
+
+  &__nav-img {
+    width: 8rem;
+    height: 6.8rem;
+
+    & img {
+      object-fit: contain;
+    }
+  }
+
+  &__preview-img {
+    position: relative;
+    box-shadow: 0 .2rem 1rem #5656561A;
+    width: 48rem;
+    height: 44rem;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    img {
+      max-height: 38.4rem;
+    }
+
+    &:after {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      color: variables.$white;
+      padding: .8rem;
+      text-transform: uppercase;
+      font-family: variables.$font-semi;
+      font-size: 2rem;
+      line-height: 2.6rem;
+
+      @media (max-width: variables.$mobile) {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: .6rem 1.2rem;
+      }
+
+    }
+
+    &[data-type="hit"] {
+      &:after {
+        background: variables.$light-blue;
+        content: "хит";
+      }
+    }
+
+    &[data-type="new"] {
+      &:after {
+        background: variables.$btn-pink;
+        content: "НОВИНКА";
+      }
+    }
+  }
+}

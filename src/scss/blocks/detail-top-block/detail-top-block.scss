@@ -1,0 +1,7 @@
+@use "detail-product-slider";
+@use "detail-main-content";
+
+.detail-top-block {
+  display: flex;
+  grid-gap: 6rem;
+}

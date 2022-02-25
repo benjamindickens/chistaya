@@ -10,6 +10,12 @@
 
 //components
 @use "components/breadcrumb";
+@use "components/stats";
+@use "components/main-btn";
+
+//main-content
+@use "blocks/detail-top-block/detail-top-block";
+
 
 //page styles
 .detail-page {

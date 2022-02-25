@@ -78,9 +78,9 @@ const getSlide = (content) => {
         <p class="product-card__volume">
             ${content.volume} мл
         </p>
-        <div class="product-card__stats">
-            <div data-stars="4" class="product-card__stars"></div>
-            <a href="${content.link}#comments" class="js-product-comments product-card__comments">${getNoun(content.comments, "отзыв",
+        <div class="product-card__stats stats">
+            <div data-stars="4" class="stats__stars"></div>
+            <a href="${content.link}#comments" class="js-product-comments stats__comments">${getNoun(content.comments, "отзыв",
         "отзыва", "отзывов")}</a>
         </div>
         <button class="js-buy-btn product-card__btn main-btn _green">
