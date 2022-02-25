@@ -51,6 +51,8 @@ const tabSlider = new Swiper(tabContainer, {
     autoHeight: true,
     slidesPerView: 1,
     effect: 'fade',
+    noSwiping: true,
+    noSwipingClass: "swiper-slide",
     fadeEffect: {
         crossFade: true
     },

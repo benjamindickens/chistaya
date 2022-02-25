@@ -23,6 +23,7 @@
     line-height: 2.1rem;
     font-family: variables.$font-regular;
     color: variables.$light-gray;
+    cursor: pointer;
 
     &._active {
       position: relative;

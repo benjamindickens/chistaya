@@ -1,7 +1,57 @@
 @use "../../common/variables";
 
 .composition {
+  position: relative;
+  
   &__slider {
-    width: 117rem;
+    position: relative;
+  }
+
+  &__slider-container {
+    width: 106rem;
+    margin: 2.1rem auto 0 !important;
+  }
+
+  &__nav-btn._black-nav-btn._reverse-styles {
+    background-position: center;
+    top: calc(50% + 2rem);
+  }
+
+  &__slide {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 0 1.7rem;
+  }
+
+  &__slide-title {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    text-transform: uppercase;
+    margin-bottom: .8rem;
+  }
+
+  &__slide-description {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-family: variables.$font-light;
+  }
+
+  &__slide-img {
+    width: 5.8rem;
+    height: 5.8rem;
+    grid-column: 1 / span 1;
+    grid-row: 1 / -1;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-family: variables.$font-medium;
+    margin-top: 4.2rem;
+
+    &:nth-child(1) {
+      margin-top: 2rem;
+    }
   }
 }

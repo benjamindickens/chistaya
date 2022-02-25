@@ -78,8 +78,6 @@
       right: 0rem;
       @media (max-width: variables.$mobile) {
         right: 1rem;
-        background-position: right;
-        background-image: url("data:image/svg+xml,%3Csvg width='16' height='26' viewBox='0 0 16 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.68652 2L13.0002 13.3137L1.68652 24.6274' stroke='%2395C19C' stroke-width='3'/%3E%3C/svg%3E%0A");
       }
     }
 
@@ -87,12 +85,12 @@
       left: 0rem;
       @media (max-width: variables.$mobile) {
         left: 1rem;
-        background-image: url("data:image/svg+xml,%3Csvg width='16' height='26' viewBox='0 0 16 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3135 2L2.99977 13.3137L14.3135 24.6274' stroke='%2395C19C' stroke-width='3'/%3E%3C/svg%3E%0A");
       }
     }
   }
 
   &__slide.swiper-slide {
+    cursor: pointer;
     width: 8rem;
     display: grid;
     justify-items: center;
