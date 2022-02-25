@@ -5,6 +5,20 @@
 
   &__slider {
     position: relative;
+
+    &:after {
+      @media (max-width: variables.$mobile) {
+        content: "";
+        height: 100%;
+        position: absolute;
+        width: 5rem;
+        top: 0;
+        right: -1px;
+        z-index: 1;
+        display: block;
+        background-image: linear-gradient(to right, transparent 0, white 100%);
+      }
+    }
   }
 
   &__slider-container {
@@ -19,6 +33,10 @@
   &__nav-btn._black-nav-btn._reverse-styles {
     background-position: center;
     top: calc(50% + 2rem);
+
+    @media (max-width: variables.$mobile) {
+      display: none;
+    }
 
     &.swiper-button-prev {
       left: 0;
@@ -35,6 +53,10 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     grid-gap: 0 1.7rem;
+
+    @media (max-width: variables.$mobile) {
+      width: 28.4rem !important;
+    }
   }
 
   &__slide-title {
@@ -42,6 +64,7 @@
     line-height: 1.7rem;
     text-transform: uppercase;
     margin-bottom: .8rem;
+    font-family: variables.$font-semi;
   }
 
   &__slide-description {

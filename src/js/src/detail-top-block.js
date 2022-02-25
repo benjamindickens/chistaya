@@ -83,8 +83,9 @@ const tabSlider = new Swiper(tabContainer, {
 const descriptionCompositionSlider = new Swiper(descriptionCompositionContainer, {
     spaceBetween: 20,
     followFinger: false,
-    slidesPerView: 1,
+    slidesPerView: "auto",
     speed: 300,
+    navigation: false,
     slideToClickedSlide: true,
     preventInteractionOnTransition: true,
     pagination: {
