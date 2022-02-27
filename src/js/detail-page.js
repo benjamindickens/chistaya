@@ -1,4 +1,5 @@
 // import "./src/header.js"
 // import "./src/forms.js"
-import "./src/breadcrumb"
-import "./src/detail-top-block"
+import "./src/breadcrumb.js"
+import "./src/detail-top-block.js"
+import "./src/circles-banner.js"

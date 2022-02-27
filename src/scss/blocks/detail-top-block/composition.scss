@@ -106,6 +106,7 @@
     max-height: 23.7rem;
     grid-gap: .6rem 2.8rem;
     align-content: flex-start;
+    padding-bottom: 2rem;
     @media (max-width: variables.$mobile) {
       max-height: unset;
     }

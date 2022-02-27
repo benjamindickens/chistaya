@@ -23,7 +23,7 @@
         </ul>
     </div>
 
-    <div class="detail-page__top-block detail-top-block _width-sizer">
+    <section class="detail-page__top-block detail-top-block _width-sizer">
 
         <div class="detail-top-block__detail-main-content detail-main-content">
 
@@ -223,8 +223,37 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="detail-page__circles-banner circles-banner">
+        <picture class="circles-banner__bg _1">
+            <source media="(max-width: 667px)" type="image/png"
+                    srcset="images/mobile/circles-banner/bg-1.png"/>
+            <img src="images/desktop/circles-banner/bg-1.png"
+                 alt="bg img">
+        </picture>
+        <img class="circles-banner__bg _2 _desktop" src="images/desktop/circles-banner/bg-2.png" alt="bg img">
 
-    </div>
+        <div class="circles-banner__container _width-sizer">
+
+            <div class="circles-banner__content">
+                <h1 class="circles-banner__title">Место для небольшого баннера</h1>
+                <p class="circles-banner__description">Описание для небольшого баннера. Возможно процентные показатели
+                    после
+                    применениия продукта.</p>
+            </div>
+
+            <div class="circles-banner__graph-container">
+                <div class="circles-banner__graph">
+                    <div data-value="45" class="circles-banner__circle js-circle"></div>
+                    <p class="circles-banner__graph-description">Процентный показатель спустя какое-то время</p>
+                </div>
+                <div class="circles-banner__graph">
+                    <div data-main-color="#F6C179" data-second-color="#3F8344" data-value="60" class="circles-banner__circle js-circle"></div>
+                    <p class="circles-banner__graph-description">Процентный показатель спустя какое-то время</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 </body>
 </html>
