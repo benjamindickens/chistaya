@@ -64,18 +64,29 @@
     & .circle-progress-text {
       font-size: 2.4rem;
       line-height: 3.6rem;
-      fill: #3F8344;
-      font-family: variables.$font-semi;
     }
 
-    .circle-progress-value {
-      stroke-width: 6px;
-      stroke: #3F8344;
-    }
-
-    .circle-progress-circle {
+    & .circle-progress-circle {
       stroke-width: .3rem;
-      stroke: #EBFFEC;
+    }
+
+    & .circle-progress-value {
+      stroke-width: .3rem;
+    }
+
+    &._default {
+      & .circle-progress-text {
+        fill: #3F8344;
+        font-family: variables.$font-semi;
+      }
+
+      & .circle-progress-value {
+        stroke: #3F8344;
+      }
+
+      & .circle-progress-circle {
+        stroke: #EBFFEC;
+      }
     }
 
   }
