@@ -1,0 +1,69 @@
+@use "../../common/variables";
+
+.suggestions {
+
+  margin-top: 2rem;
+
+  @media (max-width: variables.$mobile) {
+    margin-top: 6rem;
+    padding: 0 1.6rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    font-family: variables.$font-semi;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &:nth-child(2) {
+      margin-top: 1rem;
+    }
+
+    @media (max-width: variables.$mobile) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    & br {
+      @media (max-width: variables.$mobile) {
+        margin-top: .8rem;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 1.2rem 4rem;
+
+    @media (max-width: variables.$mobile) {
+      grid-template-columns:1fr;
+      grid-gap: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    grid-gap: 2rem;
+    align-items: center;
+    max-width: 36rem;
+
+    & img {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    & p {
+      font-family: variables.$font-light;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      line-height: 2.1rem;
+
+      & span {
+        font-family: variables.$font-semi;
+      }
+    }
+  }
+}

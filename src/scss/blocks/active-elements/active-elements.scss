@@ -1,0 +1,74 @@
+@use "../../common/variables";
+
+.active-elements {
+  margin: 4rem auto 8rem;
+
+  @media (max-width: variables.$mobile) {
+    padding: 0 1.6rem;
+    margin: 6rem auto 6rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    font-family: variables.$font-semi;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: variables.$mobile) {
+      display: none;
+    }
+  }
+
+  &__nav-btn._black-nav-btn {
+    top: unset;
+    bottom: 0;
+    @media (min-width: variables.$mobile) {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    bottom: 0 !important;
+  }
+
+  &__list.swiper {
+    margin-top: 2rem;
+    width: 100%;
+
+    @media (max-width: variables.$mobile) {
+      padding-bottom: 3.8rem;
+    }
+  }
+
+  &__item {
+    width: 38rem;
+  }
+
+  &__item-img {
+    height: 20rem;
+    object-fit: cover;
+  }
+
+  &__item-description {
+    background: variables.$green-bg;
+    color: variables.$white;
+    padding: .8rem 1.25rem;
+
+    & h2 {
+      text-transform: uppercase;
+      font-family: variables.$font-semi;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      font-weight: 600;
+      margin-bottom: .4rem;
+    }
+
+    & p {
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      font-family: variables.$font-light;
+    }
+  }
+
+}

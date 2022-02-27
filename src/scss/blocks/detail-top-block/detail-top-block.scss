@@ -9,6 +9,10 @@
   display: grid;
 
   @media (max-width: variables.$mobile) {
+    padding: 0 1.6rem;
+  }
+
+  @media (max-width: variables.$mobile) {
     grid-gap: 4rem;
   }
 

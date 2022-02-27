@@ -16,6 +16,8 @@
 //main-content
 @use "blocks/detail-top-block/detail-top-block";
 @use "blocks/circles-banner/circles-banner";
+@use "blocks/sugestions/suggestions";
+@use "blocks/active-elements/active-elements";
 
 
 //page styles
@@ -25,6 +27,5 @@
 
   @media (max-width: variables.$mobile) {
     background: none;
-    padding: 0 1.6rem;
   }
 }

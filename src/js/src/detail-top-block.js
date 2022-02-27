@@ -57,15 +57,15 @@ const detailProductSlider = new Swiper(detailProductContainer, {
 
 const tabSlider = new Swiper(tabContainer, {
     followFinger: false,
-    autoHeight: true,
     slidesPerView: 1,
+    autoHeight: true,
     effect: 'fade',
     noSwiping: true,
     noSwipingClass: "swiper-slide",
     fadeEffect: {
         crossFade: true
     },
-    speed: 300,
+    speed: 150,
     slideToClickedSlide: true,
     preventInteractionOnTransition: true,
     navigation: {
@@ -73,11 +73,15 @@ const tabSlider = new Swiper(tabContainer, {
         prevEl: '.js-description-tab-btn-prev',
     },
     on: {
+        afterInit() {
+            //fixing bag with tab height
+            this.wrapperEl.style.height = "auto";
+        },
         transitionStart() {
             descriptionTabButtons[this.previousIndex].classList.remove("_active");
             descriptionTabButtons[this.realIndex].classList.add("_active");
         }
-    }
+    },
 })
 
 const descriptionCompositionSlider = new Swiper(descriptionCompositionContainer, {
@@ -103,4 +107,3 @@ const descriptionCompositionSlider = new Swiper(descriptionCompositionContainer,
         }
     },
 })
-
