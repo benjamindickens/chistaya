@@ -1,0 +1,34 @@
+@use "common/variables";
+@use "common/fonts";
+@use "common/common";
+
+//header
+@use "blocks/main-header/main-header";
+
+//footer
+@use "blocks/main-footer/main-footer";
+
+//components
+@use "components/breadcrumb";
+@use "components/top-filter";
+@use "components/stats";
+@use "components/main-btn";
+
+
+.catalog-page {
+
+
+  &__product-list {
+
+  }
+
+  &__product-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2.8rem;
+  }
+
+  &__product-card {
+
+  }
+}

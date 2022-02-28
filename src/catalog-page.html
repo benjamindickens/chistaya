@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="scss/catalog-page.scss">
+    <script defer type="module" src="js/catalog-page.js"></script>
+    <title>Чистая линия</title>
+</head>
+<body>
+
+<!--detail page-->
+
+<main class="catalog-page">
+
+    <div class="detail-page__breadcrumb breadcrumb">
+        <ul class="js-breadcrumb breadcrumb__list _width-sizer">
+            <li class="breadcrumb__item" data-link="catalog-page.html">Главная</li>
+            <li class="breadcrumb__item" data-link="main-page.html">Лицо</li>
+        </ul>
+    </div>
+
+    <div class="catalog-page__container _width-sizer">
+        <div class="catalog-page__title _detail-section-title _lowercase">Уходовая косметика для лица</div>
+        <div class="js-filter-top catalog-page__top-filter top-filter">
+            <h2 class="top-filter__title">
+                Сортировать по:
+            </h2>
+            <button data-filter="hit" class="js-filter-item top-filter__item _active">
+                хиты продаж
+            </button>
+            <button data-filter="new" class="js-filter-item top-filter__item">
+                новинки
+            </button>
+            <button data-filter="name" class="js-filter-item top-filter__item">
+                название
+            </button>
+            <button data-filter="ascending" class="js-filter-item top-filter__arrow _active">
+                <svg class="analyzer__pin">
+                    <use xlink:href="images/sprite.svg#filter-arrow"></use>
+                </svg>
+            </button>
+            <button data-filter="descending" class="js-filter-item top-filter__arrow">
+                <svg class="analyzer__pin">
+                    <use xlink:href="images/sprite.svg#filter-arrow-descending"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="js-filter-side catalog-page__side-filter side-filter">
+            side block
+        </div>
+        <ul class="js-product-list catalog-page__product-list">
+
+        </ul>
+    </div>
+</main>
+
+</body>
+</html>

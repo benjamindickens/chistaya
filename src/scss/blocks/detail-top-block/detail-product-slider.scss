@@ -128,11 +128,10 @@
     align-items: center;
     opacity: 1;
     transition: opacity .15s, filter .15s;
-    filter: blur(0px);
+    user-select: none;
 
     &._transition {
       opacity: 0;
-      filter: blur(3rem);
     }
 
     img {

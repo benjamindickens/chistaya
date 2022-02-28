@@ -137,6 +137,10 @@ main {
   font-weight: 600;
   text-transform: uppercase;
 
+  &._lowercase {
+    text-transform: none;
+  }
+
   @media (max-width: variables.$mobile) {
     text-transform: none;
   }
