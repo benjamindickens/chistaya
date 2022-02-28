@@ -1,6 +1,20 @@
-import {getNoun} from "./common";
+import {getNoun, productCardClickEvents} from "./common";
+import {submitForm} from "./request";
 
+const catalogPage = document.querySelector(".js-catalog-page ");
 const catalogContainer = document.querySelector(".js-product-list ");
+const loader = document.querySelector("#loader");
+let currentBlock = 0;
+let readyToLoad = true;
+const filters = {
+    typeOfProduct: catalogPage.dataset.type
+};
+
+const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.25
+}
 
 // ниже генератор тестовых данных удалить
 
@@ -41,7 +55,7 @@ const getSlide = (content) => {
     </div>`
 }
 
-const dummyData = dummyDataGenerator((4 * 4) * 2);
+const dummyData = dummyDataGenerator((4 * 4) * 3);
 
 const getPage = (content) => {
     return `<div class="js-product-page catalog-page__product-page">
@@ -60,8 +74,6 @@ const getDummyPages = (dummyData) => {
             dummyPages.push(getPage(currentPageContent));
             page++;
             currentPageContent = "";
-            console.log("created");
-            console.log(dummyPages)
         }
     })
     return dummyPages
@@ -69,6 +81,44 @@ const getDummyPages = (dummyData) => {
 
 const test = getDummyPages(dummyData)
 
-catalogContainer.insertAdjacentHTML("beforeend", test[0]);
 
 // конец генератор тестовых данных
+
+
+const insertNewPage = (content) => {
+    catalogContainer.insertAdjacentHTML("beforeend", content);
+}
+
+const handleIntersect = (entries, observer) => {
+    if (entries[0].isIntersecting && readyToLoad) {
+        submitForm('post', "/api/hits", filters).then(res => {
+            //раскоментировать когда будут реальные запросы
+            // readyToLoad = false;
+            return res.json()
+        }).then(async data => {
+            await insertNewPage(data)
+            currentBlock += 1;
+            readyToLoad = true;
+        }).catch(e => {
+            console.error(e)
+            console.log(filters)
+            //удалить ниже тестовые данные
+            insertNewPage(test[currentBlock])
+            currentBlock++;
+            if (currentBlock === test.length) {
+                loader.style.display = "none";
+            }
+        });
+
+
+    }
+}
+
+const observer = new IntersectionObserver(handleIntersect,
+    options);
+observer.observe(loader);
+
+insertNewPage(test[currentBlock])
+productCardClickEvents(catalogContainer)
+
+
