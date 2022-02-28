@@ -40,6 +40,10 @@
     border-bottom: 0.1rem solid variables.$light-gray;
   }
 
+  &__item.ac.is-active {
+    border-bottom: none;
+  }
+
   &__item.ac:nth-child(1) {
     border-top: 0.1rem solid #B3BBB6;
   }

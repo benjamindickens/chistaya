@@ -20,7 +20,30 @@
 
 
   &__product-list {
+    grid-area: catalog;
+  }
 
+  &__title {
+    grid-area: title;
+  }
+
+  &__top-filter {
+    grid-area: top-filter;
+    justify-self: end;
+    margin-bottom: 2.6rem;
+  }
+
+  &__side-filter {
+    grid-area: side-filter;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "title title"
+        "top-filter top-filter"
+        "side-filter catalog";
   }
 
   &__product-page {
@@ -32,4 +55,5 @@
   &__product-card {
 
   }
+
 }

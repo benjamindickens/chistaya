@@ -1,13 +1,16 @@
-import {getNoun, productCardClickEvents} from "./common";
+import {getNoun, productCardClickEvents, hasClass} from "./common";
 import {submitForm} from "./request";
 
-const catalogPage = document.querySelector(".js-catalog-page ");
+const catalogPage = document.querySelector(".js-catalog-page");
 const catalogContainer = document.querySelector(".js-product-list ");
+const topFilter = document.querySelector(".js-top-filter")
 const loader = document.querySelector("#loader");
 let currentBlock = 0;
 let readyToLoad = true;
 const filters = {
-    typeOfProduct: catalogPage.dataset.type
+    type: catalogPage.dataset.type,
+    sort: "hit",
+    method: "ascending"
 };
 
 const options = {
@@ -16,24 +19,45 @@ const options = {
     threshold: 0.25
 }
 
+const handleTopFilter = (e) => {
+    const el = e.target;
+    if (hasClass(e.target, null, "js-sort-filter") && !hasClass(e.target, null, "_active")) {
+        el.parentElement.querySelector(".js-sort-filter._active").classList.remove("_active");
+        el.classList.add("_active")
+    } else if (hasClass(e.target, null, "js-method-filter")) {
+        el.parentElement.querySelector(".js-method-filter._active").classList.remove("_active");
+        el.classList.add("_active")
+    }
+}
+
+
 // ниже генератор тестовых данных удалить
+
+const insertTypeBar = (content) => {
+    return content.map(type => `<div data-type="${type}" class="product-card__type-bar"></div>`).join("");
+}
 
 const dummyDataGenerator = (num) => {
     const array = new Array(num).fill(0);
     return array.map((el, index) => {
         return {
+            id: 1,
             link: "https://test.ru",
             title: "test",
             description: "test",
             volume: 200,
             comments: 20,
             image: `https://picsum.photos/id/${index + 90}/200/`,
-            type: "new",
+            type: ["new"],
         }
     })
 }
+
 const getSlide = (content) => {
-    return `<div data-href="${content.link}" data-type="${content.type}" data-product-id="1"  class="js-product-card product-card _hit">
+    return `<div data-href="${content.link}" data-product-id="${content.id}"  class="js-product-card product-card">
+<div class="product-card__type-section">
+${insertTypeBar(content.type)}
+</div>
         <img class="product-card__img" src="${content.image}" alt="product">
         <h3 class="product-card__title">
             ${content.title}
@@ -114,11 +138,11 @@ const handleIntersect = (entries, observer) => {
     }
 }
 
+topFilter.onclick = handleTopFilter;
 const observer = new IntersectionObserver(handleIntersect,
     options);
 observer.observe(loader);
 
-insertNewPage(test[currentBlock])
 productCardClickEvents(catalogContainer)
 
 

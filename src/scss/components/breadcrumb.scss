@@ -1,7 +1,7 @@
 @use "../common/variables";
 
 .breadcrumb {
-  padding: 1.2rem 0 4.4rem;
+  padding: 1.2rem 0;
   list-style: none;
 
   @media (max-width: variables.$mobile) {

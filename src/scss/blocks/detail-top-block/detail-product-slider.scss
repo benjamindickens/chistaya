@@ -12,36 +12,48 @@
     margin-bottom: 4rem;
   }
 
-  &:after {
+  &__type-section {
     position: absolute;
     top: 2rem;
     left: 0;
-    color: variables.$white;
-    padding: .8rem;
-    text-transform: uppercase;
-    font-family: variables.$font-semi;
-    font-size: 2rem;
-    line-height: 2.6rem;
-
-    @media (max-width: variables.$mobile) {
-      font-size: 1rem;
-      line-height: 1.3rem;
-      padding: .6rem 1.2rem;
-    }
-
+    display: grid;
+    grid-gap: .8rem;
+    justify-items: start;
   }
 
-  &[data-type="hit"] {
+  &__type-bar {
     &:after {
-      background: variables.$light-blue;
-      content: "хит";
-    }
-  }
+      height: 4.2rem;
+      display: grid;
+      align-items: center;
+      color: variables.$white;
+      padding: 0 1.2rem;
+      text-transform: uppercase;
+      font-family: variables.$font-semi;
+      font-size: 2rem;
+      line-height: 2.6rem;
 
-  &[data-type="new"] {
-    &:after {
-      background: variables.$btn-pink;
-      content: "НОВИНКА";
+      @media (max-width: variables.$mobile) {
+        height: 3.2rem;
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: 0 1.2rem;
+      }
+
+    }
+
+    &[data-type="hit"] {
+      &:after {
+        background: variables.$light-blue;
+        content: "хит";
+      }
+    }
+
+    &[data-type="new"] {
+      &:after {
+        background: variables.$btn-pink;
+        content: "НОВИНКА";
+      }
     }
   }
 

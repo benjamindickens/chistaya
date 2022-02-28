@@ -8,36 +8,48 @@
   cursor: pointer;
   background: variables.$white;
 
-  &:after {
+  &__type-section {
     position: absolute;
     top: 1.2rem;
     left: 0;
-    color: variables.$white;
-    padding: .6rem 1.2rem;
-    text-transform: uppercase;
-    font-family: variables.$font-semi;
-
-    @media (max-width: variables.$mobile) {
-      font-size: 1rem;
-      line-height: 1.3rem;
-      padding: .6rem 1.2rem;
-    }
-
+    display: grid;
+    grid-gap: .4rem;
+    justify-items: start;
   }
 
-  &[data-type="hit"] {
+  &__type-bar {
     &:after {
-      background: variables.$light-blue;
-      content: "хит";
+      height: 2.4rem;
+      display: grid;
+      align-items: center;
+      color: variables.$white;
+      padding: 0 1.2rem;
+      text-transform: uppercase;
+      font-family: variables.$font-semi;
+
+      @media (max-width: variables.$mobile) {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+
     }
+
+    &[data-type="hit"] {
+      &:after {
+        background: variables.$light-blue;
+        content: "хит";
+      }
+    }
+
+    &[data-type="new"] {
+      &:after {
+        background: variables.$btn-pink;
+        content: "НОВИНКА";
+      }
+    }
+
   }
 
-  &[data-type="new"] {
-    &:after {
-      background: variables.$btn-pink;
-      content: "НОВИНКА";
-    }
-  }
 
   &__img {
     justify-self: center;

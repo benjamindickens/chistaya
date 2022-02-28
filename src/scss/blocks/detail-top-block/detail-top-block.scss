@@ -7,9 +7,11 @@
 
 .detail-top-block {
   display: grid;
+  margin-top: 2.8rem;
 
   @media (max-width: variables.$mobile) {
     padding: 0 1.6rem;
+    margin-top: 0;
   }
 
   @media (max-width: variables.$mobile) {
