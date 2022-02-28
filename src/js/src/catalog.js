@@ -1,5 +1,9 @@
 import {getNoun} from "./common";
 
+const catalogContainer = document.querySelector(".js-product-list ");
+
+// ниже генератор тестовых данных удалить
+
 const dummyDataGenerator = (num) => {
     const array = new Array(num).fill(0);
     return array.map((el, index) => {
@@ -36,3 +40,35 @@ const getSlide = (content) => {
         </button>
     </div>`
 }
+
+const dummyData = dummyDataGenerator((4 * 4) * 2);
+
+const getPage = (content) => {
+    return `<div class="js-product-page catalog-page__product-page">
+${content}
+</div>`
+}
+
+const getDummyPages = (dummyData) => {
+    let page = 1;
+    const dummyPages = [];
+    let currentPageContent = "";
+    dummyData.forEach((data, index) => {
+        currentPageContent += getSlide(data);
+
+        if ((index + 1) / page === 4 * 4 || dummyData.length === index + 1) {
+            dummyPages.push(getPage(currentPageContent));
+            page++;
+            currentPageContent = "";
+            console.log("created");
+            console.log(dummyPages)
+        }
+    })
+    return dummyPages
+}
+
+const test = getDummyPages(dummyData)
+
+catalogContainer.insertAdjacentHTML("beforeend", test[0]);
+
+// конец генератор тестовых данных

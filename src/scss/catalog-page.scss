@@ -13,7 +13,7 @@
 @use "components/top-filter";
 @use "components/stats";
 @use "components/main-btn";
-
+@use "components/product-card";
 
 .catalog-page {
 
@@ -22,9 +22,9 @@
 
   }
 
-  &__product-item {
+  &__product-page {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 20.4rem);
     grid-gap: 2.8rem;
   }
 
