@@ -53,9 +53,7 @@
                 <div class="js-selected side-filter__item selected">
                     <h2 class="selected__title _side-filter-title _lowercase">Вы выбрали:</h2>
                     <ul class="selected__list">
-                        <li class="js-selected-item selected__item">проблемная</li>
-                        <li class="js-selected-item selected__item">проблемная</li>
-                        <li class="js-selected-item selected__item">проблемная</li>
+
                     </ul>
                     <button class="js-selected-reset selected__reset _underlined _blue">Очистить все</button>
                 </div>
@@ -63,30 +61,27 @@
                 <div class="side-filter__item">
                     <h2 class="side-filter__title _side-filter-title">тип продукта</h2>
 
-                    <ul class="side-filter__filter-list">
+                    <ul class="js-filter-list side-filter__filter-list">
                         <li class="side-filter__filter">
                             <label class="main-checkbox">Крем для лица и тела (20)
-                                <input type="checkbox">
+                                <input data-filter="0" type="checkbox">
                                 <span class="main-checkbox__checkmark"></span>
                             </label>
                         </li>
                         <li class="side-filter__filter">
                             <label class="main-checkbox">Маска для лица (12)
-                                <input type="checkbox">
+                                <input data-filter="1" type="checkbox">
                                 <span class="main-checkbox__checkmark"></span>
                             </label>
                         </li>
                         <li class="side-filter__filter">
                             <label class="main-checkbox">Лосьен-тоник для лица (11)
-                                <input type="checkbox">
+                                <input data-filter="2" type="checkbox">
                                 <span class="main-checkbox__checkmark"></span>
                             </label>
                         </li>
                     </ul>
-
-
                 </div>
-
             </div>
         </div>
         <ul class="js-product-list catalog-page__product-list">

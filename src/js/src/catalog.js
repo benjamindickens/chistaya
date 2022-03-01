@@ -6,6 +6,9 @@ const catalogContainer = document.querySelector(".js-product-list");
 const topFilter = document.querySelector(".js-top-filter")
 const loader = document.querySelector("#loader");
 const selected = document.querySelector(".js-selected");
+const selectedList = document.querySelector(".js-selected ul");
+const filterList = document.querySelector(".js-filter-list");
+const filterItems = document.querySelectorAll(".js-filter-list input");
 let currentBlock = 0;
 let readyToLoad = true;
 
@@ -13,38 +16,56 @@ const filters = {
     type: catalogPage.dataset.type,
     sort: "hit",
     method: "ascending",
+    filters: [],
+    timeline: null,
 
-    set updateFilters(value) {
-        for (const key in value) {
-            this[key] = value[key];
+    rerenderList() {
+        const filterData = {
+            type: this.type,
+            sort: this.sort,
+            method: this.method,
+            filters: this.filters
         }
-
-        const isSideFilter = !Object.keys(value).includes("sort") && !Object.keys(value).includes("method");
-
-        if (isSideFilter) {
-            console.log("update filters help bars")
-        }
-
-        console.log("update content with request to beck with filter data")
-        // submitForm('post', "/api/hits", filters).then(res => {
+        console.log(filterData)
+        console.log("rerender list")
+        // submitForm('post', "/api/hits", filterData).then(res => {
         //     //раскоментировать когда будут реальные запросы
         //     // readyToLoad = false;
         //     return res.json()
         // }).then(async data => {
         //     await insertNewPage(data)
-        //     currentBlock += 1;
-        //     readyToLoad = true;
         // }).catch(e => {
         //     console.error(e)
         //     // console.log(filters)
         //     //удалить ниже тестовые данные
         //     insertNewPage(test[currentBlock])
-        //     currentBlock++;
-        //     if (currentBlock === test.length) {
-        //         loader.style.display = "none";
-        //     }
         // });
-    }
+    },
+
+    set removeFilters(value) {
+        this.filters.splice(this.filters.indexOf(value), 1);
+
+        clearTimeout(this.timeline);
+        this.timeline = null;
+        this.timeline = setTimeout(() => {
+            this.rerenderList();
+            console.log("rerendered")
+        }, 50)
+    },
+
+    set updateFilters(value) {
+        const isSort = (typeof value === 'object' && value !== null)
+
+        if (isSort) {
+            for (const key in value) {
+                this[key] = value[key];
+            }
+        } else {
+            this.filters.push(value);
+        }
+
+        this.rerenderList();
+    },
 
 };
 
@@ -54,19 +75,38 @@ const options = {
     threshold: 0.25
 }
 
+const createSelectedItem = (el) => {
+    const data = el.dataset.filter;
+    const text = el.closest("label").innerText.split("(")[0].toLowerCase();
+    return `<li data-filter="${data}" class="js-selected-item selected__item">${text}</li>`
+}
+
 const handleSelectedFilters = (e) => {
     if (hasClass(e.target, null, "js-selected-item")) {
-        e.target.remove();
+        console.log(e.target)
+        filterList.querySelector(`input[data-filter='${e.target.dataset.filter}']`).click();
     }
 
     if (hasClass(e.target, null, "js-selected-reset")) {
-        selected.querySelector("ul").innerHTML = "";
-        //uncheck all checkboxes in side-filter
+        filterList.querySelectorAll("input:checked").forEach(checkbox => checkbox.click());
     }
 
 }
 
-const handleTopFilter = (e) => {
+const handleSideFilter = (e) => {
+    const value = e.currentTarget.dataset.filter;
+    if (e.currentTarget.checked) {
+        filters.updateFilters = value;
+        const newSelectedItem = createSelectedItem(e.currentTarget);
+        selectedList.insertAdjacentHTML("beforeend", newSelectedItem);
+    } else {
+        filters.removeFilters = value;
+        selectedList.querySelector(`[data-filter="${value}"]`).remove();
+
+    }
+}
+
+const handleTopSort = (e) => {
     const el = e.target;
     if (hasClass(e.target, null, "js-sort-filter") && !hasClass(e.target, null, "_active")) {
         el.parentElement.querySelector(".js-sort-filter._active").classList.remove("_active");
@@ -81,6 +121,34 @@ const handleTopFilter = (e) => {
     }
 }
 
+const insertNewPage = (content) => {
+    catalogContainer.insertAdjacentHTML("beforeend", content);
+}
+
+const handleIntersect = (entries, observer) => {
+    if (entries[0].isIntersecting && readyToLoad) {
+        submitForm('post', "/api/hits", filters).then(res => {
+            //раскоментировать когда будут реальные запросы
+            // readyToLoad = false;
+            return res.json()
+        }).then(async data => {
+            await insertNewPage(data)
+            currentBlock += 1;
+            readyToLoad = true;
+        }).catch(e => {
+            console.error(e)
+            // console.log(filters)
+            //удалить ниже тестовые данные
+            insertNewPage(test[currentBlock])
+            currentBlock++;
+            if (currentBlock === test.length) {
+                loader.style.display = "none";
+            }
+        });
+
+
+    }
+}
 
 // ниже генератор тестовых данных удалить
 
@@ -158,41 +226,14 @@ const test = getDummyPages(dummyData)
 
 // конец генератор тестовых данных
 
-const insertNewPage = (content) => {
-    catalogContainer.insertAdjacentHTML("beforeend", content);
-}
 
-const handleIntersect = (entries, observer) => {
-    if (entries[0].isIntersecting && readyToLoad) {
-        submitForm('post', "/api/hits", filters).then(res => {
-            //раскоментировать когда будут реальные запросы
-            // readyToLoad = false;
-            return res.json()
-        }).then(async data => {
-            await insertNewPage(data)
-            currentBlock += 1;
-            readyToLoad = true;
-        }).catch(e => {
-            console.error(e)
-            // console.log(filters)
-            //удалить ниже тестовые данные
-            insertNewPage(test[currentBlock])
-            currentBlock++;
-            if (currentBlock === test.length) {
-                loader.style.display = "none";
-            }
-        });
-
-
-    }
-}
-
-topFilter.onclick = handleTopFilter;
+filterItems.forEach(checkbox => checkbox.onchange = handleSideFilter);
+topFilter.onclick = handleTopSort;
 selected.onclick = handleSelectedFilters;
 const observer = new IntersectionObserver(handleIntersect,
     options);
 observer.observe(loader);
 
-productCardClickEvents(catalogContainer)
+productCardClickEvents(catalogContainer);
 
 

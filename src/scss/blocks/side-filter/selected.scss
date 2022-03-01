@@ -10,14 +10,14 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    grid-gap: 1.7rem;
+    grid-gap: .7rem;
   }
 
   &__item {
     cursor: pointer;
     padding: .4rem .8rem;
-    border: .1rem solid variables.$green-bg;
-    color: variables.$green-bg;
+    border: .1rem solid variables.$green;
+    color: variables.$green;
     display: flex;
     align-items: center;
 
@@ -35,10 +35,10 @@
 
   &__reset {
     margin-top: 1.4rem;
-    color: variables.$blue;
+    color: variables.$link-blue;
 
     &:after {
-      background: variables.$blue;
+      background: variables.$link-blue;
     }
   }
 }
