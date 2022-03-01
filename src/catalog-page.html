@@ -28,28 +28,66 @@
             <h2 class="top-filter__title">
                 Сортировать по:
             </h2>
-            <button data-filter="hit" class="js-sort-filter top-filter__item _active">
+            <button data-sort="hit" class="js-sort-filter top-filter__item _active">
                 хиты продаж
             </button>
-            <button data-filter="new" class="js-sort-filter top-filter__item">
+            <button data-sort="new" class="js-sort-filter top-filter__item">
                 новинки
             </button>
-            <button data-filter="name" class="js-sort-filter top-filter__item">
+            <button data-sort="name" class="js-sort-filter top-filter__item">
                 название
             </button>
-            <button data-filter="ascending" class="js-method-filter top-filter__arrow _active">
+            <button data-method="ascending" class="js-method-filter top-filter__arrow _active">
                 <svg class="analyzer__pin">
                     <use xlink:href="images/sprite.svg#filter-arrow"></use>
                 </svg>
             </button>
-            <button data-filter="descending" class="js-method-filter top-filter__arrow">
+            <button data-method="descending" class="js-method-filter top-filter__arrow">
                 <svg class="analyzer__pin">
                     <use xlink:href="images/sprite.svg#filter-arrow-descending"></use>
                 </svg>
             </button>
         </div>
         <div class="js-filter-side catalog-page__side-filter side-filter">
-            side block
+            <div class="side-filter__container">
+                <div class="js-selected side-filter__item selected">
+                    <h2 class="selected__title _side-filter-title _lowercase">Вы выбрали:</h2>
+                    <ul class="selected__list">
+                        <li class="js-selected-item selected__item">проблемная</li>
+                        <li class="js-selected-item selected__item">проблемная</li>
+                        <li class="js-selected-item selected__item">проблемная</li>
+                    </ul>
+                    <button class="js-selected-reset selected__reset _underlined _blue">Очистить все</button>
+                </div>
+
+                <div class="side-filter__item">
+                    <h2 class="side-filter__title _side-filter-title">тип продукта</h2>
+
+                    <ul class="side-filter__filter-list">
+                        <li class="side-filter__filter">
+                            <label class="main-checkbox">Крем для лица и тела (20)
+                                <input type="checkbox">
+                                <span class="main-checkbox__checkmark"></span>
+                            </label>
+                        </li>
+                        <li class="side-filter__filter">
+                            <label class="main-checkbox">Маска для лица (12)
+                                <input type="checkbox">
+                                <span class="main-checkbox__checkmark"></span>
+                            </label>
+                        </li>
+                        <li class="side-filter__filter">
+                            <label class="main-checkbox">Лосьен-тоник для лица (11)
+                                <input type="checkbox">
+                                <span class="main-checkbox__checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
         </div>
         <ul class="js-product-list catalog-page__product-list">
 

@@ -1,0 +1,62 @@
+@use "../common/variables";
+
+.main-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: .8rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: variables.$font-light;
+  color: variables.$black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.main-checkbox__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: variables.$white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border: .1rem solid variables.$black;
+}
+
+.main-checkbox input:checked ~ .main-checkbox__checkmark {
+  background-color: variables.$green-bg;
+  border-color: variables.$green-bg;
+}
+
+.main-checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.main-checkbox input:checked ~ .main-checkbox__checkmark:after {
+  display: block;
+}
+
+.main-checkbox .main-checkbox__checkmark:after {
+  left: unset;
+  top: 0.2rem;
+  width: .6rem;
+  height: .9rem;
+  border: solid white;
+  border-width: 0 .3rem .3rem 0;
+  transform: rotate(45deg);
+}

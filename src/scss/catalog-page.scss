@@ -15,9 +15,12 @@
 @use "components/main-btn";
 @use "components/product-card";
 @use "components/loader";
+@use "components/main-checkbox";
+
+//blocks
+@use "blocks/side-filter/side-filter";
 
 .catalog-page {
-
 
   &__product-list {
     grid-area: catalog;
@@ -43,7 +46,13 @@
     grid-template-areas:
         "title title"
         "top-filter top-filter"
-        "side-filter catalog";
+        "side-filter catalog"
+        "side-filter loader";
+  }
+
+
+  &__loader {
+    grid-area: loader;
   }
 
   &__product-page {

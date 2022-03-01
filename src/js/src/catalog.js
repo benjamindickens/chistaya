@@ -2,15 +2,50 @@ import {getNoun, productCardClickEvents, hasClass} from "./common";
 import {submitForm} from "./request";
 
 const catalogPage = document.querySelector(".js-catalog-page");
-const catalogContainer = document.querySelector(".js-product-list ");
+const catalogContainer = document.querySelector(".js-product-list");
 const topFilter = document.querySelector(".js-top-filter")
 const loader = document.querySelector("#loader");
+const selected = document.querySelector(".js-selected");
 let currentBlock = 0;
 let readyToLoad = true;
+
 const filters = {
     type: catalogPage.dataset.type,
     sort: "hit",
-    method: "ascending"
+    method: "ascending",
+
+    set updateFilters(value) {
+        for (const key in value) {
+            this[key] = value[key];
+        }
+
+        const isSideFilter = !Object.keys(value).includes("sort") && !Object.keys(value).includes("method");
+
+        if (isSideFilter) {
+            console.log("update filters help bars")
+        }
+
+        console.log("update content with request to beck with filter data")
+        // submitForm('post', "/api/hits", filters).then(res => {
+        //     //раскоментировать когда будут реальные запросы
+        //     // readyToLoad = false;
+        //     return res.json()
+        // }).then(async data => {
+        //     await insertNewPage(data)
+        //     currentBlock += 1;
+        //     readyToLoad = true;
+        // }).catch(e => {
+        //     console.error(e)
+        //     // console.log(filters)
+        //     //удалить ниже тестовые данные
+        //     insertNewPage(test[currentBlock])
+        //     currentBlock++;
+        //     if (currentBlock === test.length) {
+        //         loader.style.display = "none";
+        //     }
+        // });
+    }
+
 };
 
 const options = {
@@ -19,14 +54,30 @@ const options = {
     threshold: 0.25
 }
 
+const handleSelectedFilters = (e) => {
+    if (hasClass(e.target, null, "js-selected-item")) {
+        e.target.remove();
+    }
+
+    if (hasClass(e.target, null, "js-selected-reset")) {
+        selected.querySelector("ul").innerHTML = "";
+        //uncheck all checkboxes in side-filter
+    }
+
+}
+
 const handleTopFilter = (e) => {
     const el = e.target;
     if (hasClass(e.target, null, "js-sort-filter") && !hasClass(e.target, null, "_active")) {
         el.parentElement.querySelector(".js-sort-filter._active").classList.remove("_active");
         el.classList.add("_active")
+        const newValue = Object.assign({}, el.dataset);
+        filters.updateFilters = newValue;
     } else if (hasClass(e.target, null, "js-method-filter")) {
         el.parentElement.querySelector(".js-method-filter._active").classList.remove("_active");
         el.classList.add("_active")
+        const newValue = Object.assign({}, el.dataset);
+        filters.updateFilters = newValue;
     }
 }
 
@@ -105,9 +156,7 @@ const getDummyPages = (dummyData) => {
 
 const test = getDummyPages(dummyData)
 
-
 // конец генератор тестовых данных
-
 
 const insertNewPage = (content) => {
     catalogContainer.insertAdjacentHTML("beforeend", content);
@@ -125,7 +174,7 @@ const handleIntersect = (entries, observer) => {
             readyToLoad = true;
         }).catch(e => {
             console.error(e)
-            console.log(filters)
+            // console.log(filters)
             //удалить ниже тестовые данные
             insertNewPage(test[currentBlock])
             currentBlock++;
@@ -139,6 +188,7 @@ const handleIntersect = (entries, observer) => {
 }
 
 topFilter.onclick = handleTopFilter;
+selected.onclick = handleSelectedFilters;
 const observer = new IntersectionObserver(handleIntersect,
     options);
 observer.observe(loader);
