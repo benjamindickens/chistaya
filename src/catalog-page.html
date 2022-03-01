@@ -782,7 +782,7 @@
         <div class="js-filter-side catalog-page__side-filter side-filter">
             <div class="side-filter__container">
                 <button class="js-side-filter-close side-filter__close _mobile"></button>
-                <div class="js-selected side-filter__item selected">
+                <div class="js-selected side-filter__selected selected">
                     <h2 class="selected__title _side-filter-title _lowercase">Вы выбрали:</h2>
                     <ul class="selected__list">
 
@@ -790,29 +790,60 @@
                     <button class="js-selected-reset selected__reset _underlined _blue">Очистить все</button>
                 </div>
 
-                <div class="side-filter__item">
-                    <h2 class="side-filter__title _side-filter-title">тип продукта</h2>
 
-                    <ul class="js-filter-list side-filter__filter-list">
-                        <li class="side-filter__filter">
-                            <label class="main-checkbox">Крем для лица и тела (20)
-                                <input data-filter="0" type="checkbox">
-                                <span class="main-checkbox__checkmark"></span>
-                            </label>
-                        </li>
-                        <li class="side-filter__filter">
-                            <label class="main-checkbox">Маска для лица (12)
-                                <input data-filter="1" type="checkbox">
-                                <span class="main-checkbox__checkmark"></span>
-                            </label>
-                        </li>
-                        <li class="side-filter__filter">
-                            <label class="main-checkbox">Лосьен-тоник для лица (11)
-                                <input data-filter="2" type="checkbox">
-                                <span class="main-checkbox__checkmark"></span>
-                            </label>
-                        </li>
-                    </ul>
+                <div class="js-filters-accordion side-filter__accordion accordion-container">
+                    <div class="side-filter__item ac">
+                        <h2 class="side-filter__title _side-filter-title ac-header">
+                            <button class="ac-trigger">тип продукта</button>
+                        </h2>
+
+                        <ul class="js-filter-list side-filter__filter-list ac-panel">
+                            <li class="side-filter__filter">
+                                <label class="main-checkbox">Крем для лица и тела (20)
+                                    <input data-filter="0" type="checkbox">
+                                    <span class="main-checkbox__checkmark"></span>
+                                </label>
+                            </li>
+                            <li class="side-filter__filter">
+                                <label class="main-checkbox">Маска для лица (12)
+                                    <input data-filter="1" type="checkbox">
+                                    <span class="main-checkbox__checkmark"></span>
+                                </label>
+                            </li>
+                            <li class="side-filter__filter">
+                                <label class="main-checkbox">Лосьен-тоник для лица (11)
+                                    <input data-filter="2" type="checkbox">
+                                    <span class="main-checkbox__checkmark"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="side-filter__item ac">
+                        <h2 class="side-filter__title _side-filter-title ac-header">
+                            <button class="ac-trigger">линейка</button>
+                        </h2>
+
+                        <ul class="js-filter-list side-filter__filter-list ac-panel">
+                            <li class="side-filter__filter">
+                                <label class="main-checkbox">Крем для лица и тела (20)
+                                    <input data-filter="0" type="checkbox">
+                                    <span class="main-checkbox__checkmark"></span>
+                                </label>
+                            </li>
+                            <li class="side-filter__filter">
+                                <label class="main-checkbox">Маска для лица (12)
+                                    <input data-filter="1" type="checkbox">
+                                    <span class="main-checkbox__checkmark"></span>
+                                </label>
+                            </li>
+                            <li class="side-filter__filter">
+                                <label class="main-checkbox">Лосьен-тоник для лица (11)
+                                    <input data-filter="2" type="checkbox">
+                                    <span class="main-checkbox__checkmark"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

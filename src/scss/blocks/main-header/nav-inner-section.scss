@@ -26,16 +26,6 @@
     }
   }
 
-  &__item, &__item.ac {
-    margin: 0 !important;
-    border: none;
-    border-bottom: 0.1rem solid variables.$light-gray;
-  }
-
-  &__item:nth-child(1) {
-    border-top: 0.1rem solid #B3BBB6;
-  }
-
   &__title {
     display: grid;
     align-items: center;
@@ -51,10 +41,20 @@
       transition: transform .3s;
       transform: rotate(90deg);
       background-repeat: no-repeat;
+      background-size: contain;
       background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.34766 17.8572L16.4289 9.77596L8.34766 1.69474' stroke='%23001D0B'/%3E%3C/svg%3E%0A");
     }
   }
 
+  &__item, &__item.ac {
+    margin: 0 !important;
+    border: none;
+    border-bottom: 0.1rem solid variables.$light-gray;
+  }
+
+  &__item:nth-child(1) {
+    border-top: 0.1rem solid #B3BBB6;
+  }
 
   &__item .ac-header .ac-trigger, &__title {
     padding: 1.6rem 0;

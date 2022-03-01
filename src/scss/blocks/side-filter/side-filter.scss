@@ -9,6 +9,60 @@
     width: 100%;
   }
 
+
+  &__title {
+    display: grid;
+    position: relative;
+    align-items: center;
+
+    &:after {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 2rem;
+      height: 2rem;
+      content: "";
+      transition: transform .3s;
+      transform: rotate(90deg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.34766 17.8572L16.4289 9.77596L8.34766 1.69474' stroke='%23001D0B'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  &__item, &__item.ac {
+    margin: 0 !important;
+    border: none;
+    border-bottom: 0.1rem solid variables.$light-gray;
+  }
+
+  &__item .ac-header .ac-trigger, &__title {
+    padding: 2rem 0;
+    font-family: variables.$font-regular;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: variables.$black;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &__item.ac .ac-header .ac-trigger {
+    &:after {
+      display: none;
+    }
+  }
+
+  &__item.ac .ac-trigger:focus {
+    color: variables.$black;
+  }
+
+  &__item.is-active &__title {
+
+    &:after {
+      transform: rotate(270deg);
+    }
+  }
+
   &__container {
     box-shadow: 0px .2rem 1rem #5656561A;
     padding: 0 1.6rem 1.6rem;
@@ -33,9 +87,17 @@
     background-size: contain;
   }
 
-  &__item {
-    padding: 1.6rem 0;
+  &__selected {
+    padding: 2rem 0;
     border-bottom: .1rem solid variables.$light-gray;
+  }
+
+  &__item {
+    padding: 0;
+
+    & .side-filter__filter:last-child {
+      margin-bottom: 2rem;
+    }
   }
 
 

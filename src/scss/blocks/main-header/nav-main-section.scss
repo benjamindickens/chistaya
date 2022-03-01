@@ -10,11 +10,6 @@
   left: -100%;
   z-index: 2;
 
-  & .nav-main-section__item:last-of-type {
-    border-color: transparent;
-    padding-bottom: 4rem;
-  }
-
   &._opened {
     left: 0;
     transition: background .3s, left 0s;
@@ -32,20 +27,6 @@
     transform: translateX(-100%);
     transition: transform .3s;
     background: variables.$white;
-  }
-
-  &__item, &__item.ac {
-    margin: 0 1.6rem !important;
-    border: none;
-    border-bottom: 0.1rem solid variables.$light-gray;
-  }
-
-  &__item.ac.is-active {
-    border-bottom: none;
-  }
-
-  &__item.ac:nth-child(1) {
-    border-top: 0.1rem solid #B3BBB6;
   }
 
   &__title {
@@ -68,6 +49,24 @@
     }
   }
 
+  & .nav-main-section__item:last-of-type {
+    border-color: transparent;
+    padding-bottom: 4rem;
+  }
+
+  &__item, &__item.ac {
+    margin: 0 1.6rem !important;
+    border: none;
+    border-bottom: 0.1rem solid variables.$light-gray;
+  }
+
+  &__item.ac.is-active {
+    border-bottom: none;
+  }
+
+  &__item.ac:nth-child(1) {
+    border-top: 0.1rem solid #B3BBB6;
+  }
 
   &__item .ac-header .ac-trigger, &__title {
     padding: 1.7rem 0;

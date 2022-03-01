@@ -2,6 +2,8 @@ import {getNoun, productCardClickEvents, hasClass, setMobileMenuHeight, getOneRe
 import {submitForm} from "./request";
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
 
 const catalogPage = document.querySelector(".js-catalog-page");
 const catalogContainer = document.querySelector(".js-product-list");
@@ -76,6 +78,11 @@ const filters = {
     },
 
 };
+
+const filterAccordion = new Accordion(".js-filters-accordion", {
+    duration: 300,
+    showMultiple: true,
+});
 
 const handleSideMenuVisibility = () => {
     sideFilterContainer.classList.toggle("_opened");
@@ -247,6 +254,8 @@ sideFilterContainer.addEventListener("click", (e) => {
 
 if (isMobile) {
     setMobileMenuHeight(sideFilterContainer, oneRemValue, 2, header);
+} else {
+    filterAccordion.openAll()
 }
 
 const observer = new IntersectionObserver(handleIntersect,
