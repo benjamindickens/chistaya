@@ -246,6 +246,14 @@ main {
   }
 }
 
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity .3s;
+}
 
 @media (max-width: 667px) {
   main {

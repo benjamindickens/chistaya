@@ -1,5 +1,3 @@
-@use "../common/variables";
-
 .loader-container {
   justify-content: center;
   display: grid;
@@ -7,7 +5,7 @@
   margin-top: 3.2rem;
 
   &__lds-spinner {
-    color: variables.$green-bg;
+    color: black;
     display: inline-block;
     position: relative;
     width: 8rem;
@@ -27,7 +25,7 @@
       width: .6rem;
       height: 1.8rem;
       border-radius: 20%;
-      color: variables.$green-bg;
+      background: black;
     }
 
     & div:nth-child(1) {

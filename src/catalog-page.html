@@ -15,7 +15,7 @@
 
 <main data-type="face" class="js-catalog-page catalog-page">
 
-    <div class="detail-page__breadcrumb breadcrumb">
+    <div class="catalog-page__breadcrumb breadcrumb">
         <ul class="js-breadcrumb breadcrumb__list _width-sizer">
             <li class="breadcrumb__item" data-link="catalog-page.html">Главная</li>
             <li class="breadcrumb__item" data-link="main-page.html">Лицо</li>
@@ -24,8 +24,10 @@
 
     <div class="catalog-page__container _width-sizer">
         <div class="catalog-page__title _detail-section-title _lowercase">Уходовая косметика для лица</div>
+
+        <button class="js-slide-filter-btn catalog-page__side-filter-btn main-btn _green _mobile"><span>ФИЛЬТР</span></button>
         <div class="js-top-filter catalog-page__top-filter top-filter">
-            <h2 class="top-filter__title">
+            <h2 class="top-filter__title _desktop">
                 Сортировать по:
             </h2>
             <button data-sort="hit" class="js-sort-filter top-filter__item _active">
@@ -87,7 +89,7 @@
         <ul class="js-product-list catalog-page__product-list">
 
         </ul>
-        <div id="loader" class="loader-container">
+        <div id="loader" class="catalog-page__loader loader-container">
             <div class="loader-container__lds-spinner">
                 <div></div>
                 <div></div>
@@ -103,8 +105,13 @@
                 <div></div>
             </div>
         </div>
-
     </div>
+    <picture class="catalog-page__bg">
+        <source media="(max-width: 667px)" type="image/png"
+                srcset="images/mobile/catalog/bg.png"/>
+        <img src="images/desktop/catalog/bg.png"
+             alt="bg img">
+    </picture>
 </main>
 
 </body>

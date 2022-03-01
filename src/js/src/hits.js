@@ -2,6 +2,8 @@ import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
 import {getNoun, productCardClickEvents, detectMobile} from "./common.js";
 import {submitForm} from "./request.js";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const hitsSliderContainer = document.querySelector(".js-hits-slider");
 const isMobile = detectMobile();
@@ -77,7 +79,7 @@ const getSlide = (content) => {
                         <div class="product-card__type-section">
                             ${insertTypeBar(content.type)}
                         </div>
-                        <img class="product-card__img" src="${content.image}" alt="product">
+                        <img class="product-card__img lazyload" data-src="${content.image}" alt="product">
                         <h3 class="product-card__title">
                             ${content.title}
                         </h3>
@@ -94,7 +96,7 @@ const getSlide = (content) => {
         "отзыва", "отзывов")}</a>
                         </div>
                         <button class="js-buy-btn product-card__btn main-btn _green">
-                            Купить
+                        <span>Купить</span>                     
                         </button>
                     </div>`
 }

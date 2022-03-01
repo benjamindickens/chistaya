@@ -1,5 +1,7 @@
 import {getNoun, productCardClickEvents, hasClass} from "./common";
 import {submitForm} from "./request";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const catalogPage = document.querySelector(".js-catalog-page");
 const catalogContainer = document.querySelector(".js-product-list");
@@ -26,19 +28,16 @@ const filters = {
             method: this.method,
             filters: this.filters
         }
-        console.log(filterData)
+
         console.log("rerender list")
-        // submitForm('post', "/api/hits", filterData).then(res => {
-        //     //раскоментировать когда будут реальные запросы
-        //     // readyToLoad = false;
+
+        //раскоментировать когда будут реальные запросы
+        // submitForm('post', "/api/product-list", filterData).then(res => {
         //     return res.json()
         // }).then(async data => {
-        //     await insertNewPage(data)
+        //     catalogContainer.innerHTML = data;
         // }).catch(e => {
         //     console.error(e)
-        //     // console.log(filters)
-        //     //удалить ниже тестовые данные
-        //     insertNewPage(test[currentBlock])
         // });
     },
 
@@ -177,7 +176,7 @@ const getSlide = (content) => {
 <div class="product-card__type-section">
 ${insertTypeBar(content.type)}
 </div>
-        <img class="product-card__img" src="${content.image}" alt="product">
+        <img class="product-card__img lazyload" data-src="${content.image}" alt="product">
         <h3 class="product-card__title">
             ${content.title}
         </h3>
@@ -193,7 +192,7 @@ ${insertTypeBar(content.type)}
         "отзыва", "отзывов")}</a>
         </div>
         <button class="js-buy-btn product-card__btn main-btn _green">
-            Купить
+            <span>Купить</span>
         </button>
     </div>`
 }
@@ -230,6 +229,8 @@ const test = getDummyPages(dummyData)
 filterItems.forEach(checkbox => checkbox.onchange = handleSideFilter);
 topFilter.onclick = handleTopSort;
 selected.onclick = handleSelectedFilters;
+window.onbeforeunload = () => window.scrollTo(0, 0);
+
 const observer = new IntersectionObserver(handleIntersect,
     options);
 observer.observe(loader);

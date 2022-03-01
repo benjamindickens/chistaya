@@ -19,7 +19,12 @@
     border: .1rem solid transparent;
     font-family: variables.$font-light;
     font-size: 1.2rem;
-    text-transform: uppercase;
+
+    @media (max-width: variables.$mobile) {
+      margin-right: 0.2rem;
+      padding: .4rem .6rem;
+      font-size: 1.4rem;
+    }
 
     &._active {
       border-color: variables.$green;
@@ -31,9 +36,13 @@
 
     &:nth-child(1) {
       margin-left: 1.6rem;
+      @media (max-width: variables.$mobile) {
+        margin-left: .8rem;
+      }
     }
 
     margin-left: .8rem;
+
 
     & svg {
       stroke: variables.$light-gray;
