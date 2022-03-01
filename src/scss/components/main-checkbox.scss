@@ -36,6 +36,7 @@
   border: .1rem solid variables.$black;
 }
 
+
 .main-checkbox input:checked ~ .main-checkbox__checkmark {
   background-color: variables.$green-bg;
   border-color: variables.$green-bg;

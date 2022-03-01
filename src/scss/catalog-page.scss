@@ -84,8 +84,24 @@
 
     @media (max-width: variables.$mobile) {
       grid-area: unset;
-      position: absolute;
-      display: none;
+      position: fixed;
+      top: calc(7.3rem + 4rem);
+      width: 100%;
+      background: transparent;
+      overflow: scroll;
+      transition: background .3s, left .3s .6s;
+      left: -100%;
+      z-index: 4;
+
+      &._opened {
+        left: 0;
+        transition: background .3s, left 0s;
+        background: rgba(0, 0, 0, .6);
+
+        & .side-filter__container {
+          transform: translateX(0);
+        }
+      }
     }
   }
 

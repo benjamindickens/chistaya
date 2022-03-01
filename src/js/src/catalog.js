@@ -1,4 +1,4 @@
-import {getNoun, productCardClickEvents, hasClass} from "./common";
+import {getNoun, productCardClickEvents, hasClass, setMobileMenuHeight, getOneRem, detectMobile} from "./common";
 import {submitForm} from "./request";
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
@@ -9,11 +9,20 @@ const topFilter = document.querySelector(".js-top-filter")
 const loader = document.querySelector("#loader");
 const selected = document.querySelector(".js-selected");
 const selectedList = document.querySelector(".js-selected ul");
+const sideFilterBtn = document.querySelector(".js-slide-filter-btn");
+const sideFilterContainer = document.querySelector(".js-filter-side");
 const filterList = document.querySelector(".js-filter-list");
 const filterItems = document.querySelectorAll(".js-filter-list input");
+const header = document.querySelector(".js-header");
 let currentBlock = 0;
 let readyToLoad = true;
-
+let oneRemValue = getOneRem();
+let isMobile = detectMobile();
+const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.25
+}
 const filters = {
     type: catalogPage.dataset.type,
     sort: "hit",
@@ -68,11 +77,10 @@ const filters = {
 
 };
 
-const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.25
+const handleSideMenuVisibility = () => {
+    sideFilterContainer.classList.toggle("_opened");
 }
+
 
 const createSelectedItem = (el) => {
     const data = el.dataset.filter;
@@ -225,11 +233,21 @@ const test = getDummyPages(dummyData)
 
 // конец генератор тестовых данных
 
-
+window.onbeforeunload = () => window.scrollTo(0, 0);
 filterItems.forEach(checkbox => checkbox.onchange = handleSideFilter);
 topFilter.onclick = handleTopSort;
 selected.onclick = handleSelectedFilters;
-window.onbeforeunload = () => window.scrollTo(0, 0);
+sideFilterBtn.onclick = handleSideMenuVisibility;
+
+sideFilterContainer.addEventListener("click", (e) => {
+    if (hasClass(e.target, "||", "js-side-filter-close", "js-filter-side")) {
+        handleSideMenuVisibility();
+    }
+})
+
+if (isMobile) {
+    setMobileMenuHeight(sideFilterContainer, oneRemValue, 2, header);
+}
 
 const observer = new IntersectionObserver(handleIntersect,
     options);

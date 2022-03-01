@@ -31,9 +31,16 @@ const productCardClickEvents = (container) => {
     })
 }
 
+const setMobileMenuHeight = (container, oneRemValue, additionHeightValueInRem = 0, ...otherElements) => {
+    const sumOfElementsHeight = otherElements.reduce((prev, el) => prev + el.offsetHeight, 0);
+    const screenHeight = window.screen.availHeight;
+    container.style.height = (screenHeight - sumOfElementsHeight) / 10 + additionHeightValueInRem + "rem";
+}
+
+
 const detectMobile = () => {
     return window.innerWidth < 667;
 }
 
 
-export {hasClass, getNoun, productCardClickEvents, detectMobile, getOneRem}
+export {hasClass, getNoun, productCardClickEvents, detectMobile, getOneRem, setMobileMenuHeight}

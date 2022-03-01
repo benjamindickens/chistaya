@@ -15,6 +15,7 @@
   &__nav-main-section {
     position: fixed;
     top: 7.3rem;
+    z-index: 99;
   }
 
   &__burger-btn {

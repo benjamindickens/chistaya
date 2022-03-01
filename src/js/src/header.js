@@ -1,6 +1,6 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
-import {hasClass, detectMobile, getOneRem} from "./common.js";
+import {hasClass, detectMobile, getOneRem, setMobileMenuHeight} from "./common.js";
 
 const searchContainer = document.querySelector(".js-search-container");
 const search = document.querySelector(".js-search");
@@ -15,12 +15,6 @@ let innerAccordions = null;
 
 const mainCollapsesMenu = document.querySelector(".js-nav-main-section")
 const innerCollapsesMenu = [...document.querySelectorAll(".js-nav-inner-section")];
-
-const setMobileMenuHeight = (container, oneRemValue, additionHeightValueInRem = 0, ...otherElements) => {
-    const sumOfElementsHeight = otherElements.reduce((prev, el) => prev + el.offsetHeight, 0);
-    const screenHeight = window.screen.availHeight;
-    container.style.height = (screenHeight - sumOfElementsHeight) / 10 + additionHeightValueInRem + "rem";
-}
 
 const searchClickHandler = (e) => {
     if (hasClass(e.target, null, "js-open-search")) {
