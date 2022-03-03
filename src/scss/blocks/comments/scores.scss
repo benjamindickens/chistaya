@@ -6,6 +6,11 @@
   display: grid;
   justify-items: center;
 
+  @media (max-width: variables.$mobile) {
+    padding: 2.5rem 1.6rem;
+    justify-items: start;
+  }
+
   &__title {
     font-size: 1.6rem;
     line-height: 2rem;
@@ -18,11 +23,21 @@
     align-items: center;
     margin-top: 2.4rem;
     margin-left: 4rem;
+
+    @media (max-width: variables.$mobile) {
+      margin-top: 0.4rem;
+      margin-left: 0;
+      display: grid;
+    }
   }
 
   &__score-container {
     display: grid;
     margin-right: 7.4rem;
+
+    @media (max-width: variables.$mobile) {
+      justify-content: start;
+    }
   }
 
   &__score-num {
@@ -43,6 +58,10 @@
     font-size: 1.2rem;
     line-height: 1.56rem;
     font-family: variables.$font-regular;
+
+    @media (max-width: variables.$mobile) {
+      margin-top: 4rem;
+    }
 
     &-title {
       margin-bottom: .6rem;
@@ -104,7 +123,11 @@
     margin-left: 6.6rem;
     padding: 1.2rem 2.4rem;
     transform: translateY(25%);
+
+    @media (max-width: variables.$mobile) {
+      margin-left: 0;
+      margin-top: 1.4rem;
+      grid-row: 2 /span 1;
+    }
   }
-
-
 }
