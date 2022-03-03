@@ -18,6 +18,7 @@
 @use "blocks/circles-banner/circles-banner";
 @use "blocks/sugestions/suggestions";
 @use "blocks/active-elements/active-elements";
+@use "blocks/comments/comments";
 
 
 //page styles
@@ -28,4 +29,5 @@
   @media (max-width: variables.$mobile) {
     background: none;
   }
+
 }

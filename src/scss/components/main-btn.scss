@@ -22,4 +22,12 @@
     background: variables.$blue;
     color: variables.$white;
   }
+
+  &._outlined {
+    height: unset;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: variables.$black;
+    border: .1rem solid variables.$black;
+  }
 }
