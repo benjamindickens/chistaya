@@ -1,0 +1,108 @@
+@use "../common/variables";
+
+.select {
+  position: relative;
+}
+
+.select__title {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.3rem;
+  font-family: variables.$font-medium;
+}
+
+.select__toggle {
+  align-items: center;
+  background: variables.$white;
+  border-radius: 2px;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid black;
+  padding: 1.2rem 3.8rem 1.2rem 1.6rem;
+  color: black;
+  justify-content: space-between;
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  min-width: 17rem;
+}
+
+.select__toggle::before {
+  content: '';
+  position: absolute;
+  right: 2.5rem;
+  display: block;
+  width: .1rem;
+  height: 1.9rem;
+  background: variables.$black;
+}
+
+.select__toggle::after {
+  content: "";
+  position: absolute;
+  right: 0.9rem;
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  margin-left: 1rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 330'%3E%3Cpath d='M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,85.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,159.202,250.606,154.389z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+.select__toggle:focus {
+  outline: none;
+}
+
+.select_show .select__toggle::after {
+  transform: rotate(-90deg);
+}
+
+.select__dropdown {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  border: .1rem solid variables.$black;
+  overflow-y: auto;
+  z-index: 2;
+  background-color: #fff;
+  border-radius: 0 0 2px 2px;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.select_show .select__dropdown {
+  display: block;
+}
+
+.select_show .select__backdrop {
+  display: block;
+}
+
+.select__options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.select__option {
+  padding: 1.2rem 1.6rem;
+  cursor: pointer;
+}
+
+.select__option:nth-child(odd) {
+  background: variables.$light-green;
+}
+
+.select__option_selected {
+
+}
+
+.select__option:hover {
+
+}

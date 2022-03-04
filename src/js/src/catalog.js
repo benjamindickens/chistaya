@@ -88,7 +88,6 @@ const handleSideMenuVisibility = () => {
     sideFilterContainer.classList.toggle("_opened");
 }
 
-
 const createSelectedItem = (el) => {
     const data = el.dataset.filter;
     const text = el.closest("label").innerText.split("(")[0].toLowerCase();

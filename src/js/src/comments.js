@@ -1,7 +1,10 @@
+import Swiper from 'swiper/swiper-bundle.min';
+import 'swiper/swiper-bundle.min.css';
 import {getNoun} from "./common";
+import {submitForm} from "./request.js";
 
 const scoreList = document.querySelector(".js-score-list");
-const scoreText = document.querySelector(".js-score-text");
+const scoreTexts = document.querySelectorAll(".js-score-text");
 const averageNumContainer = document.querySelector(".js-score-num");
 let averageNum = 0;
 let numOfReviews = 0;
@@ -16,9 +19,9 @@ const dummyData = [
     {id: 5, stars: "5", title: "review 5", text: "kekeke", likes: "3", author: "Наталия", date: "11.12.2021"}
 ]
 
-const setProgress = async (container) => {
+const setProgress = async (container, receivedData) => {
 
-    const data = await formatData(dummyData);
+    const data = await formatData(receivedData);
 
     for (const key in data) {
         const scoreNum = key.substring(1);
@@ -35,8 +38,8 @@ const setProgress = async (container) => {
 
     averageNumContainer.innerText = (averageNum / numOfReviews).toFixed(1);
 
-    scoreText.innerText = getNoun(numOfReviews, "отзыв",
-        "отзыва", "отзывов");
+    scoreTexts.forEach(el => el.innerText = getNoun(numOfReviews, "отзыв",
+        "отзыва", "отзывов"));
 
 }
 
@@ -57,5 +60,27 @@ const formatData = async (data) => {
     return result;
 };
 
-setProgress(scoreList, numOfReviews);
+submitForm('get', "/api/hits").then(res => res.json()).then(data => {
+    setProgress(scoreList, data);
+}).catch(e => {
+    console.error(e)
+    //удалить ниже тестовые данные
+    setProgress(scoreList, dummyData);
+});
+
+
+const reviewSlider = new Swiper(".js-review-slider", {
+    slidesPerView: 1,
+    followFinger: false,
+    effect: 'fade',
+    loop: true,
+    fadeEffect: {
+        crossFade: true
+    },
+    watchSlidesVisibility: true,
+});
+
+
+
+
 

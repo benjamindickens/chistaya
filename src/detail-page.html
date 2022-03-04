@@ -334,8 +334,8 @@
             </h1>
             <div class="scores__content">
                 <div class="scores__score-container">
-                    <div class="js-score-num scores__score-num"></div>
-                    <div class="js-score-text scores__score-all"></div>
+                    <div class="js-score-num scores__reviews-num"></div>
+                    <div class="js-score-text scores__amount-reviews"></div>
                 </div>
                 <div class="scores__representation">
                     <h3 class="scores__representation-title">Снимок рейтинга</h3>
@@ -346,7 +346,293 @@
                 <button class="scores__add-btn main-btn _outlined"><span>Написать рецензию</span></button>
             </div>
         </div>
+
+        <div class="comments__container _width-sizer">
+            <div class="js-score-text comments__amount-reviews"></div>
+
+            <div class="comments__filters">
+
+
+                <div class="comments__select select" id="detail-sort">
+
+                    <div class="select__title">
+                        Сортировать по
+                    </div>
+
+                    <button type="button" class="select__toggle" name="gender" value="" data-select="toggle"
+                            data-index="0">
+                        Самый последний
+                    </button>
+                    <div class="select__dropdown">
+                        <ul class="select__options">
+                            <li class="select__option" data-select="option" data-value="male" data-index="0">Самый
+                                последний
+                            </li>
+                            <li class="select__option" data-select="option" data-value="female" data-index="1">Самый
+                                первый
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="comments__select select" id="detail-filter">
+
+                    <div class="select__title">
+                        Фильтр
+                    </div>
+
+                    <button type="button" class="select__toggle" name="price" value="" data-select="toggle"
+                            data-index="0">
+                        Все
+                    </button>
+                    <div class="select__dropdown">
+                        <ul class="select__options">
+                            <li class="select__option" data-select="option" data-value="low" data-index="0">Все
+                            </li>
+                            <li class="select__option" data-select="option" data-value="middle" data-index="1">Не все
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments__reviews swiper js-review-slider">
+                <ul class="comments__wrapper swiper-wrapper">
+                    <li class="comments__review swiper-slide">
+
+                        <div data-stars="5" class="comments__stars stats__stars"></div>
+
+                        <h2 class="comments__review-title">Шампунь объем и сила с экстрактом льна и
+                            пшеницы</h2>
+                        <p class="comments__review-text">Urna imperdiet sed vestibulum, commodo lorem
+                            pellentesque euismod
+                            scelerisque. Imperdiet suspendisse pretium imperdiet sit metus et. Urna
+                            imperdiet sed
+                            vestibulum, commodo lorem pellentesque euismod scelerisque. Imperdiet
+                            suspendisse pretium
+                            imperdiet sit metus et.</p>
+                        <div class="comments__author">Наталья</div>
+                        <div class="comments__date">01/12/2021</div>
+                        <div class="comments__interface-bar">
+                            <div class="comments__likes">
+                                <div class="js-likes comments__likes-container">
+                                    <div class="icon"></div>
+                                    <div class="num">(1)</div>
+                                </div>
+                                <span>Полезный</span>
+                            </div>
+                            <div class="js-share comments__share">
+                                <div class="icon"></div>
+                                <span>Доля</span>
+                            </div>
+                            <div class="js-report comments__report">
+                                <div class="icon"></div>
+                                <span>Отчет</span>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li class="comments__review swiper-slide">
+
+                        <div data-stars="5" class="comments__stars stats__stars"></div>
+
+                        <h2 class="comments__review-title">Шампунь объем и сила с экстрактом льна и
+                            пшеницы</h2>
+                        <p class="comments__review-text">Urna imperdiet sed vestibulum, commodo lorem
+                            pellentesque euismod
+                            scelerisque. Imperdiet suspendisse pretium imperdiet sit metus et. Urna
+                            imperdiet sed
+                            vestibulum, commodo lorem pellentesque euismod scelerisque. Imperdiet
+                            suspendisse pretium
+                            imperdiet sit metus et.</p>
+                        <div class="comments__author">Наталья</div>
+                        <div class="comments__date">01/12/2021</div>
+                        <div class="comments__interface-bar">
+                            <div class="comments__likes">
+                                <div class="js-likes comments__likes-container">
+                                    <div class="icon"></div>
+                                    <div class="num">(1)</div>
+                                </div>
+                                <span>Полезный</span>
+                            </div>
+                            <div class="js-share comments__share">
+                                <div class="icon"></div>
+                                <span>Доля</span>
+                            </div>
+                            <div class="js-report comments__report">
+                                <div class="icon"></div>
+                                <span>Отчет</span>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li class="comments__review swiper-slide">
+
+                        <div data-stars="5" class="comments__stars stats__stars"></div>
+
+                        <h2 class="comments__review-title">Шампунь объем и сила с экстрактом льна и
+                            пшеницы</h2>
+                        <p class="comments__review-text">Urna imperdiet sed vestibulum, commodo lorem
+                            pellentesque euismod
+                            scelerisque. Imperdiet suspendisse pretium imperdiet sit metus et. Urna
+                            imperdiet sed
+                            vestibulum, commodo lorem pellentesque euismod scelerisque. Imperdiet
+                            suspendisse pretium
+                            imperdiet sit metus et.</p>
+                        <div class="comments__author">Наталья</div>
+                        <div class="comments__date">01/12/2021</div>
+                        <div class="comments__interface-bar">
+                            <div class="comments__likes">
+                                <div class="js-likes comments__likes-container">
+                                    <div class="icon"></div>
+                                    <div class="num">(1)</div>
+                                </div>
+                                <span>Полезный</span>
+                            </div>
+                            <div class="js-share comments__share">
+                                <div class="icon"></div>
+                                <span>Доля</span>
+                            </div>
+                            <div class="js-report comments__report">
+                                <div class="icon"></div>
+                                <span>Отчет</span>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li class="comments__review swiper-slide">
+
+                        <div data-stars="5" class="comments__stars stats__stars"></div>
+
+                        <h2 class="comments__review-title">Шампунь объем и сила с экстрактом льна и
+                            пшеницы</h2>
+                        <p class="comments__review-text">Urna imperdiet sed vestibulum, commodo lorem
+                            pellentesque euismod
+                            scelerisque. Imperdiet suspendisse pretium imperdiet sit metus et. Urna
+                            imperdiet sed
+                            vestibulum, commodo lorem pellentesque euismod scelerisque. Imperdiet
+                            suspendisse pretium
+                            imperdiet sit metus et.</p>
+                        <div class="comments__author">Наталья</div>
+                        <div class="comments__date">01/12/2021</div>
+                        <div class="comments__interface-bar">
+                            <div class="comments__likes">
+                                <div class="js-likes comments__likes-container">
+                                    <div class="icon"></div>
+                                    <div class="num">(1)</div>
+                                </div>
+                                <span>Полезный</span>
+                            </div>
+                            <div class="js-share comments__share">
+                                <div class="icon"></div>
+                                <span>Доля</span>
+                            </div>
+                            <div class="js-report comments__report">
+                                <div class="icon"></div>
+                                <span>Отчет</span>
+                            </div>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
     </section>
+
+    <!--footer-->
+
+    <footer class="main-footer">
+
+        <div class="main-footer__subscribe-form subscribe-form">
+            <div class="subscribe-form__container">
+                <picture class="subscribe-form__decor _1">
+                    <source media="(max-width: 667px)" type="image/png"
+                            srcset="images/mobile/footer/subscribe-1.png"/>
+                    <img src="images/desktop/footer/subscribe-1.png" alt="bush">
+                </picture>
+                <picture class="subscribe-form__decor _2">
+                    <source media="(max-width: 667px)" type="image/png"
+                            srcset="images/desktop/footer/subscribe-2.png"/>
+                    <img src="images/desktop/footer/subscribe-2.png" alt="bush">
+                </picture>
+
+                <div class="subscribe-form__description">
+                    <h3>Подписаться на новости</h3>
+                    <p>Подпишитесь на рассылку и узнавайте первыми о новинках, акциях и эксклюзивных предложениях!</p>
+                </div>
+                <form class="js-subscribe-form subscribe-form__form">
+                    <div class="js-input subscribe-form__input main-input">
+                        <input class="main-input__input"
+                               data-required
+                               name="email"
+                               type="text"
+                               placeholder="Электронная почта">
+                        <div class="js-error main-input__error"></div>
+                    </div>
+
+                    <button class="js-submit subscribe-form__submit main-btn _green">
+                    <span>
+ПОДПИСАТЬСЯ
+                    </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="main-footer__socials socials">
+            <a href="#" target="_blank" class="socials__social-item _vk"></a>
+            <a href="#" target="_blank" class="socials__social-item _youtube"></a>
+            <a href="#" target="_blank" class="socials__social-item _instagram"></a>
+            <a href="#" target="_blank" class="socials__social-item _ok"></a>
+        </div>
+
+        <div class="main-footer__navigation footer-navigation">
+            <img class="footer-navigation__logo _mobile" src="images/mobile/footer/unilever-logo.png"
+                 alt="unilever logo">
+            <ul class="footer-navigation__menu-list _width-sizer">
+                <li class="footer-navigation__menu-item"><a href="#">Где купить</a></li>
+                <li class="footer-navigation__menu-item"><a href="#">Программа лояльности</a></li>
+                <li class="footer-navigation__menu-item"><a href="#">Линейки</a></li>
+                <li class="footer-navigation__menu-item"><a href="#">О марке</a></li>
+            </ul>
+        </div>
+
+        <div class="main-footer__info footer-info _width-sizer">
+            <ul class="footer-info__col">
+                <li class="footer-info__item"><a target="_blank" href="">Условия пользования сайтом (PDF, 494 KB)</a>
+                </li>
+                <li class="footer-info__item"><a target="_blank" href="">Политика о персональных данных</a></li>
+                <li class="footer-info__item"><a target="_blank" href="">Политика Cookie</a></li>
+                <li class="footer-info__item"><a target="_blank" href="">Карта сайта</a></li>
+                <li class="footer-info__item"><a target="_blank" href="">Правила акции «Твоя Красота Может Больше» (PDF,
+                    287
+                    KB)</a></li>
+            </ul>
+            <img class="footer-info__logo _desktop" src="images/desktop/footer/unilever-logo.png" alt="unilever logo">
+            <ul class="footer-info__col">
+                <li class="footer-info__item">Юридический и почтовый адрес: 123022, г. Москва, </br>ул. Сергея Макеева,
+                    д.
+                    13. ИНН: 7705183476
+                </li>
+                <li class="footer-info__item"><a target="_blank" href="mailto:communications.russia@unilever.com">communications.russia@unilever.com</a>
+                </li>
+                <li class="footer-info__item"><a target="_blank" href="tel:+78002001200">Горячая линия: +7 (800) 200 1
+                    200
+                    (бесплатно по России)</a></li>
+                <li class="footer-info__item">© 2021 Unilever</li>
+            </ul>
+
+        </div>
+
+    </footer>
+
+    <!--footer end-->
 
 
 </main>
