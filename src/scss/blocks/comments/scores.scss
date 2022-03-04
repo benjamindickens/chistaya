@@ -45,6 +45,11 @@
     line-height: 6rem;
     color: variables.$green;
     font-family: variables.$font-medium;
+
+    @media (max-width: variables.$mobile) {
+      line-height: 1;
+      margin-top: .4rem;
+    }
   }
 
   &__score-all {
@@ -69,7 +74,7 @@
 
     &-list {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       grid-gap: 1rem;
       order: revert;
     }
@@ -109,7 +114,7 @@
         position: absolute;
         left: 0;
         height: 100%;
-        width: 10%;
+        width: 0;
         background: variables.$green;
       }
 
