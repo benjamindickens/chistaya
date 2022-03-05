@@ -7,6 +7,10 @@
 
   &__container {
     margin-top: 4.4rem;
+
+    @media (max-width: variables.$mobile) {
+      padding: 1.6rem;
+    }
   }
 
   &__amount-reviews {
@@ -141,7 +145,7 @@
 
   &__pagination-bullet {
     font-size: 1rem;
-    line-height: 1;
+    line-height: 0;
     cursor: pointer;
   }
 

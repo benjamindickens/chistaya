@@ -2,6 +2,10 @@
 
 .select {
   position: relative;
+
+  @media (max-width: variables.$mobile) {
+    flex: 1;
+  }
 }
 
 .select__title {
@@ -26,6 +30,11 @@
   user-select: none;
   position: relative;
   min-width: 17rem;
+  @media (max-width: variables.$mobile) {
+    min-width: unset;
+    width: 100%;
+    padding-right: 2.8rem;
+  }
 }
 
 .select__toggle::before {
