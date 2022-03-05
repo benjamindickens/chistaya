@@ -1,3 +1,5 @@
+import {submitForm} from "./request";
+
 const CLASS_NAME_SELECT = 'select';
 const CLASS_NAME_ACTIVE = 'select_show';
 const CLASS_NAME_SELECTED = 'select__option_selected';
@@ -6,12 +8,15 @@ const SELECTOR_DATA = '[data-select]';
 const SELECTOR_DATA_TOGGLE = '[data-select="toggle"]';
 const SELECTOR_OPTION_SELECTED = '.select__option_selected';
 const filterData = {
-    gender: null,
-    price: null
+    sort: null,
+    filter: null
 };
 
 class DetailFilters {
-    constructor(target, params) {
+    constructor(target, slider, renderSlide, renderPag, params) {
+        this.slider = slider;
+        this.renderSlide = renderSlide;
+        this.renderPag = renderPag;
         this._elRoot = typeof target === 'string' ? document.querySelector(target) : target;
         this._params = params || {};
         if (this._params['options']) {
@@ -36,7 +41,48 @@ class DetailFilters {
     }
 
     _updateContent(data) {
-        console.log(data, "update slider")
+
+        const fake = [
+            {
+                id: 1,
+                reports: "",
+                stars: "5",
+                title: "3423432324",
+                text: "kekeke 443234 32 324  2",
+                likes: "3",
+                author: "Наталия",
+                date: "11.12.2021"
+            },
+            {
+                id: 2,
+                reports: "",
+                stars: "5",
+                title: "review 2",
+                text: "kekeke",
+                likes: "2",
+                author: "Наталия",
+                date: "11.12.2021"
+            },
+        ]
+
+        submitForm('post', "/api/hits", data).then(res => res.json()).then(data => {
+            this.slider.virtual.removeAllSlides(true)
+            this.slider.virtual.slides = this.renderSlide(data);
+            this.slider.virtual.update(true);
+            this.renderPag(this.slider.virtual.slides.length);
+        }).catch(e => {
+            console.error(e)
+            //удалить ниже тестовые данные
+        });
+
+        //удалить ниже тестовая дата и переменную дамми дату выще
+        this.slider.virtual.removeAllSlides(true)
+        this.slider.virtual.slides = this.renderSlide(fake);
+        this.slider.virtual.update(true);
+        this.renderPag(this.slider.virtual.slides.length);
+
+
+        console.log("slider updated")
     }
 
     _update(option) {
@@ -164,5 +210,4 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const detailSort = new DetailFilters('#detail-sort');
-const detailFilter = new DetailFilters('#detail-filter');
+export {DetailFilters};

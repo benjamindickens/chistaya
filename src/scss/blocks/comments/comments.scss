@@ -71,6 +71,7 @@
 
 
   &__likes, &__share, &__report {
+    cursor: pointer;
     display: grid;
     grid-gap: .4rem;
     justify-items: center;
@@ -125,4 +126,43 @@
     }
   }
 
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    grid-gap: 1.25rem;
+  }
+
+  &__pagination {
+    display: flex;
+    grid-gap: .5rem;
+  }
+
+  &__pagination-bullet {
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &__nav-btn.js-comment-nav {
+    width: 0.45rem;
+    height: 1.05rem;
+    position: static;
+    margin-top: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__nav-btn.swiper-button-prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 1L1 6L5.5 11.5' stroke='black' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+
+  &__nav-btn.swiper-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 6L1 11.5' stroke='black' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
 }
