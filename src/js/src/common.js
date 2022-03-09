@@ -1,3 +1,7 @@
+import {Popup} from "./popups";
+
+const whereToBuy = new Popup();
+
 const getOneRem = () => document.querySelector(".js-rem-example").offsetHeight;
 
 const hasClass = (el, logicOperator = "||", ...classNames) => {
@@ -26,7 +30,7 @@ const productCardClickEvents = (container) => {
         if (!hasClass(e.target, "||", "js-buy-btn", "js-product-comments")) {
             location.href = e.target.closest(".js-product-card").dataset.href;
         } else if (hasClass(e.target, null, "js-buy-btn")) {
-            //logic for buy btn
+            whereToBuy.openWhereToBuy(e.target);
         }
     })
 }

@@ -1,6 +1,6 @@
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
-import {getNoun, detectMobile} from "./common.js";
+import {getNoun, detectMobile, productCardClickEvents} from "./common.js";
 
 const detailProductContainer = document.querySelector(".js-detail-product-slider");
 const descriptionCompositionContainer = document.querySelector(".js-composition-slider");
@@ -13,7 +13,9 @@ const isMobile = detectMobile();
 const amountLikes = document.querySelector(".js-product-comments");
 amountLikes.innerText = getNoun(amountLikes.innerText, "отзыв",
     "отзыва", "отзывов");
+const detailTopContainer = document.querySelector(".js-detail-top");
 
+productCardClickEvents(detailTopContainer);
 
 const detailProductSlider = new Swiper(detailProductContainer, {
     spaceBetween: 16,

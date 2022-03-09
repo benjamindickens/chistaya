@@ -1,8 +1,13 @@
 @use "../../common/variables";
 
 .cart-btn {
-  cursor: pointer;
   display: grid;
+
+  //disabled block
+  display: none !important;
+
+  cursor: pointer;
+
   grid-template-areas: "icon name"
 "icon amount";
   justify-items: start;

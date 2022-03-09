@@ -205,7 +205,7 @@ ${insertTypeBar(content.type)}
             <a href="${content.link}#comments" class="js-product-comments stats__comments">${getNoun(content.comments, "отзыв",
         "отзыва", "отзывов")}</a>
         </div>
-        <button class="js-buy-btn product-card__btn main-btn _green">
+        <button data-id="3" class="js-buy-btn product-card__btn main-btn _green">
             <span>Купить</span>
         </button>
     </div>`

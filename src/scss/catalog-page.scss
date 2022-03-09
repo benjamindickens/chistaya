@@ -9,6 +9,7 @@
 @use "blocks/main-footer/main-footer";
 
 //components
+@use "components/small-product-card";
 @use "components/breadcrumb";
 @use "components/top-filter";
 @use "components/stats";
@@ -16,6 +17,7 @@
 @use "components/product-card";
 @use "components/loader";
 @use "components/main-checkbox";
+@use "components/popups";
 
 //blocks
 @use "blocks/side-filter/side-filter";

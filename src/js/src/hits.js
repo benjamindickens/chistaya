@@ -95,7 +95,7 @@ const getSlide = (content) => {
         "отзыв",
         "отзыва", "отзывов")}</a>
                         </div>
-                        <button class="js-buy-btn product-card__btn main-btn _green">
+                        <button data-id="3" class="js-buy-btn product-card__btn main-btn _green">
                         <span>Купить</span>                     
                         </button>
                     </div>`
