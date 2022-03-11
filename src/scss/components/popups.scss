@@ -136,3 +136,24 @@
     }
   }
 }
+
+@media (max-width: 667px) {
+    .popup__container {
+        padding: 2rem;
+    }
+
+    .where-to-buy-popup__item {
+        grid-gap: 2rem;
+    }
+
+    .where-to-buy-popup__button {
+        width: 13.6rem;
+    }
+
+    .where-to-buy-popup__title {
+        max-width: 30rem;
+        margin: 0 auto;
+
+    }
+
+}
